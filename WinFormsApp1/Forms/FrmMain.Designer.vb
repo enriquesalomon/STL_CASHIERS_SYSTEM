@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class FrmMain
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.TEXT1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListOfReceiversFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,6 +38,7 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PanelLogin = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -50,6 +52,7 @@ Partial Class Form1
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.PanelLogin.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.PanelBottom.SuspendLayout()
         Me.SuspendLayout()
@@ -160,6 +163,7 @@ Partial Class Form1
         '
         Me.PanelLogin.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PanelLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelLogin.Controls.Add(Me.PictureBox1)
         Me.PanelLogin.Controls.Add(Me.Label1)
         Me.PanelLogin.Controls.Add(Me.TextBox2)
         Me.PanelLogin.Controls.Add(Me.TextBox1)
@@ -171,6 +175,16 @@ Partial Class Form1
         Me.PanelLogin.Name = "PanelLogin"
         Me.PanelLogin.Size = New System.Drawing.Size(411, 139)
         Me.PanelLogin.TabIndex = 2
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 28)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 106)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
@@ -294,6 +308,7 @@ Partial Class Form1
         Me.Panel1.PerformLayout()
         Me.PanelLogin.ResumeLayout(False)
         Me.PanelLogin.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.PanelBottom.ResumeLayout(False)
@@ -328,4 +343,5 @@ Partial Class Form1
     Friend WithEvents RidersShortOverRemittancesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label5 As Label
     Friend WithEvents COLLECTIONToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

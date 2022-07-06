@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class FrmMain
     Private Sub Button3_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
