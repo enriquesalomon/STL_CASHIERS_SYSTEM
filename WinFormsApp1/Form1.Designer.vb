@@ -33,7 +33,6 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.PanelLogin = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -41,11 +40,14 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.PanelBottom = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.PanelLogin.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.PanelBottom.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -115,9 +117,9 @@ Partial Class Form1
         'Button3
         '
         Me.Button3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Button3.Location = New System.Drawing.Point(1178, 0)
+        Me.Button3.Location = New System.Drawing.Point(1191, 0)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 31)
+        Me.Button3.Size = New System.Drawing.Size(62, 31)
         Me.Button3.TabIndex = 4
         Me.Button3.Text = "X"
         Me.Button3.UseVisualStyleBackColor = True
@@ -126,29 +128,17 @@ Partial Class Form1
         '
         Me.PanelLogin.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PanelLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PanelLogin.Controls.Add(Me.Label2)
         Me.PanelLogin.Controls.Add(Me.Label1)
         Me.PanelLogin.Controls.Add(Me.TextBox2)
         Me.PanelLogin.Controls.Add(Me.TextBox1)
         Me.PanelLogin.Controls.Add(Me.Button2)
         Me.PanelLogin.Controls.Add(Me.Button1)
         Me.PanelLogin.Controls.Add(Me.Panel2)
+        Me.PanelLogin.Controls.Add(Me.Label2)
         Me.PanelLogin.Location = New System.Drawing.Point(374, 198)
         Me.PanelLogin.Name = "PanelLogin"
         Me.PanelLogin.Size = New System.Drawing.Size(411, 139)
         Me.PanelLogin.TabIndex = 2
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Goldenrod
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(109, 72)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(98, 21)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Password   :"
         '
         'Label1
         '
@@ -166,6 +156,7 @@ Partial Class Form1
         '
         Me.TextBox2.Location = New System.Drawing.Point(205, 72)
         Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox2.Size = New System.Drawing.Size(195, 23)
         Me.TextBox2.TabIndex = 4
         '
@@ -218,13 +209,37 @@ Partial Class Form1
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "LOGIN ACCOUNT"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Goldenrod
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(109, 72)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(98, 21)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Password   :"
+        '
         'PanelBottom
         '
+        Me.PanelBottom.Controls.Add(Me.Label4)
         Me.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelBottom.Location = New System.Drawing.Point(0, 716)
         Me.PanelBottom.Name = "PanelBottom"
         Me.PanelBottom.Size = New System.Drawing.Size(1253, 33)
         Me.PanelBottom.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label4.ForeColor = System.Drawing.Color.DimGray
+        Me.Label4.Location = New System.Drawing.Point(865, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(388, 15)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Copyrights 2022 @ 1028 GAMING AND ENTERTAINMENT CORPORATION"
         '
         'Form1
         '
@@ -248,6 +263,8 @@ Partial Class Form1
         Me.PanelLogin.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.PanelBottom.ResumeLayout(False)
+        Me.PanelBottom.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -273,4 +290,5 @@ Partial Class Form1
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class
