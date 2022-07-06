@@ -23,7 +23,7 @@ Partial Class FrmMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.panelMenu = New System.Windows.Forms.MenuStrip()
         Me.TEXT1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListOfReceiversFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerateReceiversFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -40,8 +40,8 @@ Partial Class FrmMain
         Me.PanelLogin = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -49,7 +49,7 @@ Partial Class FrmMain
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PanelBottom = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.MenuStrip1.SuspendLayout()
+        Me.panelMenu.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.PanelLogin.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,16 +57,16 @@ Partial Class FrmMain
         Me.PanelBottom.SuspendLayout()
         Me.SuspendLayout()
         '
-        'MenuStrip1
+        'panelMenu
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.MenuStrip1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TEXT1ToolStripMenuItem, Me.COLLECTIONToolStripMenuItem, Me.TEXT2ToolStripMenuItem, Me.RIDERSREMITTANCEToolStripMenuItem, Me.VIEWUNPAIDREMITTANCEToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 31)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1253, 25)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.panelMenu.BackColor = System.Drawing.Color.Transparent
+        Me.panelMenu.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.panelMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TEXT1ToolStripMenuItem, Me.COLLECTIONToolStripMenuItem, Me.TEXT2ToolStripMenuItem, Me.RIDERSREMITTANCEToolStripMenuItem, Me.VIEWUNPAIDREMITTANCEToolStripMenuItem})
+        Me.panelMenu.Location = New System.Drawing.Point(0, 31)
+        Me.panelMenu.Name = "panelMenu"
+        Me.panelMenu.Size = New System.Drawing.Size(1253, 25)
+        Me.panelMenu.TabIndex = 0
+        Me.panelMenu.Text = "MenuStrip1"
         '
         'TEXT1ToolStripMenuItem
         '
@@ -165,8 +165,8 @@ Partial Class FrmMain
         Me.PanelLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PanelLogin.Controls.Add(Me.PictureBox1)
         Me.PanelLogin.Controls.Add(Me.Label1)
-        Me.PanelLogin.Controls.Add(Me.TextBox2)
-        Me.PanelLogin.Controls.Add(Me.TextBox1)
+        Me.PanelLogin.Controls.Add(Me.txtPassword)
+        Me.PanelLogin.Controls.Add(Me.txtUsername)
         Me.PanelLogin.Controls.Add(Me.Button2)
         Me.PanelLogin.Controls.Add(Me.Button1)
         Me.PanelLogin.Controls.Add(Me.Panel2)
@@ -198,20 +198,20 @@ Partial Class FrmMain
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Username :"
         '
-        'TextBox2
+        'txtPassword
         '
-        Me.TextBox2.Location = New System.Drawing.Point(205, 72)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox2.Size = New System.Drawing.Size(195, 23)
-        Me.TextBox2.TabIndex = 4
+        Me.txtPassword.Location = New System.Drawing.Point(205, 72)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPassword.Size = New System.Drawing.Size(195, 23)
+        Me.txtPassword.TabIndex = 4
         '
-        'TextBox1
+        'txtUsername
         '
-        Me.TextBox1.Location = New System.Drawing.Point(205, 43)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(195, 23)
-        Me.TextBox1.TabIndex = 3
+        Me.txtUsername.Location = New System.Drawing.Point(205, 43)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(195, 23)
+        Me.txtUsername.TabIndex = 3
         '
         'Button2
         '
@@ -287,7 +287,7 @@ Partial Class FrmMain
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Copyrights 2022 @ 1028 GAMING AND ENTERTAINMENT CORPORATION"
         '
-        'Form1
+        'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -295,15 +295,15 @@ Partial Class FrmMain
         Me.ClientSize = New System.Drawing.Size(1253, 749)
         Me.Controls.Add(Me.PanelBottom)
         Me.Controls.Add(Me.PanelLogin)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "Form1"
+        Me.MainMenuStrip = Me.panelMenu
+        Me.Name = "FrmMain"
         Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.panelMenu.ResumeLayout(False)
+        Me.panelMenu.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.PanelLogin.ResumeLayout(False)
@@ -318,7 +318,7 @@ Partial Class FrmMain
 
     End Sub
 
-    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents panelMenu As MenuStrip
     Friend WithEvents TEXT1ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TEXT2ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
@@ -334,8 +334,8 @@ Partial Class FrmMain
     Friend WithEvents VIEWUNPAIDREMITTANCEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents txtUsername As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents ListOfReceiversFormToolStripMenuItem As ToolStripMenuItem
