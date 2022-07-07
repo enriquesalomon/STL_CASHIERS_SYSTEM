@@ -64,16 +64,19 @@ Partial Class FrmMain
         Me.panelMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TEXT1ToolStripMenuItem, Me.COLLECTIONToolStripMenuItem, Me.TEXT2ToolStripMenuItem, Me.RIDERSREMITTANCEToolStripMenuItem, Me.VIEWUNPAIDREMITTANCEToolStripMenuItem})
         Me.panelMenu.Location = New System.Drawing.Point(0, 31)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(1253, 25)
+        Me.panelMenu.Size = New System.Drawing.Size(1253, 58)
         Me.panelMenu.TabIndex = 0
         Me.panelMenu.Text = "MenuStrip1"
         '
         'TEXT1ToolStripMenuItem
         '
         Me.TEXT1ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListOfReceiversFormToolStripMenuItem, Me.GenerateReceiversFormToolStripMenuItem})
+        Me.TEXT1ToolStripMenuItem.Image = CType(resources.GetObject("TEXT1ToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.TEXT1ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TEXT1ToolStripMenuItem.Name = "TEXT1ToolStripMenuItem"
-        Me.TEXT1ToolStripMenuItem.Size = New System.Drawing.Size(126, 21)
+        Me.TEXT1ToolStripMenuItem.Size = New System.Drawing.Size(176, 54)
         Me.TEXT1ToolStripMenuItem.Text = "RECEIVERS FORM"
+        Me.TEXT1ToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ListOfReceiversFormToolStripMenuItem
         '
@@ -89,15 +92,19 @@ Partial Class FrmMain
         '
         'COLLECTIONToolStripMenuItem
         '
+        Me.COLLECTIONToolStripMenuItem.Image = CType(resources.GetObject("COLLECTIONToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.COLLECTIONToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.COLLECTIONToolStripMenuItem.Name = "COLLECTIONToolStripMenuItem"
-        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(106, 21)
+        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(156, 54)
         Me.COLLECTIONToolStripMenuItem.Text = "COLLECTIBLES"
         '
         'TEXT2ToolStripMenuItem
         '
         Me.TEXT2ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PAIDToolStripMenuItem, Me.UNPAIDToolStripMenuItem, Me.REMITTANCEWITHBALANCEToolStripMenuItem})
+        Me.TEXT2ToolStripMenuItem.Image = CType(resources.GetObject("TEXT2ToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.TEXT2ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TEXT2ToolStripMenuItem.Name = "TEXT2ToolStripMenuItem"
-        Me.TEXT2ToolStripMenuItem.Size = New System.Drawing.Size(101, 21)
+        Me.TEXT2ToolStripMenuItem.Size = New System.Drawing.Size(151, 54)
         Me.TEXT2ToolStripMenuItem.Text = "COLLECTION"
         '
         'PAIDToolStripMenuItem
@@ -121,8 +128,10 @@ Partial Class FrmMain
         'RIDERSREMITTANCEToolStripMenuItem
         '
         Me.RIDERSREMITTANCEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RidersShortOverRemittancesToolStripMenuItem})
+        Me.RIDERSREMITTANCEToolStripMenuItem.Image = CType(resources.GetObject("RIDERSREMITTANCEToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.RIDERSREMITTANCEToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.RIDERSREMITTANCEToolStripMenuItem.Name = "RIDERSREMITTANCEToolStripMenuItem"
-        Me.RIDERSREMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(131, 21)
+        Me.RIDERSREMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(181, 54)
         Me.RIDERSREMITTANCEToolStripMenuItem.Text = "RIDERS ACCOUNT"
         '
         'RidersShortOverRemittancesToolStripMenuItem
@@ -134,7 +143,7 @@ Partial Class FrmMain
         'VIEWUNPAIDREMITTANCEToolStripMenuItem
         '
         Me.VIEWUNPAIDREMITTANCEToolStripMenuItem.Name = "VIEWUNPAIDREMITTANCEToolStripMenuItem"
-        Me.VIEWUNPAIDREMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(76, 21)
+        Me.VIEWUNPAIDREMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(76, 54)
         Me.VIEWUNPAIDREMITTANCEToolStripMenuItem.Text = "LOG-OUT"
         '
         'Panel1
