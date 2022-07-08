@@ -34,6 +34,7 @@ Partial Class FrmMain
         Me.REMITTANCEWITHBALANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RIDERSREMITTANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RidersShortOverRemittancesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IMPORTSALESREPORTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VIEWUNPAIDREMITTANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -60,8 +61,9 @@ Partial Class FrmMain
         'panelMenu
         '
         Me.panelMenu.BackColor = System.Drawing.Color.Transparent
+        Me.panelMenu.Enabled = False
         Me.panelMenu.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.panelMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TEXT1ToolStripMenuItem, Me.COLLECTIONToolStripMenuItem, Me.TEXT2ToolStripMenuItem, Me.RIDERSREMITTANCEToolStripMenuItem, Me.VIEWUNPAIDREMITTANCEToolStripMenuItem})
+        Me.panelMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TEXT1ToolStripMenuItem, Me.COLLECTIONToolStripMenuItem, Me.TEXT2ToolStripMenuItem, Me.RIDERSREMITTANCEToolStripMenuItem, Me.IMPORTSALESREPORTToolStripMenuItem, Me.VIEWUNPAIDREMITTANCEToolStripMenuItem})
         Me.panelMenu.Location = New System.Drawing.Point(0, 31)
         Me.panelMenu.Name = "panelMenu"
         Me.panelMenu.Size = New System.Drawing.Size(1253, 58)
@@ -140,6 +142,14 @@ Partial Class FrmMain
         Me.RidersShortOverRemittancesToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
         Me.RidersShortOverRemittancesToolStripMenuItem.Text = "Riders Short/Over Remittances"
         '
+        'IMPORTSALESREPORTToolStripMenuItem
+        '
+        Me.IMPORTSALESREPORTToolStripMenuItem.Image = CType(resources.GetObject("IMPORTSALESREPORTToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.IMPORTSALESREPORTToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.IMPORTSALESREPORTToolStripMenuItem.Name = "IMPORTSALESREPORTToolStripMenuItem"
+        Me.IMPORTSALESREPORTToolStripMenuItem.Size = New System.Drawing.Size(205, 54)
+        Me.IMPORTSALESREPORTToolStripMenuItem.Text = "IMPORT SALES REPORT"
+        '
         'VIEWUNPAIDREMITTANCEToolStripMenuItem
         '
         Me.VIEWUNPAIDREMITTANCEToolStripMenuItem.Name = "VIEWUNPAIDREMITTANCEToolStripMenuItem"
@@ -214,6 +224,7 @@ Partial Class FrmMain
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(195, 23)
         Me.txtPassword.TabIndex = 4
+        Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtUsername
         '
@@ -221,6 +232,7 @@ Partial Class FrmMain
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(195, 23)
         Me.txtUsername.TabIndex = 3
+        Me.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Button2
         '
@@ -235,7 +247,7 @@ Partial Class FrmMain
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button1.Location = New System.Drawing.Point(218, 107)
+        Me.Button1.Location = New System.Drawing.Point(222, 107)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(88, 29)
         Me.Button1.TabIndex = 1
@@ -353,4 +365,5 @@ Partial Class FrmMain
     Friend WithEvents Label5 As Label
     Friend WithEvents COLLECTIONToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents IMPORTSALESREPORTToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -1,48 +1,63 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Net.Sockets
+Imports System.Text
+Imports System.Data.SqlClient
 Public Class Login
     Sub VerifyUser()
 
         Try
+
+            Call connectSQL(conString)
+            mycommand = mysqlconn.CreateCommand
+            mycommand.CommandText = "SELECT * FROM tbl_UserAccount where  Username='" & Trim(FrmMain.txtUsername.Text) & "' and  UserPassword='" & Trim(FrmMain.txtPassword.Text) & "'"
+            myadapter.SelectCommand = mycommand
+            myadapter.Fill(mydataset, "tbl_UserAccount")
+            mydataTable = mydataset.Tables("tbl_UserAccount")
+            mysqlreader = mycommand.ExecuteReader
+            If mydataTable.Rows.Count > 0 Then
+                tempName = ""
+                While mysqlreader.Read()
+                    username = mysqlreader("Username").ToString
+                    password = mysqlreader("UserPassword").ToString
+                    'tempName = (mysqlreader("Fullname")).ToString & Space(1) & Mid((mysqlreader("Mname")), 1, 1).ToString & "." & Space(1) & (mysqlreader("Lname")).ToString & "  "
+                    tempName = (mysqlreader("Fullname")).ToString
+                    'lblposition.Text = Trim(mysqlreader("Designation").ToString)
+
+
+                End While
+            Else
+                password = password
+            End If
+
+
             If FrmMain.txtPassword.Text = "" And FrmMain.txtUsername.Text = "" Then
                 MessageBox.Show("Please enter username or password", "Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
             End If
-            openCon()
-            Dim READER As MySqlDataReader
-
-
-            Dim Query As String
-            Query = "SELECT * FROM useraccounts WHERE UserName='" & FrmMain.txtUsername.Text & "' AND  UserPassword ='" & FrmMain.txtPassword.Text & "'"
-            cmd = New MySqlCommand(Query, con)
-            READER = cmd.ExecuteReader
-            Dim count As Integer
-            count = 0
-            While READER.Read
-                count = count + 1
-            End While
-
-            If count = 1 Then
+            If Trim(password) = Trim(FrmMain.txtPassword.Text) And FrmMain.txtUsername.Text = Trim(username) Then
                 MessageBox.Show("Access successfully Granted", "Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-                FrmMain.txtUsername.Clear()
-                FrmMain.txtPassword.Clear()
+                FrmMain.txtPassword.Text = ""
+                FrmMain.txtUsername.Text = ""
+                FrmMain.Enabled = True
                 FrmMain.PanelLogin.Visible = False
-                FrmMain.panelMenu.Visible = True
-                '   FrmMain.panelTop.Visible = True
-            ElseIf count > 1 Then
-                MessageBox.Show("Username and password are Duplicate")
+
+                FrmMain.panelMenu.Enabled = True
+                'btnSchedule.Enabled = True
+                'btnPerformance.Enabled = True
+                'btnResults.Enabled = True
+                'btnLogout.Enabled = True
+                'If lblUserID.Text = "0001" Then
+                '    btnSetting.Visible = True
+                'Else
+                '    btnSetting.Visible = False
+                'End If
+
             Else
-                MessageBox.Show("Access denied! Invalid username or password", "Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("Access denied Invalid username or password", "Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 FrmMain.txtPassword.Focus()
-
             End If
-
-            con.Close()
-
-
         Catch ex As Exception
-
+            MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, " Error !!")
         End Try
-
 
 
     End Sub
