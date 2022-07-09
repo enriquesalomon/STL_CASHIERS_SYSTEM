@@ -17,6 +17,7 @@ Module ModFunction
 
     Public mylogin As New Login
     Public myimporttable As New ImportTable
+    Public mysalessummary As New SaleSummary
 
 
 

@@ -64,4 +64,8 @@
     Private Sub IMPORTSALESREPORTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IMPORTSALESREPORTToolStripMenuItem.Click
         FrmImportExcelSales.ShowDialog()
     End Sub
+
+    Private Sub GameAccountsSummaryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GameAccountsSummaryToolStripMenuItem.Click
+        FrmGameAccountsSummary.ShowDialog()
+    End Sub
 End Class

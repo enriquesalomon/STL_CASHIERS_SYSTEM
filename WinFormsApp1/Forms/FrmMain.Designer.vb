@@ -29,6 +29,7 @@ Partial Class FrmMain
         Me.GenerateReceiversFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GrossSalesReportSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.COLLECTIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GameAccountsSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TEXT2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PAIDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UNPAIDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -101,11 +102,18 @@ Partial Class FrmMain
         '
         'COLLECTIONToolStripMenuItem
         '
+        Me.COLLECTIONToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GameAccountsSummaryToolStripMenuItem})
         Me.COLLECTIONToolStripMenuItem.Image = CType(resources.GetObject("COLLECTIONToolStripMenuItem.Image"), System.Drawing.Image)
         Me.COLLECTIONToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.COLLECTIONToolStripMenuItem.Name = "COLLECTIONToolStripMenuItem"
         Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(156, 54)
         Me.COLLECTIONToolStripMenuItem.Text = "COLLECTIBLES"
+        '
+        'GameAccountsSummaryToolStripMenuItem
+        '
+        Me.GameAccountsSummaryToolStripMenuItem.Name = "GameAccountsSummaryToolStripMenuItem"
+        Me.GameAccountsSummaryToolStripMenuItem.Size = New System.Drawing.Size(244, 22)
+        Me.GameAccountsSummaryToolStripMenuItem.Text = "Game Accounts Summary"
         '
         'TEXT2ToolStripMenuItem
         '
@@ -154,8 +162,8 @@ Partial Class FrmMain
         Me.IMPORTSALESREPORTToolStripMenuItem.Image = CType(resources.GetObject("IMPORTSALESREPORTToolStripMenuItem.Image"), System.Drawing.Image)
         Me.IMPORTSALESREPORTToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.IMPORTSALESREPORTToolStripMenuItem.Name = "IMPORTSALESREPORTToolStripMenuItem"
-        Me.IMPORTSALESREPORTToolStripMenuItem.Size = New System.Drawing.Size(205, 54)
-        Me.IMPORTSALESREPORTToolStripMenuItem.Text = "IMPORT SALES REPORT"
+        Me.IMPORTSALESREPORTToolStripMenuItem.Size = New System.Drawing.Size(218, 54)
+        Me.IMPORTSALESREPORTToolStripMenuItem.Text = "IMPORT SALES SUMMARY"
         '
         'VIEWUNPAIDREMITTANCEToolStripMenuItem
         '
@@ -197,7 +205,7 @@ Partial Class FrmMain
         Me.PanelLogin.Controls.Add(Me.Button1)
         Me.PanelLogin.Controls.Add(Me.Panel2)
         Me.PanelLogin.Controls.Add(Me.Label2)
-        Me.PanelLogin.Location = New System.Drawing.Point(374, 198)
+        Me.PanelLogin.Location = New System.Drawing.Point(415, 248)
         Me.PanelLogin.Name = "PanelLogin"
         Me.PanelLogin.Size = New System.Drawing.Size(411, 139)
         Me.PanelLogin.TabIndex = 2
@@ -374,4 +382,5 @@ Partial Class FrmMain
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents IMPORTSALESREPORTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GrossSalesReportSummaryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GameAccountsSummaryToolStripMenuItem As ToolStripMenuItem
 End Class
