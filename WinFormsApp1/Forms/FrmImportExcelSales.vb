@@ -9,67 +9,114 @@ Public Class FrmImportExcelSales
     End Sub
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
-        Using ofd As OpenFileDialog = New OpenFileDialog() With {.Filter = "Excel 97-2003 Workbook|*.xls|Excel Workbook|*.xlsx"}
-            If ofd.ShowDialog = DialogResult.OK Then
-                txtFilename.Text = ofd.FileName
-                Using stream = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read)
-                    Using reader As IExcelDataReader = ExcelReaderFactory.CreateReader(stream)
-                        Dim result As DataSet = reader.AsDataSet(New ExcelDataSetConfiguration() With {
-                                                                .ConfigureDataTable = Function(__) New ExcelDataTableConfiguration() With {
-                                                                .UseHeaderRow = True}})
-                        tables = result.Tables
-                        cboSheet.Items.Clear()
-                        For Each table As DataTable In tables
-                            cboSheet.Items.Add(table.TableName)
-                        Next
-                    End Using
-                End Using
+        Try
 
-            End If
-        End Using
+
+            Using ofd As OpenFileDialog = New OpenFileDialog() With {.Filter = "Excel Workbook|*.xlsx|Excel 97-2003 Workbook|*.xls"}
+                If ofd.ShowDialog = DialogResult.OK Then
+                    txtFilename.Text = ofd.FileName
+                    Using stream = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read)
+                        Using reader As IExcelDataReader = ExcelReaderFactory.CreateReader(stream)
+                            Dim result As DataSet = reader.AsDataSet(New ExcelDataSetConfiguration() With {
+                                                                    .ConfigureDataTable = Function(__) New ExcelDataTableConfiguration() With {
+                                                                    .UseHeaderRow = True}})
+                            tables = result.Tables
+                            cboSheet.Items.Clear()
+                            For Each table As DataTable In tables
+                                cboSheet.Items.Add(table.TableName)
+                            Next
+                        End Using
+                    End Using
+
+                End If
+            End Using
+        Catch ex As Exception
+
+
+            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        End Try
     End Sub
 
     Private Sub cboSheet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSheet.SelectedIndexChanged
+        'Try
         Dim dt As DataTable = tables(cboSheet.SelectedItem.ToString())
-        'dtgImportSales.DataSource = dt
-        If dt IsNot Nothing Then
-            Dim list As List(Of ImportTable) = New List(Of ImportTable)()
-            For i As Integer = 0 To dt.Rows.Count - 1
-                Dim importable As ImportTable = New ImportTable()
-                importable.Cluster = dt.Rows(i)("CLUSTER").ToString()
-                importable.Barangay = dt.Rows(i)("BARANGAY").ToString()
-                importable.Rider = dt.Rows(i)("RIDER").ToString()
-                importable.Type = dt.Rows(i)("TYPE").ToString()
-                importable.Coordinator = dt.Rows(i)("COORDINATOR").ToString()
-                importable.Agent = dt.Rows(i)("AGENT").ToString()
-                importable.Comm = dt.Rows(i)("COMM").ToString()
-                importable.Username = dt.Rows(i)("USERNAME").ToString()
-                list.Add(importable)
-            Next
-            ImportTableBindingSource.DataSource = list
+            'dtgImportSales.DataSource = dt
+            If dt IsNot Nothing Then
+                Dim list As List(Of ImportTable) = New List(Of ImportTable)()
+                For i As Integer = 0 To dt.Rows.Count - 1
+                    Dim importable As ImportTable = New ImportTable()
 
-        End If
+                importable.salesdate = dt.Rows(i)("DATE").ToString()
+                    importable.cluster = dt.Rows(i)("CLUSTER").ToString()
+                    importable.municipality = dt.Rows(i)("BARANGAY").ToString()
+                    importable.rider = dt.Rows(i)("RIDER").ToString()
+                    importable.type = dt.Rows(i)("TYPE").ToString()
+                    importable.coordinator = dt.Rows(i)("COORDINATOR").ToString()
+                    importable.agent = dt.Rows(i)("AGENT").ToString()
+                    importable.comm = dt.Rows(i)("COMM.(%)").ToString()
+                    importable.username = dt.Rows(i)("USERNAME").ToString()
+
+                importable.draw1 = dt.Rows(i)("DRAW 1").ToString()
+                importable.comm1 = dt.Rows(i)("COMM").ToString()
+                    importable.net1 = dt.Rows(i)("NET").ToString()
+                    importable.hits1 = dt.Rows(i)("HITS").ToString()
+                    importable.total1 = dt.Rows(i)("TOTAL").ToString()
+
+                importable.draw2 = dt.Rows(i)("DRAW 2").ToString()
+                importable.comm2 = dt.Rows(i)("COMM").ToString()
+                    importable.net2 = dt.Rows(i)("NET").ToString()
+                    importable.hits2 = dt.Rows(i)("HITS").ToString()
+                    importable.total2 = dt.Rows(i)("TOTAL").ToString()
+
+                importable.draw3 = dt.Rows(i)("DRAW 3").ToString()
+                importable.comm3 = dt.Rows(i)("COMM").ToString()
+                    importable.net3 = dt.Rows(i)("NET").ToString()
+                    importable.hits3 = dt.Rows(i)("HITS").ToString()
+                    importable.total3 = dt.Rows(i)("TOTAL").ToString()
+
+                    importable.overallgross = dt.Rows(i)("OVERALL GROSS").ToString()
+                    importable.overallcomm = dt.Rows(i)("OVERALL COMM").ToString()
+                    importable.overallnet = dt.Rows(i)("OVERALL NET").ToString()
+                    importable.overallhits = dt.Rows(i)("OVERALL HITS").ToString()
+                    importable.revenue = dt.Rows(i)("REVENUE").ToString()
+
+
+
+
+                    list.Add(importable)
+                Next
+                ImportTableBindingSource.DataSource = list
+
+            End If
+        'Catch ex As Exception
+
+        '    MessageBox.Show("Invalid Report Format!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'End Try
     End Sub
 
     Private Sub btnImport_Click(sender As Object, e As EventArgs) Handles btnImport.Click
 
-        'Try
-        Dim list As List(Of ImportTable) = TryCast(ImportTableBindingSource.DataSource, List(Of ImportTable))
-        If list IsNot Nothing Then
-            DapperPlusManager.Entity(Of ImportTable).Table("tbl_SampleImport")
-            Using db As IDbConnection = New SqlClient.SqlConnection(mstring)
-                db.BulkInsert(list)
+        Try
+            Dim list As List(Of ImportTable) = TryCast(ImportTableBindingSource.DataSource, List(Of ImportTable))
+            If list IsNot Nothing Then
+                DapperPlusManager.Entity(Of ImportTable).Table("tb_SalesSummaryImported")
+                Using db As IDbConnection = New SqlClient.SqlConnection(mstring)
+                    db.BulkInsert(list)
 
-            End Using
-            MessageBox.Show("Finish !!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End Using
+                MessageBox.Show("Successfully Saved", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                dtgImportSales.Rows.Clear()
+                txtFilename.Clear()
+                cboSheet.Text = ""
 
-        End If
+            End If
 
 
 
-        'Catch ex As Exception
-        '    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-        'End Try
+        End Try
     End Sub
 End Class

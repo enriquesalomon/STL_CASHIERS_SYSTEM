@@ -36,14 +36,35 @@ Partial Class FrmImportExcelSales
         Me.panelcenter = New System.Windows.Forms.Panel()
         Me.dtgImportSales = New System.Windows.Forms.DataGridView()
         Me.ImportTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SalesdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClusterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BarangayDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MunicipalityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RiderDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CoordinatorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AgentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CommDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UsernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Draw1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Comm1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Net1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Hits1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Draw2DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Comm2DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Net2DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Hits2DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total2DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Draw3DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Comm3DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Net3DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Hits3DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total3DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OverallgrossDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OverallcommDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OverallnetDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OverallhitsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RevenueDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.panelbottom.SuspendLayout()
         Me.panelcenter.SuspendLayout()
@@ -87,6 +108,7 @@ Partial Class FrmImportExcelSales
         '
         'panelbottom
         '
+        Me.panelbottom.BackColor = System.Drawing.Color.White
         Me.panelbottom.Controls.Add(Me.btnImport)
         Me.panelbottom.Controls.Add(Me.cboSheet)
         Me.panelbottom.Controls.Add(Me.Label2)
@@ -103,9 +125,9 @@ Partial Class FrmImportExcelSales
         '
         Me.btnImport.Location = New System.Drawing.Point(232, 35)
         Me.btnImport.Name = "btnImport"
-        Me.btnImport.Size = New System.Drawing.Size(82, 26)
+        Me.btnImport.Size = New System.Drawing.Size(127, 26)
         Me.btnImport.TabIndex = 5
-        Me.btnImport.Text = "Import"
+        Me.btnImport.Text = "Import to Database"
         Me.btnImport.UseVisualStyleBackColor = True
         '
         'cboSheet
@@ -119,7 +141,7 @@ Partial Class FrmImportExcelSales
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 38)
+        Me.Label2.Location = New System.Drawing.Point(32, 41)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 15)
         Me.Label2.TabIndex = 3
@@ -127,7 +149,7 @@ Partial Class FrmImportExcelSales
         '
         'btnBrowse
         '
-        Me.btnBrowse.Location = New System.Drawing.Point(863, 6)
+        Me.btnBrowse.Location = New System.Drawing.Point(497, 6)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.Size = New System.Drawing.Size(95, 23)
         Me.btnBrowse.TabIndex = 2
@@ -138,7 +160,7 @@ Partial Class FrmImportExcelSales
         '
         Me.txtFilename.Location = New System.Drawing.Point(70, 6)
         Me.txtFilename.Name = "txtFilename"
-        Me.txtFilename.Size = New System.Drawing.Size(787, 23)
+        Me.txtFilename.Size = New System.Drawing.Size(422, 23)
         Me.txtFilename.TabIndex = 1
         '
         'Label1
@@ -163,65 +185,192 @@ Partial Class FrmImportExcelSales
         '
         Me.dtgImportSales.AutoGenerateColumns = False
         Me.dtgImportSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgImportSales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ClusterDataGridViewTextBoxColumn, Me.BarangayDataGridViewTextBoxColumn, Me.RiderDataGridViewTextBoxColumn, Me.TypeDataGridViewTextBoxColumn, Me.CoordinatorDataGridViewTextBoxColumn, Me.AgentDataGridViewTextBoxColumn, Me.CommDataGridViewTextBoxColumn, Me.UsernameDataGridViewTextBoxColumn})
+        Me.dtgImportSales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SalesdateDataGridViewTextBoxColumn, Me.ClusterDataGridViewTextBoxColumn, Me.MunicipalityDataGridViewTextBoxColumn, Me.RiderDataGridViewTextBoxColumn, Me.TypeDataGridViewTextBoxColumn, Me.CoordinatorDataGridViewTextBoxColumn, Me.AgentDataGridViewTextBoxColumn, Me.CommDataGridViewTextBoxColumn, Me.UsernameDataGridViewTextBoxColumn, Me.Draw1DataGridViewTextBoxColumn, Me.Comm1DataGridViewTextBoxColumn, Me.Net1DataGridViewTextBoxColumn, Me.Hits1DataGridViewTextBoxColumn, Me.Total1DataGridViewTextBoxColumn, Me.Draw2DataGridViewTextBoxColumn, Me.Comm2DataGridViewTextBoxColumn, Me.Net2DataGridViewTextBoxColumn, Me.Hits2DataGridViewTextBoxColumn, Me.Total2DataGridViewTextBoxColumn, Me.Draw3DataGridViewTextBoxColumn, Me.Comm3DataGridViewTextBoxColumn, Me.Net3DataGridViewTextBoxColumn, Me.Hits3DataGridViewTextBoxColumn, Me.Total3DataGridViewTextBoxColumn, Me.OverallgrossDataGridViewTextBoxColumn, Me.OverallcommDataGridViewTextBoxColumn, Me.OverallnetDataGridViewTextBoxColumn, Me.OverallhitsDataGridViewTextBoxColumn, Me.RevenueDataGridViewTextBoxColumn})
         Me.dtgImportSales.DataSource = Me.ImportTableBindingSource
-        Me.dtgImportSales.Location = New System.Drawing.Point(13, 6)
+        Me.dtgImportSales.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtgImportSales.Location = New System.Drawing.Point(0, 0)
         Me.dtgImportSales.Name = "dtgImportSales"
         Me.dtgImportSales.RowTemplate.Height = 25
-        Me.dtgImportSales.Size = New System.Drawing.Size(957, 403)
+        Me.dtgImportSales.Size = New System.Drawing.Size(1042, 427)
         Me.dtgImportSales.TabIndex = 0
         '
         'ImportTableBindingSource
         '
         Me.ImportTableBindingSource.DataSource = GetType(WinFormsApp1.ImportTable)
         '
+        'SalesdateDataGridViewTextBoxColumn
+        '
+        Me.SalesdateDataGridViewTextBoxColumn.DataPropertyName = "salesdate"
+        Me.SalesdateDataGridViewTextBoxColumn.HeaderText = "salesdate"
+        Me.SalesdateDataGridViewTextBoxColumn.Name = "SalesdateDataGridViewTextBoxColumn"
+        '
         'ClusterDataGridViewTextBoxColumn
         '
-        Me.ClusterDataGridViewTextBoxColumn.DataPropertyName = "Cluster"
-        Me.ClusterDataGridViewTextBoxColumn.HeaderText = "Cluster"
+        Me.ClusterDataGridViewTextBoxColumn.DataPropertyName = "cluster"
+        Me.ClusterDataGridViewTextBoxColumn.HeaderText = "cluster"
         Me.ClusterDataGridViewTextBoxColumn.Name = "ClusterDataGridViewTextBoxColumn"
         '
-        'BarangayDataGridViewTextBoxColumn
+        'MunicipalityDataGridViewTextBoxColumn
         '
-        Me.BarangayDataGridViewTextBoxColumn.DataPropertyName = "Barangay"
-        Me.BarangayDataGridViewTextBoxColumn.HeaderText = "Barangay"
-        Me.BarangayDataGridViewTextBoxColumn.Name = "BarangayDataGridViewTextBoxColumn"
+        Me.MunicipalityDataGridViewTextBoxColumn.DataPropertyName = "municipality"
+        Me.MunicipalityDataGridViewTextBoxColumn.HeaderText = "municipality"
+        Me.MunicipalityDataGridViewTextBoxColumn.Name = "MunicipalityDataGridViewTextBoxColumn"
         '
         'RiderDataGridViewTextBoxColumn
         '
-        Me.RiderDataGridViewTextBoxColumn.DataPropertyName = "Rider"
-        Me.RiderDataGridViewTextBoxColumn.HeaderText = "Rider"
+        Me.RiderDataGridViewTextBoxColumn.DataPropertyName = "rider"
+        Me.RiderDataGridViewTextBoxColumn.HeaderText = "rider"
         Me.RiderDataGridViewTextBoxColumn.Name = "RiderDataGridViewTextBoxColumn"
         '
         'TypeDataGridViewTextBoxColumn
         '
-        Me.TypeDataGridViewTextBoxColumn.DataPropertyName = "Type"
-        Me.TypeDataGridViewTextBoxColumn.HeaderText = "Type"
+        Me.TypeDataGridViewTextBoxColumn.DataPropertyName = "type"
+        Me.TypeDataGridViewTextBoxColumn.HeaderText = "type"
         Me.TypeDataGridViewTextBoxColumn.Name = "TypeDataGridViewTextBoxColumn"
         '
         'CoordinatorDataGridViewTextBoxColumn
         '
-        Me.CoordinatorDataGridViewTextBoxColumn.DataPropertyName = "Coordinator"
-        Me.CoordinatorDataGridViewTextBoxColumn.HeaderText = "Coordinator"
+        Me.CoordinatorDataGridViewTextBoxColumn.DataPropertyName = "coordinator"
+        Me.CoordinatorDataGridViewTextBoxColumn.HeaderText = "coordinator"
         Me.CoordinatorDataGridViewTextBoxColumn.Name = "CoordinatorDataGridViewTextBoxColumn"
         '
         'AgentDataGridViewTextBoxColumn
         '
-        Me.AgentDataGridViewTextBoxColumn.DataPropertyName = "Agent"
-        Me.AgentDataGridViewTextBoxColumn.HeaderText = "Agent"
+        Me.AgentDataGridViewTextBoxColumn.DataPropertyName = "agent"
+        Me.AgentDataGridViewTextBoxColumn.HeaderText = "agent"
         Me.AgentDataGridViewTextBoxColumn.Name = "AgentDataGridViewTextBoxColumn"
         '
         'CommDataGridViewTextBoxColumn
         '
-        Me.CommDataGridViewTextBoxColumn.DataPropertyName = "Comm"
-        Me.CommDataGridViewTextBoxColumn.HeaderText = "Comm"
+        Me.CommDataGridViewTextBoxColumn.DataPropertyName = "comm"
+        Me.CommDataGridViewTextBoxColumn.HeaderText = "comm"
         Me.CommDataGridViewTextBoxColumn.Name = "CommDataGridViewTextBoxColumn"
         '
         'UsernameDataGridViewTextBoxColumn
         '
-        Me.UsernameDataGridViewTextBoxColumn.DataPropertyName = "Username"
-        Me.UsernameDataGridViewTextBoxColumn.HeaderText = "Username"
+        Me.UsernameDataGridViewTextBoxColumn.DataPropertyName = "username"
+        Me.UsernameDataGridViewTextBoxColumn.HeaderText = "username"
         Me.UsernameDataGridViewTextBoxColumn.Name = "UsernameDataGridViewTextBoxColumn"
+        '
+        'Draw1DataGridViewTextBoxColumn
+        '
+        Me.Draw1DataGridViewTextBoxColumn.DataPropertyName = "draw1"
+        Me.Draw1DataGridViewTextBoxColumn.HeaderText = "draw1"
+        Me.Draw1DataGridViewTextBoxColumn.Name = "Draw1DataGridViewTextBoxColumn"
+        '
+        'Comm1DataGridViewTextBoxColumn
+        '
+        Me.Comm1DataGridViewTextBoxColumn.DataPropertyName = "comm1"
+        Me.Comm1DataGridViewTextBoxColumn.HeaderText = "comm1"
+        Me.Comm1DataGridViewTextBoxColumn.Name = "Comm1DataGridViewTextBoxColumn"
+        '
+        'Net1DataGridViewTextBoxColumn
+        '
+        Me.Net1DataGridViewTextBoxColumn.DataPropertyName = "net1"
+        Me.Net1DataGridViewTextBoxColumn.HeaderText = "net1"
+        Me.Net1DataGridViewTextBoxColumn.Name = "Net1DataGridViewTextBoxColumn"
+        '
+        'Hits1DataGridViewTextBoxColumn
+        '
+        Me.Hits1DataGridViewTextBoxColumn.DataPropertyName = "hits1"
+        Me.Hits1DataGridViewTextBoxColumn.HeaderText = "hits1"
+        Me.Hits1DataGridViewTextBoxColumn.Name = "Hits1DataGridViewTextBoxColumn"
+        '
+        'Total1DataGridViewTextBoxColumn
+        '
+        Me.Total1DataGridViewTextBoxColumn.DataPropertyName = "total1"
+        Me.Total1DataGridViewTextBoxColumn.HeaderText = "total1"
+        Me.Total1DataGridViewTextBoxColumn.Name = "Total1DataGridViewTextBoxColumn"
+        '
+        'Draw2DataGridViewTextBoxColumn
+        '
+        Me.Draw2DataGridViewTextBoxColumn.DataPropertyName = "draw2"
+        Me.Draw2DataGridViewTextBoxColumn.HeaderText = "draw2"
+        Me.Draw2DataGridViewTextBoxColumn.Name = "Draw2DataGridViewTextBoxColumn"
+        '
+        'Comm2DataGridViewTextBoxColumn
+        '
+        Me.Comm2DataGridViewTextBoxColumn.DataPropertyName = "comm2"
+        Me.Comm2DataGridViewTextBoxColumn.HeaderText = "comm2"
+        Me.Comm2DataGridViewTextBoxColumn.Name = "Comm2DataGridViewTextBoxColumn"
+        '
+        'Net2DataGridViewTextBoxColumn
+        '
+        Me.Net2DataGridViewTextBoxColumn.DataPropertyName = "net2"
+        Me.Net2DataGridViewTextBoxColumn.HeaderText = "net2"
+        Me.Net2DataGridViewTextBoxColumn.Name = "Net2DataGridViewTextBoxColumn"
+        '
+        'Hits2DataGridViewTextBoxColumn
+        '
+        Me.Hits2DataGridViewTextBoxColumn.DataPropertyName = "hits2"
+        Me.Hits2DataGridViewTextBoxColumn.HeaderText = "hits2"
+        Me.Hits2DataGridViewTextBoxColumn.Name = "Hits2DataGridViewTextBoxColumn"
+        '
+        'Total2DataGridViewTextBoxColumn
+        '
+        Me.Total2DataGridViewTextBoxColumn.DataPropertyName = "total2"
+        Me.Total2DataGridViewTextBoxColumn.HeaderText = "total2"
+        Me.Total2DataGridViewTextBoxColumn.Name = "Total2DataGridViewTextBoxColumn"
+        '
+        'Draw3DataGridViewTextBoxColumn
+        '
+        Me.Draw3DataGridViewTextBoxColumn.DataPropertyName = "draw3"
+        Me.Draw3DataGridViewTextBoxColumn.HeaderText = "draw3"
+        Me.Draw3DataGridViewTextBoxColumn.Name = "Draw3DataGridViewTextBoxColumn"
+        '
+        'Comm3DataGridViewTextBoxColumn
+        '
+        Me.Comm3DataGridViewTextBoxColumn.DataPropertyName = "comm3"
+        Me.Comm3DataGridViewTextBoxColumn.HeaderText = "comm3"
+        Me.Comm3DataGridViewTextBoxColumn.Name = "Comm3DataGridViewTextBoxColumn"
+        '
+        'Net3DataGridViewTextBoxColumn
+        '
+        Me.Net3DataGridViewTextBoxColumn.DataPropertyName = "net3"
+        Me.Net3DataGridViewTextBoxColumn.HeaderText = "net3"
+        Me.Net3DataGridViewTextBoxColumn.Name = "Net3DataGridViewTextBoxColumn"
+        '
+        'Hits3DataGridViewTextBoxColumn
+        '
+        Me.Hits3DataGridViewTextBoxColumn.DataPropertyName = "hits3"
+        Me.Hits3DataGridViewTextBoxColumn.HeaderText = "hits3"
+        Me.Hits3DataGridViewTextBoxColumn.Name = "Hits3DataGridViewTextBoxColumn"
+        '
+        'Total3DataGridViewTextBoxColumn
+        '
+        Me.Total3DataGridViewTextBoxColumn.DataPropertyName = "total3"
+        Me.Total3DataGridViewTextBoxColumn.HeaderText = "total3"
+        Me.Total3DataGridViewTextBoxColumn.Name = "Total3DataGridViewTextBoxColumn"
+        '
+        'OverallgrossDataGridViewTextBoxColumn
+        '
+        Me.OverallgrossDataGridViewTextBoxColumn.DataPropertyName = "overallgross"
+        Me.OverallgrossDataGridViewTextBoxColumn.HeaderText = "overallgross"
+        Me.OverallgrossDataGridViewTextBoxColumn.Name = "OverallgrossDataGridViewTextBoxColumn"
+        '
+        'OverallcommDataGridViewTextBoxColumn
+        '
+        Me.OverallcommDataGridViewTextBoxColumn.DataPropertyName = "overallcomm"
+        Me.OverallcommDataGridViewTextBoxColumn.HeaderText = "overallcomm"
+        Me.OverallcommDataGridViewTextBoxColumn.Name = "OverallcommDataGridViewTextBoxColumn"
+        '
+        'OverallnetDataGridViewTextBoxColumn
+        '
+        Me.OverallnetDataGridViewTextBoxColumn.DataPropertyName = "overallnet"
+        Me.OverallnetDataGridViewTextBoxColumn.HeaderText = "overallnet"
+        Me.OverallnetDataGridViewTextBoxColumn.Name = "OverallnetDataGridViewTextBoxColumn"
+        '
+        'OverallhitsDataGridViewTextBoxColumn
+        '
+        Me.OverallhitsDataGridViewTextBoxColumn.DataPropertyName = "overallhits"
+        Me.OverallhitsDataGridViewTextBoxColumn.HeaderText = "overallhits"
+        Me.OverallhitsDataGridViewTextBoxColumn.Name = "OverallhitsDataGridViewTextBoxColumn"
+        '
+        'RevenueDataGridViewTextBoxColumn
+        '
+        Me.RevenueDataGridViewTextBoxColumn.DataPropertyName = "revenue"
+        Me.RevenueDataGridViewTextBoxColumn.HeaderText = "revenue"
+        Me.RevenueDataGridViewTextBoxColumn.Name = "RevenueDataGridViewTextBoxColumn"
         '
         'FrmImportExcelSales
         '
@@ -259,13 +408,35 @@ Partial Class FrmImportExcelSales
     Friend WithEvents btnImport As Button
     Friend WithEvents dtgImportSales As DataGridView
     Friend WithEvents DatereportDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ImportTableBindingSource As BindingSource
-    Friend WithEvents ClusterDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BarangayDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SalesdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ClusterDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MunicipalityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents RiderDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CoordinatorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AgentDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CommDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents UsernameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Draw1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Comm1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Net1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Hits1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Total1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Draw2DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Comm2DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Net2DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Hits2DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Total2DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Draw3DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Comm3DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Net3DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Hits3DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Total3DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents OverallgrossDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents OverallcommDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents OverallnetDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents OverallhitsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents RevenueDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ImportTableBindingSource As BindingSource
 End Class
