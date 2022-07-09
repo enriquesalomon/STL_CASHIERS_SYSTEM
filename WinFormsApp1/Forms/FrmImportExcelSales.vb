@@ -39,15 +39,15 @@ Public Class FrmImportExcelSales
     End Sub
 
     Private Sub cboSheet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSheet.SelectedIndexChanged
-        'Try
-        Dim dt As DataTable = tables(cboSheet.SelectedItem.ToString())
+        Try
+            Dim dt As DataTable = tables(cboSheet.SelectedItem.ToString())
             'dtgImportSales.DataSource = dt
             If dt IsNot Nothing Then
                 Dim list As List(Of ImportTable) = New List(Of ImportTable)()
                 For i As Integer = 0 To dt.Rows.Count - 1
                     Dim importable As ImportTable = New ImportTable()
 
-                importable.salesdate = dt.Rows(i)("DATE").ToString()
+                    importable.salesdate = dt.Rows(i)("DATE").ToString()
                     importable.cluster = dt.Rows(i)("CLUSTER").ToString()
                     importable.municipality = dt.Rows(i)("BARANGAY").ToString()
                     importable.rider = dt.Rows(i)("RIDER").ToString()
@@ -57,20 +57,20 @@ Public Class FrmImportExcelSales
                     importable.comm = dt.Rows(i)("COMM.(%)").ToString()
                     importable.username = dt.Rows(i)("USERNAME").ToString()
 
-                importable.draw1 = dt.Rows(i)("DRAW 1").ToString()
-                importable.comm1 = dt.Rows(i)("COMM").ToString()
+                    importable.draw1 = dt.Rows(i)("DRAW 1").ToString()
+                    importable.comm1 = dt.Rows(i)("COMM").ToString()
                     importable.net1 = dt.Rows(i)("NET").ToString()
                     importable.hits1 = dt.Rows(i)("HITS").ToString()
                     importable.total1 = dt.Rows(i)("TOTAL").ToString()
 
-                importable.draw2 = dt.Rows(i)("DRAW 2").ToString()
-                importable.comm2 = dt.Rows(i)("COMM").ToString()
+                    importable.draw2 = dt.Rows(i)("DRAW 2").ToString()
+                    importable.comm2 = dt.Rows(i)("COMM").ToString()
                     importable.net2 = dt.Rows(i)("NET").ToString()
                     importable.hits2 = dt.Rows(i)("HITS").ToString()
                     importable.total2 = dt.Rows(i)("TOTAL").ToString()
 
-                importable.draw3 = dt.Rows(i)("DRAW 3").ToString()
-                importable.comm3 = dt.Rows(i)("COMM").ToString()
+                    importable.draw3 = dt.Rows(i)("DRAW 3").ToString()
+                    importable.comm3 = dt.Rows(i)("COMM").ToString()
                     importable.net3 = dt.Rows(i)("NET").ToString()
                     importable.hits3 = dt.Rows(i)("HITS").ToString()
                     importable.total3 = dt.Rows(i)("TOTAL").ToString()
@@ -89,10 +89,10 @@ Public Class FrmImportExcelSales
                 ImportTableBindingSource.DataSource = list
 
             End If
-        'Catch ex As Exception
+        Catch ex As Exception
 
-        '    MessageBox.Show("Invalid Report Format!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        'End Try
+            MessageBox.Show("Invalid Report Format!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
     End Sub
 
     Private Sub btnImport_Click(sender As Object, e As EventArgs) Handles btnImport.Click
