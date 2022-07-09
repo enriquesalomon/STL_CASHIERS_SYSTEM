@@ -16,6 +16,9 @@ Module ModFunction
     'End Sub
 
     Public mylogin As New Login
+    Public myimporttable As New ImportTable
+
+
 
     Public mysqlconn As New SqlClient.SqlConnection
     Public conString As String = getConnectionPATH()
