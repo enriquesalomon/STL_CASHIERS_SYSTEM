@@ -35,7 +35,6 @@ Partial Class FrmImportExcelSales
         Me.Label1 = New System.Windows.Forms.Label()
         Me.panelcenter = New System.Windows.Forms.Panel()
         Me.dtgImportSales = New System.Windows.Forms.DataGridView()
-        Me.ImportTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SalesdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClusterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MunicipalityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -65,6 +64,7 @@ Partial Class FrmImportExcelSales
         Me.OverallnetDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OverallhitsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RevenueDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImportTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel1.SuspendLayout()
         Me.panelbottom.SuspendLayout()
         Me.panelcenter.SuspendLayout()
@@ -193,10 +193,6 @@ Partial Class FrmImportExcelSales
         Me.dtgImportSales.RowTemplate.Height = 25
         Me.dtgImportSales.Size = New System.Drawing.Size(1042, 427)
         Me.dtgImportSales.TabIndex = 0
-        '
-        'ImportTableBindingSource
-        '
-        Me.ImportTableBindingSource.DataSource = GetType(WinFormsApp1.ImportTable)
         '
         'SalesdateDataGridViewTextBoxColumn
         '
@@ -372,6 +368,10 @@ Partial Class FrmImportExcelSales
         Me.RevenueDataGridViewTextBoxColumn.HeaderText = "revenue"
         Me.RevenueDataGridViewTextBoxColumn.Name = "RevenueDataGridViewTextBoxColumn"
         '
+        'ImportTableBindingSource
+        '
+        Me.ImportTableBindingSource.DataSource = GetType(WinFormsApp1.ImportTable)
+        '
         'FrmImportExcelSales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -384,6 +384,7 @@ Partial Class FrmImportExcelSales
         Me.Name = "FrmImportExcelSales"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmImportExcelSales"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.panelbottom.ResumeLayout(False)

@@ -27,6 +27,7 @@ Partial Class FrmMain
         Me.TEXT1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListOfReceiversFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerateReceiversFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GrossSalesReportSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.COLLECTIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TEXT2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PAIDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -72,7 +73,7 @@ Partial Class FrmMain
         '
         'TEXT1ToolStripMenuItem
         '
-        Me.TEXT1ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListOfReceiversFormToolStripMenuItem, Me.GenerateReceiversFormToolStripMenuItem})
+        Me.TEXT1ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListOfReceiversFormToolStripMenuItem, Me.GenerateReceiversFormToolStripMenuItem, Me.GrossSalesReportSummaryToolStripMenuItem})
         Me.TEXT1ToolStripMenuItem.Image = CType(resources.GetObject("TEXT1ToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TEXT1ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TEXT1ToolStripMenuItem.Name = "TEXT1ToolStripMenuItem"
@@ -91,6 +92,12 @@ Partial Class FrmMain
         Me.GenerateReceiversFormToolStripMenuItem.Name = "GenerateReceiversFormToolStripMenuItem"
         Me.GenerateReceiversFormToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.GenerateReceiversFormToolStripMenuItem.Text = "Generate Receivers Form"
+        '
+        'GrossSalesReportSummaryToolStripMenuItem
+        '
+        Me.GrossSalesReportSummaryToolStripMenuItem.Name = "GrossSalesReportSummaryToolStripMenuItem"
+        Me.GrossSalesReportSummaryToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.GrossSalesReportSummaryToolStripMenuItem.Text = "Gross Sales Summary"
         '
         'COLLECTIONToolStripMenuItem
         '
@@ -366,4 +373,5 @@ Partial Class FrmMain
     Friend WithEvents COLLECTIONToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents IMPORTSALESREPORTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GrossSalesReportSummaryToolStripMenuItem As ToolStripMenuItem
 End Class
