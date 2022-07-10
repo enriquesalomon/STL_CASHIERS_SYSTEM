@@ -68,4 +68,8 @@
     Private Sub GameAccountsSummaryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GameAccountsSummaryToolStripMenuItem.Click
         FrmGameAccountsSummary.ShowDialog()
     End Sub
+
+    Private Sub ListOfReceiversFormToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListOfReceiversFormToolStripMenuItem.Click
+        FrmReceiversEntry.ShowDialog()
+    End Sub
 End Class
