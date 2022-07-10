@@ -30,10 +30,6 @@ Partial Class FrmMain
         Me.GrossSalesReportSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.COLLECTIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GameAccountsSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TEXT2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PAIDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UNPAIDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REMITTANCEWITHBALANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RIDERSREMITTANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RidersShortOverRemittancesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IMPORTSALESREPORTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,10 +61,12 @@ Partial Class FrmMain
         Me.panelMenu.BackColor = System.Drawing.Color.Transparent
         Me.panelMenu.Enabled = False
         Me.panelMenu.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.panelMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TEXT1ToolStripMenuItem, Me.COLLECTIONToolStripMenuItem, Me.TEXT2ToolStripMenuItem, Me.RIDERSREMITTANCEToolStripMenuItem, Me.IMPORTSALESREPORTToolStripMenuItem, Me.VIEWUNPAIDREMITTANCEToolStripMenuItem})
+        Me.panelMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
+        Me.panelMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TEXT1ToolStripMenuItem, Me.COLLECTIONToolStripMenuItem, Me.RIDERSREMITTANCEToolStripMenuItem, Me.IMPORTSALESREPORTToolStripMenuItem, Me.VIEWUNPAIDREMITTANCEToolStripMenuItem})
         Me.panelMenu.Location = New System.Drawing.Point(0, 31)
         Me.panelMenu.Name = "panelMenu"
         Me.panelMenu.Size = New System.Drawing.Size(1253, 58)
+        Me.panelMenu.Stretch = False
         Me.panelMenu.TabIndex = 0
         Me.panelMenu.Text = "MenuStrip1"
         '
@@ -78,15 +76,15 @@ Partial Class FrmMain
         Me.TEXT1ToolStripMenuItem.Image = CType(resources.GetObject("TEXT1ToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TEXT1ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TEXT1ToolStripMenuItem.Name = "TEXT1ToolStripMenuItem"
-        Me.TEXT1ToolStripMenuItem.Size = New System.Drawing.Size(176, 54)
-        Me.TEXT1ToolStripMenuItem.Text = "RECEIVERS FORM"
+        Me.TEXT1ToolStripMenuItem.Size = New System.Drawing.Size(151, 54)
+        Me.TEXT1ToolStripMenuItem.Text = "COLLECTION"
         Me.TEXT1ToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ListOfReceiversFormToolStripMenuItem
         '
         Me.ListOfReceiversFormToolStripMenuItem.Name = "ListOfReceiversFormToolStripMenuItem"
         Me.ListOfReceiversFormToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
-        Me.ListOfReceiversFormToolStripMenuItem.Text = "List of Receivers Form"
+        Me.ListOfReceiversFormToolStripMenuItem.Text = "Receivers Entry"
         '
         'GenerateReceiversFormToolStripMenuItem
         '
@@ -114,33 +112,6 @@ Partial Class FrmMain
         Me.GameAccountsSummaryToolStripMenuItem.Name = "GameAccountsSummaryToolStripMenuItem"
         Me.GameAccountsSummaryToolStripMenuItem.Size = New System.Drawing.Size(244, 22)
         Me.GameAccountsSummaryToolStripMenuItem.Text = "Game Accounts Summary"
-        '
-        'TEXT2ToolStripMenuItem
-        '
-        Me.TEXT2ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PAIDToolStripMenuItem, Me.UNPAIDToolStripMenuItem, Me.REMITTANCEWITHBALANCEToolStripMenuItem})
-        Me.TEXT2ToolStripMenuItem.Image = CType(resources.GetObject("TEXT2ToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.TEXT2ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.TEXT2ToolStripMenuItem.Name = "TEXT2ToolStripMenuItem"
-        Me.TEXT2ToolStripMenuItem.Size = New System.Drawing.Size(151, 54)
-        Me.TEXT2ToolStripMenuItem.Text = "COLLECTION"
-        '
-        'PAIDToolStripMenuItem
-        '
-        Me.PAIDToolStripMenuItem.Name = "PAIDToolStripMenuItem"
-        Me.PAIDToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
-        Me.PAIDToolStripMenuItem.Text = "Net Remitted"
-        '
-        'UNPAIDToolStripMenuItem
-        '
-        Me.UNPAIDToolStripMenuItem.Name = "UNPAIDToolStripMenuItem"
-        Me.UNPAIDToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
-        Me.UNPAIDToolStripMenuItem.Text = "Net Unremitted"
-        '
-        'REMITTANCEWITHBALANCEToolStripMenuItem
-        '
-        Me.REMITTANCEWITHBALANCEToolStripMenuItem.Name = "REMITTANCEWITHBALANCEToolStripMenuItem"
-        Me.REMITTANCEWITHBALANCEToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
-        Me.REMITTANCEWITHBALANCEToolStripMenuItem.Text = "Account with Balance"
         '
         'RIDERSREMITTANCEToolStripMenuItem
         '
@@ -356,16 +327,12 @@ Partial Class FrmMain
 
     Friend WithEvents panelMenu As MenuStrip
     Friend WithEvents TEXT1ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TEXT2ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PanelLogin As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PanelBottom As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents PAIDToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents UNPAIDToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents REMITTANCEWITHBALANCEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RIDERSREMITTANCEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VIEWUNPAIDREMITTANCEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label2 As Label

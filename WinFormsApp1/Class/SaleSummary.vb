@@ -13,7 +13,7 @@
             FrmGameAccountsSummary.dtgSummary.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
             FrmGameAccountsSummary.dtgSummary.Columns(1).HeaderText = "DATE"
-            FrmGameAccountsSummary.dtgSummary.Columns(1).Width = 50
+            FrmGameAccountsSummary.dtgSummary.Columns(1).Width = 100
             FrmGameAccountsSummary.dtgSummary.Columns(1).Name = "salesdate"
             FrmGameAccountsSummary.dtgSummary.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
