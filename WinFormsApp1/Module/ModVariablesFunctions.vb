@@ -14,10 +14,8 @@ Module ModVariablesFunctions
     Public tempcurrDate, strTemp, verifyExaminee As String
     Public currDate As Date
 
-    Public SAI, yrAge, monthsAge, rawScore, percentile, stanine As Integer
-    Public ctime, temptime1, temptime2, temptime3, cFormatTime, strView, verbadesc As String
-    Public noOfexaminees, totalExaminees As Double
-    Public campusPreference, prefferedCourse As String
+    Public rfID As String
+
 
     Public Function TrapKeyVer2(ByVal KCode As String, ByVal Textbox As Object) As Boolean
         'For numeric input only
@@ -190,5 +188,30 @@ Module ModVariablesFunctions
         mmonth = cMonth
         ComputeAge = strTemp + 1
         strTemp = strTemp + 1
+    End Function
+
+
+    Public Function getRFNumber(ByVal ID As String) As Boolean
+        strprefix = "RF"
+        Try
+            Call connectSQL(conString)
+            mycommand = mysqlconn.CreateCommand
+            mycommand.CommandText = "Select Top 1  * from tbl_ReceiversForm  order by ID DESC"
+            myadapter.SelectCommand = mycommand
+            myadapter.Fill(mydataset, "tbl_ReceiversForm")
+            mydataTable = mydataset.Tables("tbl_ReceiversForm")
+
+            For Each mrow As DataRow In mydataTable.Rows
+                ID = String.Format("{0:000000}", mrow("ID"))
+            Next
+            If mydataTable.Rows.Count = 0 Then
+                ID = strprefix & "000001"
+            Else
+                ID = strprefix & String.Format("{0:000000}", Mid(Trim(ID), 3, 8) + 1)
+            End If
+            rfID = Trim(ID)
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
+        End Try
     End Function
 End Module

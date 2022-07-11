@@ -38,5 +38,21 @@
         If cboRiders.Text = "" Then
             Exit Sub
         End If
+
+
+        If MessageBox.Show("Are you sure you want to Generate a Receivers Formy?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+
+            Call connectSQL(conString)
+            getRFNumber(rfID)
+            mycommand = mysqlconn.CreateCommand
+            mycommand.CommandText = "Insert into tbl_ReceiversForm (ID,SALESDATE,RIDER,CASHIER,DATECREATED)" &
+            "Values ('" & rfID & "','" & Trim(lblDate.Text) & "','" & Trim(lblridername.Text) & "','" & Trim("USER") & "','" & Format(DateTime.Now, "MM/dd/yyyy").ToString & "')"
+            mycommand.ExecuteNonQuery()
+
+
+            MsgBox("New Receivers Form has been successfully Generated ", MsgBoxStyle.OkOnly, "Message")
+            'LoadRecord()
+
+        End If
     End Sub
 End Class
