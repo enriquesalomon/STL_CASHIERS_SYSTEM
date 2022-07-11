@@ -36,8 +36,8 @@ Module ModFunction
     Public Function getConnectionPATH() As String
         mstring = ""
         'Local==============
-
-        cServername = "VIPOFFICE\SQLEXPRESS"
+        cServername = "RYZEN2\SQLEXPRESS"
+        'cServername = "VIPOFFICE\SQLEXPRESS"
         'cServername = "(localdb)\Projects"
         mstring = "server=" & cServername & ";Database=stl_cashier_db;Integrated security=true;"
 
