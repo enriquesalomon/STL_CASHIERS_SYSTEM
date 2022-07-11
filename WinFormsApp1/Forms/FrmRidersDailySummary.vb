@@ -45,13 +45,13 @@
             Call connectSQL(conString)
             getRFNumber(rfID)
             mycommand = mysqlconn.CreateCommand
-            mycommand.CommandText = "Insert into tbl_ReceiversForm (ID,SALESDATE,RIDER,CASHIER,DATECREATED)" &
-            "Values ('" & rfID & "','" & Trim(lblDate.Text) & "','" & Trim(lblridername.Text) & "','" & Trim("USER") & "','" & Format(DateTime.Now, "MM/dd/yyyy").ToString & "')"
+            mycommand.CommandText = "Insert into tbl_ReceiversForm (ID,SALESDATE,RIDER,CASHIER,DATECREATED,DATERECEIVED)" &
+            "Values ('" & rfID & "','" & Trim(lblDate.Text) & "','" & Trim(lblridername.Text) & "','" & Trim("USER") & "','" & Format(DateTime.Now, "MM/dd/yyyy").ToString & "','" & Format(DateTime.Now, "MM/dd/yyyy").ToString & "')"
             mycommand.ExecuteNonQuery()
 
 
             MsgBox("New Receivers Form has been successfully Generated ", MsgBoxStyle.OkOnly, "Message")
-            'LoadRecord()
+            myreceiver.LoadRFList()
 
         End If
     End Sub
