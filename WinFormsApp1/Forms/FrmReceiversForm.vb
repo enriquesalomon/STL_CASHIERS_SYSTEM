@@ -1,5 +1,6 @@
 ﻿Public Class FrmReceiversForm
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        dtgRidersCollection.Rows.Clear()
         Me.Close()
     End Sub
 
@@ -12,7 +13,7 @@
     End Sub
 
     Private Sub FrmReceiversForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        myriders.loadridersList()
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
