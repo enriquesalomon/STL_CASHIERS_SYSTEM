@@ -22,6 +22,7 @@ Partial Class FrmReceiversEntry
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -38,11 +39,15 @@ Partial Class FrmReceiversEntry
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.dtgReceiversFormList = New System.Windows.Forms.DataGridView()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ManageRemittanceFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteRemittanceFormRecordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.panelbottom.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.dtgReceiversFormList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -190,6 +195,7 @@ Partial Class FrmReceiversEntry
         Me.dtgReceiversFormList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtgReceiversFormList.ColumnHeadersHeight = 35
         Me.dtgReceiversFormList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dtgReceiversFormList.ContextMenuStrip = Me.ContextMenuStrip1
         Me.dtgReceiversFormList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtgReceiversFormList.EnableHeadersVisualStyles = False
         Me.dtgReceiversFormList.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
@@ -216,6 +222,24 @@ Partial Class FrmReceiversEntry
         Me.dtgReceiversFormList.Size = New System.Drawing.Size(1238, 429)
         Me.dtgReceiversFormList.TabIndex = 2
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageRemittanceFormToolStripMenuItem, Me.DeleteRemittanceFormRecordToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(242, 48)
+        '
+        'ManageRemittanceFormToolStripMenuItem
+        '
+        Me.ManageRemittanceFormToolStripMenuItem.Name = "ManageRemittanceFormToolStripMenuItem"
+        Me.ManageRemittanceFormToolStripMenuItem.Size = New System.Drawing.Size(241, 22)
+        Me.ManageRemittanceFormToolStripMenuItem.Text = "Manage Remittance Form"
+        '
+        'DeleteRemittanceFormRecordToolStripMenuItem
+        '
+        Me.DeleteRemittanceFormRecordToolStripMenuItem.Name = "DeleteRemittanceFormRecordToolStripMenuItem"
+        Me.DeleteRemittanceFormRecordToolStripMenuItem.Size = New System.Drawing.Size(241, 22)
+        Me.DeleteRemittanceFormRecordToolStripMenuItem.Text = "Delete Remittance Form Record"
+        '
         'FrmReceiversEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -236,6 +260,7 @@ Partial Class FrmReceiversEntry
         Me.panelbottom.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         CType(Me.dtgReceiversFormList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -253,4 +278,7 @@ Partial Class FrmReceiversEntry
     Friend WithEvents Panel3 As Panel
     Friend WithEvents dtgReceiversFormList As DataGridView
     Friend WithEvents Label1 As Label
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents ManageRemittanceFormToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeleteRemittanceFormRecordToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -4,19 +4,19 @@
         Me.Close()
     End Sub
 
-    Private Sub btnLoadRidersSummary_Click(sender As Object, e As EventArgs) Handles btnLoadRidersSummary.Click
-        PanelRider.Visible = True
+    Private Sub btnLoadRidersSummary_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        PanelRider.Visible = False
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub FrmReceiversForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        myriders.LoadRidersCollectionRecord()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        myriders.LoadRidersCollectionRecord()
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

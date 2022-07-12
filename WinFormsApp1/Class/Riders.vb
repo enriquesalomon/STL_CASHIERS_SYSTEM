@@ -1,25 +1,25 @@
 ﻿Public Class Riders
-    Sub loadridersList()
-        FrmReceiversForm.cboRiders.Items.Clear()
+    'Sub loadridersList()
+    '    FrmReceiversForm.cboRiders.Items.Clear()
 
-        qryStatement = "select DISTINCT Rider from tb_SalesSummaryImported "
+    '    qryStatement = "select DISTINCT Rider from tb_SalesSummaryImported "
 
-        Call connectSQL(conString)
-        mycommand = mysqlconn.CreateCommand
-        mycommand.CommandText = qryStatement
-        myadapter.SelectCommand = mycommand
-        myadapter.Fill(mydataset, "tb_SalesSummaryImported")
-        mydataTable = mydataset.Tables("tb_SalesSummaryImported")
-        mysqlreader = mycommand.ExecuteReader
-        If mydataTable.Rows.Count > 0 Then
-            While mysqlreader.Read()
-                FrmReceiversForm.cboRiders.Items.Add(mysqlreader("Rider").ToString)
-            End While
-        Else
-        End If
-        mysqlreader.Close()
-        mysqlconn.Close()
-    End Sub
+    '    Call connectSQL(conString)
+    '    mycommand = mysqlconn.CreateCommand
+    '    mycommand.CommandText = qryStatement
+    '    myadapter.SelectCommand = mycommand
+    '    myadapter.Fill(mydataset, "tb_SalesSummaryImported")
+    '    mydataTable = mydataset.Tables("tb_SalesSummaryImported")
+    '    mysqlreader = mycommand.ExecuteReader
+    '    If mydataTable.Rows.Count > 0 Then
+    '        While mysqlreader.Read()
+    '            FrmReceiversForm.cboRiders.Items.Add(mysqlreader("Rider").ToString)
+    '        End While
+    '    Else
+    '    End If
+    '    mysqlreader.Close()
+    '    mysqlconn.Close()
+    'End Sub
 
     Public Function checkExisting() As Boolean
         Dim ntable As New DataTable
@@ -123,7 +123,7 @@
 
             '    End If
             'End If
-            qryStatement = "select salesdate,cluster,municipality,rider,coordinator,agent,comm,username,overallgross,overallcomm,overallnet,overallhits,revenue from tb_SalesSummaryImported where Rider ='" & Trim(FrmReceiversForm.cboRiders.Text) & "' order by Coordinator ASC"
+            qryStatement = "select salesdate,cluster,municipality,rider,coordinator,agent,comm,username,overallgross,overallcomm,overallnet,overallhits,revenue from tb_SalesSummaryImported  order by Coordinator ASC"
 
             Call connectSQL(conString)
             mycommand = mysqlconn.CreateCommand
@@ -281,7 +281,8 @@
 
             'End If
 
-            FrmRidersDailySummary.lblDate.Text = FrmRidersDailySummary.DateTimePicker1.Value
+            FrmRidersDailySummary.lblDate.Text = FrmRidersDailySummary.DateTimePicker1.Value.Date
+
             FrmRidersDailySummary.lblridername.Text = FrmRidersDailySummary.cboRiders.Text
 
             If FrmRidersDailySummary.dtgRidersCollection.Rows.Count = 0 Then

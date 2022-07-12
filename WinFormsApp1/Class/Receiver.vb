@@ -4,7 +4,7 @@
 
             FrmReceiversEntry.dtgReceiversFormList.Rows.Clear()
 
-            FrmReceiversEntry.dtgReceiversFormList.ColumnCount = 7
+            FrmReceiversEntry.dtgReceiversFormList.ColumnCount = 8
             FrmReceiversEntry.dtgReceiversFormList.RowsDefaultCellStyle.BackColor = Color.White
             FrmReceiversEntry.dtgReceiversFormList.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke
 
@@ -20,7 +20,7 @@
 
             FrmReceiversEntry.dtgReceiversFormList.Columns(2).HeaderText = "SALESDATE"
             FrmReceiversEntry.dtgReceiversFormList.Columns(2).Width = 100
-            FrmReceiversEntry.dtgReceiversFormList.Columns(2).Name = "coordinator"
+            FrmReceiversEntry.dtgReceiversFormList.Columns(2).Name = "salesdate"
             FrmReceiversEntry.dtgReceiversFormList.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
             FrmReceiversEntry.dtgReceiversFormList.Columns(3).HeaderText = "RIDER/COLLECTOR"
@@ -44,12 +44,23 @@
             FrmReceiversEntry.dtgReceiversFormList.Columns(6).Name = "dateremitted"
             FrmReceiversEntry.dtgReceiversFormList.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
+            FrmReceiversEntry.dtgReceiversFormList.Columns(7).HeaderText = "STATUS"
+            FrmReceiversEntry.dtgReceiversFormList.Columns(7).Width = 70
+            FrmReceiversEntry.dtgReceiversFormList.Columns(7).Name = "status"
+            FrmReceiversEntry.dtgReceiversFormList.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+
 
             FrmReceiversEntry.dtgReceiversFormList.Rows.Clear()
             mydataTable.Rows.Clear()
             mydataset.Clear()
             qryStatement = ""
 
+            Dim btn As New DataGridViewButtonColumn()
+            FrmReceiversEntry.dtgReceiversFormList.Columns.Add(btn)
+            btn.HeaderText = "ACTION"
+            btn.Text = "MANAGE RECORD"
+            btn.Name = "btn"
+            btn.UseColumnTextForButtonValue = True
 
             'If filterByTestSite Then
             '    qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "' and TestingSite ='" & Trim(cboFilterTestSite.Text) & "'  order by ExamineeInfo.ExamineeNo ASC "
@@ -65,7 +76,7 @@
 
             '    End If
             'End If
-            qryStatement = "select ID,SALESDATE,RIDER,CASHIER,DATECREATED,DATERECEIVED from tbl_ReceiversForm order by DATECREATED DESC"
+            qryStatement = "select ID,SALESDATE,RIDER,CASHIER,DATECREATED,DATERECEIVED,STATUS from tbl_ReceiversForm order by DATECREATED DESC"
 
             Call connectSQL(conString)
             mycommand = mysqlconn.CreateCommand
@@ -82,7 +93,7 @@
 
 
                     'Format(CDate(lrow("salesdate")), "MM/dd/yyyy").ToString,
-                    Dim row As String() = New String() {num, lrow("ID").ToString, Format(CDate(lrow("SALESDATE")), "MM/dd/yyyy").ToString, lrow("RIDER").ToString, lrow("CASHIER").ToString, Format(CDate(lrow("DATECREATED")), "MM/dd/yyyy").ToString, Format(CDate(lrow("DATERECEIVED")), "MM/dd/yyyy").ToString}
+                    Dim row As String() = New String() {num, lrow("ID").ToString, Format(CDate(lrow("SALESDATE")), "MM/dd/yyyy").ToString, lrow("RIDER").ToString, lrow("CASHIER").ToString, Format(CDate(lrow("DATECREATED")), "MM/dd/yyyy").ToString, Format(CDate(lrow("DATERECEIVED")), "MM/dd/yyyy").ToString, lrow("STATUS").ToString}
                     FrmReceiversEntry.dtgReceiversFormList.Rows.Add(row)
                 Next
             End If
