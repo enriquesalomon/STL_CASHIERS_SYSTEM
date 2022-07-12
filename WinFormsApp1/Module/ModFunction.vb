@@ -50,47 +50,8 @@ Module ModFunction
         Return mstring
     End Function
 
-    'Public Function getRecentAdmissionSched(ByVal Controlnumber As String, ByVal tablename As String) As Boolean
-
-    '    ntable.Rows.Clear()
-    '    ndataset.Clear()
-    '    Call connectSQL(conString)
-    '    mycommand = mysqlconn.CreateCommand
-    '    mycommand.CommandText = "select  *  from " & tablename & " where SchedNo ='" & (Controlnumber) & "'"
-    '    myadapter.SelectCommand = mycommand
-    '    myadapter.Fill(ndataset, tablename)
-    '    ntable = ndataset.Tables(tablename)
-    '    If mydataTable.Rows.Count > 0 Then
-    '        For Each lrow As DataRow In mydataTable.Rows
-
-    '            Homeaddress = lrow("Baranggay").ToString & Space(1) & lrow("City").ToString & Space(1) & "," & lrow("Province").ToString
-
-    '        Next
-    '    End If
-
-    'End Function
-
-    Public AdmissionSched As String
-    Public Function getRecentAdmissionSched() As String
-        'Try
 
 
-        '    ntable.Rows.Clear()
-        '    ndataset.Clear()
-        '    Call connectSQL(conString)
-        '    mycommand = mysqlconn.CreateCommand
-        '    mycommand.CommandText = "Select Top 1  * from AdmissionSchedule  order by SchedNo DESC"
-        '    myadapter.SelectCommand = mycommand
-        '    myadapter.Fill(mydataset, "AdmissionSchedule")
-        '    mydataTable = mydataset.Tables("AdmissionSchedule")
-
-        '    For Each mrow As DataRow In mydataTable.Rows
-        '        AdmissionSched = mrow("SchedNo").ToString
-        '    Next
-        'Catch ex As Exception
-
-        'End Try
-    End Function
     Public Sub connectSQL(ByVal lconString As String)
         Try
             With mysqlconn
