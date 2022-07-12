@@ -22,9 +22,9 @@ Partial Class FrmReceiversEntry
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -53,14 +53,14 @@ Partial Class FrmReceiversEntry
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1152, 31)
+        Me.Panel1.Size = New System.Drawing.Size(1238, 31)
         Me.Panel1.TabIndex = 3
         '
         'Button2
         '
         Me.Button2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button2.Location = New System.Drawing.Point(1088, 0)
+        Me.Button2.Location = New System.Drawing.Point(1174, 0)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(64, 31)
         Me.Button2.TabIndex = 9
@@ -86,7 +86,7 @@ Partial Class FrmReceiversEntry
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 31)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1152, 43)
+        Me.Panel2.Size = New System.Drawing.Size(1238, 43)
         Me.Panel2.TabIndex = 4
         '
         'Label1
@@ -110,9 +110,9 @@ Partial Class FrmReceiversEntry
         Me.panelbottom.Controls.Add(Me.Button3)
         Me.panelbottom.Controls.Add(Me.Button1)
         Me.panelbottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelbottom.Location = New System.Drawing.Point(0, 749)
+        Me.panelbottom.Location = New System.Drawing.Point(0, 503)
         Me.panelbottom.Name = "panelbottom"
-        Me.panelbottom.Size = New System.Drawing.Size(1152, 39)
+        Me.panelbottom.Size = New System.Drawing.Size(1238, 39)
         Me.panelbottom.TabIndex = 5
         '
         'Button6
@@ -167,7 +167,7 @@ Partial Class FrmReceiversEntry
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 74)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1152, 675)
+        Me.Panel3.Size = New System.Drawing.Size(1238, 429)
         Me.Panel3.TabIndex = 6
         '
         'dtgReceiversFormList
@@ -180,14 +180,14 @@ Partial Class FrmReceiversEntry
         Me.dtgReceiversFormList.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.dtgReceiversFormList.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtgReceiversFormList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgReceiversFormList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgReceiversFormList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtgReceiversFormList.ColumnHeadersHeight = 35
         Me.dtgReceiversFormList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dtgReceiversFormList.Dock = System.Windows.Forms.DockStyle.Fill
@@ -198,29 +198,29 @@ Partial Class FrmReceiversEntry
         Me.dtgReceiversFormList.Name = "dtgReceiversFormList"
         Me.dtgReceiversFormList.ReadOnly = True
         Me.dtgReceiversFormList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgReceiversFormList.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgReceiversFormList.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dtgReceiversFormList.RowHeadersVisible = False
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black
-        Me.dtgReceiversFormList.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black
+        Me.dtgReceiversFormList.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dtgReceiversFormList.RowTemplate.Height = 25
         Me.dtgReceiversFormList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgReceiversFormList.Size = New System.Drawing.Size(1152, 675)
+        Me.dtgReceiversFormList.Size = New System.Drawing.Size(1238, 429)
         Me.dtgReceiversFormList.TabIndex = 2
         '
         'FrmReceiversEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1152, 788)
+        Me.ClientSize = New System.Drawing.Size(1238, 542)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.panelbottom)
         Me.Controls.Add(Me.Panel2)
@@ -229,7 +229,6 @@ Partial Class FrmReceiversEntry
         Me.Name = "FrmReceiversEntry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmReceiversEntry"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)

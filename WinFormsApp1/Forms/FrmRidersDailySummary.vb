@@ -32,27 +32,37 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         myriders.LoadRidersDailySummary()
+
+
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnGenerateRFForm.Click
+
         If cboRiders.Text = "" Then
+            Exit Sub
+        End If
+        If myriders.checkExisting Then
+            MsgBox("Receivers Form is already exist!", MsgBoxStyle.Exclamation, "Message")
             Exit Sub
         End If
 
 
-        If MessageBox.Show("Are you sure you want to Generate a Receivers Formy?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        'If MessageBox.Show("Are you sure you want to Generate a Receivers Formy?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
 
-            Call connectSQL(conString)
-            getRFNumber(rfID)
-            mycommand = mysqlconn.CreateCommand
-            mycommand.CommandText = "Insert into tbl_ReceiversForm (ID,SALESDATE,RIDER,CASHIER,DATECREATED,DATERECEIVED)" &
-            "Values ('" & rfID & "','" & Trim(lblDate.Text) & "','" & Trim(lblridername.Text) & "','" & Trim("USER") & "','" & Format(DateTime.Now, "MM/dd/yyyy").ToString & "','" & Format(DateTime.Now, "MM/dd/yyyy").ToString & "')"
-            mycommand.ExecuteNonQuery()
+        '    Call connectSQL(conString)
+        '    getRFNumber(rfID)
+        '    mycommand = mysqlconn.CreateCommand
+        '    mycommand.CommandText = "Insert into tbl_ReceiversForm (ID,SALESDATE,RIDER,CASHIER,DATECREATED,DATERECEIVED)" &
+        '    "Values ('" & rfID & "','" & Trim(lblDate.Text) & "','" & Trim(lblridername.Text) & "','" & Trim("USER") & "','" & Format(DateTime.Now, "MM/dd/yyyy").ToString & "','" & Format(DateTime.Now, "MM/dd/yyyy").ToString & "')"
+        '    mycommand.ExecuteNonQuery()
 
 
-            MsgBox("New Receivers Form has been successfully Generated ", MsgBoxStyle.OkOnly, "Message")
-            myreceiver.LoadRFList()
+        '    MsgBox("New Receivers Form has been successfully Generated ", MsgBoxStyle.OkOnly, "Message")
+        '    myreceiver.LoadRFList()
 
-        End If
+        'End If
     End Sub
+
+
+
 End Class

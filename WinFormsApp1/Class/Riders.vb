@@ -21,6 +21,35 @@
         mysqlconn.Close()
     End Sub
 
+    Public Function checkExisting() As Boolean
+        Dim ntable As New DataTable
+        Dim ndataset As New DataSet
+
+
+
+        Try
+            Call connectSQL(conString)
+            mycommand = mysqlconn.CreateCommand
+            mycommand.CommandText = "select  *  from tbl_ReceiversForm  where SALESDATE='" & (Format(CDate(FrmRidersDailySummary.lblDate.Text), "yyyy-dd-MM").ToString) & "' and RIDER='" & (FrmRidersDailySummary.lblridername.Text) & "' "
+
+            myadapter.SelectCommand = mycommand
+            myadapter.Fill(ndataset, "tbl_ReceiversForm")
+            ntable = ndataset.Tables("tbl_ReceiversForm")
+
+            If ntable.Rows.Count > 0 Then
+                checkExisting = True
+            Else
+                checkExisting = False
+            End If
+            ntable.Rows.Clear()
+            ndataset.Clear()
+
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
+        End Try
+
+    End Function
+
 
     Sub LoadRidersCollectionRecord()
         Try
