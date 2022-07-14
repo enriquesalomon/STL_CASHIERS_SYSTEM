@@ -123,7 +123,7 @@
 
             '    End If
             'End If
-            qryStatement = "select salesdate,cluster,municipality,rider,coordinator,agent,comm,username,overallgross,overallcomm,overallnet,overallhits,revenue from tb_SalesSummaryImported  order by Coordinator ASC"
+            qryStatement = "select salesdate,cluster,municipality,rider,coordinator,agent,comm,username,overallgross,overallcomm,overallnet,overallhits,revenue from tb_SalesSummaryImported  where SALESDATE ='" & Format(CDate(FrmReceiversEntry.rfsalesdate), "yyyy-MM-dd").ToString & "' and RIDER ='" & FrmReceiversEntry.rfridername.ToString & "'  order by Coordinator ASC"
 
             Call connectSQL(conString)
             mycommand = mysqlconn.CreateCommand
@@ -137,13 +137,17 @@
                 For Each lrow As DataRow In mydataTable.Rows
                     Dim tapada As String = "0"
                     Dim claimedhits As String = "0"
+                    Dim previoushits As String = "0"
                     Dim collectibles As String = "0"
 
                     'Format(CDate(lrow("salesdate")), "MM/dd/yyyy").ToString,
-                    Dim row As String() = New String() {lrow("username").ToString, lrow("coordinator").ToString, Format(CDbl(lrow("overallnet").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallhits").ToString), "###,###,###.#0"), Format(CDbl(claimedhits), "###,###,###.#0"), Format(CDbl(tapada), "###,###,###.#0"), Format(CDbl(collectibles), "###,###,###.#0")}
+                    Dim row As String() = New String() {lrow("username").ToString, lrow("coordinator").ToString, Format(CDbl(lrow("overallnet").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallhits").ToString), "###,###,###.#0"), Format(CDbl(previoushits), "###,###,###.#0"), Format(CDbl(claimedhits), "###,###,###.#0"), Format(CDbl(tapada), "###,###,###.#0"), Format(CDbl(collectibles), "###,###,###.#0")}
                     FrmReceiversForm.dtgRidersCollection.Rows.Add(row)
+
                 Next
             End If
+            FrmReceiversForm.txtCollector.Text = FrmReceiversEntry.rfridername
+            FrmReceiversForm.txtDateofSales.Text = FrmReceiversEntry.rfsalesdate
 
             'If viewWithSched = True Then
             '    Dim i As Integer = 0
@@ -164,7 +168,35 @@
 
             'End If
 
+            If FrmReceiversForm.dtgRidersCollection.Rows.Count <> 0 Then
+                Dim totalnet As Double = 0
+                Dim totaltotalondatehits As Double = 0
+                Dim totalprevioushits As Double = 0
+                Dim totalclaimedhits As Double = 0
+                Dim totaltapada As Double = 0
+                Dim totalcollectibles As Double = 0
+                Dim i As Integer = 0
 
+                For Each RW As DataGridViewRow In FrmReceiversForm.dtgRidersCollection.Rows
+                    totalnet += CDbl(RW.Cells(2).Value)
+                    totaltotalondatehits += CDbl(RW.Cells(3).Value)
+                    totalprevioushits += CDbl(RW.Cells(4).Value)
+                    totalclaimedhits += CDbl(RW.Cells(5).Value)
+                    totaltapada += CDbl(RW.Cells(6).Value)
+                    totalcollectibles += CDbl(RW.Cells(7).Value)
+
+                Next : i += 1
+                Dim linerow As String() = New String() {"==========", "==========", "==========", "==========", "==========", "==========", "==========", "=========="}
+                FrmReceiversForm.dtgRidersCollection.Rows.Add(linerow)
+
+                Dim nrow As String() = New String() {"", " TOTAL:", Format(totalnet, "###,###,###.#0"), Format(totaltotalondatehits, "###,###,###.#0"), Format(totalprevioushits, "###,###,###.#0"), Format(totalclaimedhits, "###,###,###.#0"), Format(totaltapada, "###,###,###.#0"), Format(totalcollectibles, "###,###,###.#0")}
+                FrmReceiversForm.dtgRidersCollection.Rows.Add(nrow)
+
+            End If
+            'frmClientLedger.txtRunningBalance.Text = Format(CDbl(totalplanamount - (totalpaid - totalpenalty)), "###,###,###.#0")
+            'Dim remainno As Integer = 0
+            'remainno = CDbl(totalplanamount - (totalpaid - totalpenalty)) / CDbl(frmClientLedger.txtAmortPayable.Text)
+            'frmClientLedger.txtRemaingNumPayment.Text = remainno
 
 
         Catch ex As Exception
