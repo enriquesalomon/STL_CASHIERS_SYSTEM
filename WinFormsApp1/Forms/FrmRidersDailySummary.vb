@@ -30,7 +30,10 @@
         loadridersList()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLoad.Click
+        lblDate.Text = ""
+        lblridername.Text = ""
+        dtgRidersCollection.Rows.Clear()
         myriders.LoadRidersDailySummary()
 
 
@@ -63,6 +66,15 @@
         End If
     End Sub
 
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+        lblDate.Text = ""
+        lblridername.Text = ""
+        dtgRidersCollection.Rows.Clear()
+    End Sub
 
-
+    Private Sub cboRiders_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboRiders.SelectedIndexChanged
+        lblDate.Text = ""
+        lblridername.Text = ""
+        dtgRidersCollection.Rows.Clear()
+    End Sub
 End Class

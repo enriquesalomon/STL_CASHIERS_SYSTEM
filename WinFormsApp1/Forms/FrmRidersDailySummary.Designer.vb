@@ -30,7 +30,8 @@ Partial Class FrmRidersDailySummary
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dtgRidersCollection = New System.Windows.Forms.DataGridView()
         Me.PanelRider = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.btnLoad = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cboRiders = New System.Windows.Forms.ComboBox()
@@ -44,7 +45,6 @@ Partial Class FrmRidersDailySummary
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnGenerateRFForm = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
         CType(Me.dtgRidersCollection, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelRider.SuspendLayout()
@@ -139,7 +139,7 @@ Partial Class FrmRidersDailySummary
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelRider.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PanelRider.Controls.Add(Me.DateTimePicker1)
-        Me.PanelRider.Controls.Add(Me.Button1)
+        Me.PanelRider.Controls.Add(Me.btnLoad)
         Me.PanelRider.Controls.Add(Me.Label2)
         Me.PanelRider.Controls.Add(Me.Label4)
         Me.PanelRider.Controls.Add(Me.cboRiders)
@@ -149,15 +149,23 @@ Partial Class FrmRidersDailySummary
         Me.PanelRider.Size = New System.Drawing.Size(298, 141)
         Me.PanelRider.TabIndex = 13
         '
-        'Button1
+        'DateTimePicker1
         '
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Button1.Location = New System.Drawing.Point(0, 102)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(296, 37)
-        Me.Button1.TabIndex = 17
-        Me.Button1.Text = "Load Record"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(66, 41)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(214, 23)
+        Me.DateTimePicker1.TabIndex = 19
+        '
+        'btnLoad
+        '
+        Me.btnLoad.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnLoad.Location = New System.Drawing.Point(0, 102)
+        Me.btnLoad.Name = "btnLoad"
+        Me.btnLoad.Size = New System.Drawing.Size(296, 37)
+        Me.btnLoad.TabIndex = 17
+        Me.btnLoad.Text = "Load Record"
+        Me.btnLoad.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -302,14 +310,6 @@ Partial Class FrmRidersDailySummary
         Me.Panel5.Size = New System.Drawing.Size(649, 449)
         Me.Panel5.TabIndex = 16
         '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(66, 41)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(214, 23)
-        Me.DateTimePicker1.TabIndex = 19
-        '
         'FrmRidersDailySummary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -343,7 +343,7 @@ Partial Class FrmRidersDailySummary
     Friend WithEvents Label5 As Label
     Friend WithEvents dtgRidersCollection As DataGridView
     Friend WithEvents PanelRider As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLoad As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents cboRiders As ComboBox
