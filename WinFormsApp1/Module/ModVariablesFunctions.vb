@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Module ModVariablesFunctions
-    Public username, password, tempName, strprefix, Homeaddress, examineeno, qryStatement, printDoc As String
+    Public username, password, cashier, tempName, strprefix, Homeaddress, examineeno, qryStatement, printDoc As String
     Public mycommand As New SqlCommand
     Public myadapter As New SqlDataAdapter
     Public mysqlreader As SqlDataReader
@@ -15,6 +15,7 @@ Module ModVariablesFunctions
     Public currDate As Date
 
     Public rfID As String
+
 
 
     Public Function TrapKeyVer2(ByVal KCode As String, ByVal Textbox As Object) As Boolean

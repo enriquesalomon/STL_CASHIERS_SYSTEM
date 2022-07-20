@@ -60,6 +60,19 @@
             mycommand.ExecuteNonQuery()
 
 
+            ''LOOP TO DATAGRIDVIEW AND INSERT DATA INTO DATABASE
+
+            For i As Integer = 0 To dtgRidersCollection.Rows.Count - 1
+
+                mycommand = mysqlconn.CreateCommand
+                mycommand.CommandText = "Insert into tbl_DailySalesAccountRemittance (RFID,SALESDATE,USERNAME,COORDINATOR,GROSS,COMM,NET,ONDATEHITS,PREVIOUSHITS,CLAIMEDHITS,TAPADA,COLLECTIBLES,RIDER,CASHIER,TRANSDATE)" &
+            "Values ('" & rfID & "','" & Trim(lblDate.Text) & "','" & Trim(dtgRidersCollection.Item(1, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(2, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(3, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(4, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(5, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(6, i).Value.ToString()) & "','','','','', '" & Trim(lblridername.Text) & "','" & Trim(cashier) & "','')"
+                mycommand.ExecuteNonQuery()
+
+            Next
+
+
+
             MsgBox("New Receivers Form has been successfully Generated ", MsgBoxStyle.OkOnly, "Message")
             myreceiver.LoadRFList()
 
@@ -76,5 +89,9 @@
         lblDate.Text = ""
         lblridername.Text = ""
         dtgRidersCollection.Rows.Clear()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+
     End Sub
 End Class

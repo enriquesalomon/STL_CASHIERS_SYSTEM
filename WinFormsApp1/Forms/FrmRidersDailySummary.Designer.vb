@@ -45,6 +45,7 @@ Partial Class FrmRidersDailySummary
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnGenerateRFForm = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dtgRidersCollection, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelRider.SuspendLayout()
@@ -225,6 +226,7 @@ Partial Class FrmRidersDailySummary
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.lblridername)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.lblDate)
@@ -310,6 +312,15 @@ Partial Class FrmRidersDailySummary
         Me.Panel5.Size = New System.Drawing.Size(649, 449)
         Me.Panel5.TabIndex = 16
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(555, 15)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FrmRidersDailySummary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -358,4 +369,5 @@ Partial Class FrmRidersDailySummary
     Friend WithEvents Label7 As Label
     Friend WithEvents btnGenerateRFForm As Button
     Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Button1 As Button
 End Class
