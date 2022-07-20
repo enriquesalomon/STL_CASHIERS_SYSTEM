@@ -30,7 +30,8 @@
         Try
             Call connectSQL(conString)
             mycommand = mysqlconn.CreateCommand
-            mycommand.CommandText = "select  *  from tbl_ReceiversForm  where SALESDATE='" & (Format(CDate(FrmRidersDailySummary.lblDate.Text), "yyyy-MM-dd").ToString) & "' and RIDER='" & (FrmRidersDailySummary.lblridername.Text) & "' "
+            'mycommand.CommandText = "select  *  from tbl_ReceiversForm  where SALESDATE='" & (Format(CDate(FrmRidersDailySummary.lblDate.Text), "yyyy-MM-dd").ToString) & "' and RIDER='" & (FrmRidersDailySummary.lblridername.Text) & "' "
+            mycommand.CommandText = "select  *  from tbl_ReceiversForm  where SALESDATE='" & FrmRidersDailySummary.lblDate.Text.ToString & "' and RIDER='" & (FrmRidersDailySummary.lblridername.Text) & "' "
 
             myadapter.SelectCommand = mycommand
             myadapter.Fill(ndataset, "tbl_ReceiversForm")
