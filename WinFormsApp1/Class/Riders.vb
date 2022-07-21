@@ -27,13 +27,13 @@
 
 
 
-        Try
-            Call connectSQL(conString)
+        'Try
+        Call connectSQL(conString)
             mycommand = mysqlconn.CreateCommand
-            'mycommand.CommandText = "select  *  from tbl_ReceiversForm  where SALESDATE='" & (Format(CDate(FrmRidersDailySummary.lblDate.Text), "yyyy-MM-dd").ToString) & "' and RIDER='" & (FrmRidersDailySummary.lblridername.Text) & "' "
-            mycommand.CommandText = "select  *  from tbl_ReceiversForm  where SALESDATE='" & FrmRidersDailySummary.lblDate.Text.ToString & "' and RIDER='" & (FrmRidersDailySummary.lblridername.Text) & "' "
+        'mycommand.CommandText = "select  *  from tbl_ReceiversForm  where SALESDATE='" & (Format(CDate(FrmRidersDailySummary.lblDate.Text), "yyyy-MM-dd").ToString) & "' and RIDER='" & (FrmRidersDailySummary.lblridername.Text) & "' "
+        mycommand.CommandText = "select  *  from tbl_ReceiversForm  where SALESDATE='" & Format(CDate(FrmRidersDailySummary.lblDate.Text), "yyyy-MM-dd") & "' and RIDER='" & (FrmRidersDailySummary.lblridername.Text) & "' "
 
-            myadapter.SelectCommand = mycommand
+        myadapter.SelectCommand = mycommand
             myadapter.Fill(ndataset, "tbl_ReceiversForm")
             ntable = ndataset.Tables("tbl_ReceiversForm")
 
@@ -45,131 +45,157 @@
             ntable.Rows.Clear()
             ndataset.Clear()
 
-        Catch ex As Exception
-            MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
-        End Try
+        'Catch ex As Exception
+        '    MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
+        'End Try
 
     End Function
 
 
     Sub LoadRidersCollectionRecord()
-        Try
+        'Try
 
 
+        FrmReceiversForm.dtgRidersCollection.ColumnCount = 9
+        FrmReceiversForm.dtgRidersCollection.RowsDefaultCellStyle.BackColor = Color.White
+        FrmReceiversForm.dtgRidersCollection.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke
 
-            FrmReceiversForm.dtgRidersCollection.ColumnCount = 8
-            FrmReceiversForm.dtgRidersCollection.RowsDefaultCellStyle.BackColor = Color.White
-            FrmReceiversForm.dtgRidersCollection.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke
+        FrmReceiversForm.dtgRidersCollection.Columns(0).HeaderText = "NO."
+        FrmReceiversForm.dtgRidersCollection.Columns(0).Width = 50
+        FrmReceiversForm.dtgRidersCollection.Columns(0).Name = "num"
+        FrmReceiversForm.dtgRidersCollection.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
-            FrmReceiversForm.dtgRidersCollection.Columns(0).HeaderText = "USERNAME"
-            FrmReceiversForm.dtgRidersCollection.Columns(0).Width = 70
-            FrmReceiversForm.dtgRidersCollection.Columns(0).Name = "username"
-            FrmReceiversForm.dtgRidersCollection.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+        FrmReceiversForm.dtgRidersCollection.Columns(1).HeaderText = "USERNAME"
+        FrmReceiversForm.dtgRidersCollection.Columns(1).Width = 70
+        FrmReceiversForm.dtgRidersCollection.Columns(1).Name = "username"
+        FrmReceiversForm.dtgRidersCollection.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
-            FrmReceiversForm.dtgRidersCollection.Columns(1).HeaderText = "COORDINATOR"
-            FrmReceiversForm.dtgRidersCollection.Columns(1).Width = 100
-            FrmReceiversForm.dtgRidersCollection.Columns(1).Name = "coordinator"
-            FrmReceiversForm.dtgRidersCollection.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        FrmReceiversForm.dtgRidersCollection.Columns(2).HeaderText = "COORDINATOR"
+        FrmReceiversForm.dtgRidersCollection.Columns(2).Width = 150
+        FrmReceiversForm.dtgRidersCollection.Columns(2).Name = "coordinator"
+        FrmReceiversForm.dtgRidersCollection.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-            FrmReceiversForm.dtgRidersCollection.Columns(2).HeaderText = "OVERALL NET"
-            FrmReceiversForm.dtgRidersCollection.Columns(2).Width = 70
-            FrmReceiversForm.dtgRidersCollection.Columns(2).Name = "overallnet"
-            FrmReceiversForm.dtgRidersCollection.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+        FrmReceiversForm.dtgRidersCollection.Columns(3).HeaderText = "OVERALL NET"
+        FrmReceiversForm.dtgRidersCollection.Columns(3).Width = 70
+        FrmReceiversForm.dtgRidersCollection.Columns(3).Name = "overallnet"
+        FrmReceiversForm.dtgRidersCollection.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
-            FrmReceiversForm.dtgRidersCollection.Columns(3).HeaderText = "ONDATE HITS"
-            FrmReceiversForm.dtgRidersCollection.Columns(3).Width = 70
-            FrmReceiversForm.dtgRidersCollection.Columns(3).Name = "ondatehits"
-            FrmReceiversForm.dtgRidersCollection.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+        FrmReceiversForm.dtgRidersCollection.Columns(4).HeaderText = "ONDATE HITS"
+        FrmReceiversForm.dtgRidersCollection.Columns(4).Width = 70
+        FrmReceiversForm.dtgRidersCollection.Columns(4).Name = "ondatehits"
+        FrmReceiversForm.dtgRidersCollection.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
-            FrmReceiversForm.dtgRidersCollection.Columns(4).HeaderText = "PREVIOUS HITS"
-            FrmReceiversForm.dtgRidersCollection.Columns(4).Width = 70
-            FrmReceiversForm.dtgRidersCollection.Columns(4).Name = "previoushits"
-            FrmReceiversForm.dtgRidersCollection.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
-
-
-            FrmReceiversForm.dtgRidersCollection.Columns(5).HeaderText = "CLAIMED HITS"
-            FrmReceiversForm.dtgRidersCollection.Columns(5).Width = 70
-            FrmReceiversForm.dtgRidersCollection.Columns(5).Name = "claimedhits"
-            FrmReceiversForm.dtgRidersCollection.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
-
-            FrmReceiversForm.dtgRidersCollection.Columns(6).HeaderText = "TAPADA"
-            FrmReceiversForm.dtgRidersCollection.Columns(6).Width = 70
-            FrmReceiversForm.dtgRidersCollection.Columns(6).Name = "tapada"
-            FrmReceiversForm.dtgRidersCollection.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        FrmReceiversForm.dtgRidersCollection.Columns(5).HeaderText = "PREVIOUS HITS"
+        FrmReceiversForm.dtgRidersCollection.Columns(5).Width = 70
+        FrmReceiversForm.dtgRidersCollection.Columns(5).Name = "previoushits"
+        FrmReceiversForm.dtgRidersCollection.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
 
-            FrmReceiversForm.dtgRidersCollection.Columns(7).HeaderText = "COLLECTIBLES"
-            FrmReceiversForm.dtgRidersCollection.Columns(7).Width = 70
-            FrmReceiversForm.dtgRidersCollection.Columns(7).Name = "collictibles"
-            FrmReceiversForm.dtgRidersCollection.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        FrmReceiversForm.dtgRidersCollection.Columns(6).HeaderText = "CLAIMED HITS"
+        FrmReceiversForm.dtgRidersCollection.Columns(6).Width = 70
+        FrmReceiversForm.dtgRidersCollection.Columns(6).Name = "claimedhits"
+        FrmReceiversForm.dtgRidersCollection.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+
+        FrmReceiversForm.dtgRidersCollection.Columns(7).HeaderText = "TAPADA"
+        FrmReceiversForm.dtgRidersCollection.Columns(7).Width = 70
+        FrmReceiversForm.dtgRidersCollection.Columns(7).Name = "tapada"
+        FrmReceiversForm.dtgRidersCollection.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
-            FrmReceiversForm.dtgRidersCollection.Rows.Clear()
-            mydataTable.Rows.Clear()
-            mydataset.Clear()
-            qryStatement = ""
+        FrmReceiversForm.dtgRidersCollection.Columns(8).HeaderText = "COLLECTIBLES"
+        FrmReceiversForm.dtgRidersCollection.Columns(8).Width = 70
+        FrmReceiversForm.dtgRidersCollection.Columns(8).Name = "collictibles"
+        FrmReceiversForm.dtgRidersCollection.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
-            'If filterByTestSite Then
-            '    qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "' and TestingSite ='" & Trim(cboFilterTestSite.Text) & "'  order by ExamineeInfo.ExamineeNo ASC "
-            '    'qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where between'" & Format(CDate(dtFromdate.Text), "yyyy-MM-dd").ToString & "' and '" & Format(CDate(dtTodate.Text), "yyyy-MM-dd").ToString & "'  order by ExamineeInfo.ExamineeNo ASC "
+        FrmReceiversForm.dtgRidersCollection.Rows.Clear()
+        mydataTable.Rows.Clear()
+        mydataset.Clear()
+        qryStatement = ""
 
-            'Else
-            '    If lfind Then
-            '        'qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(sched) & "' and Lastname like '%" & txtsearch.Text & "%' or ExamineeInfo.Examineeno  like '%" & txtsearch.Text & "%' or Firstname like '%" & txtsearch.Text & "%'"
-            '        qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "' and Lastname like '%" & txtsearch.Text & "%' "
+        qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_DailySalesAccountRemittance] where RFID='" & FrmReceiversEntry.rfnumber & "' and  RIDER ='" & FrmReceiversEntry.rfridername & "'  order by Coordinator ASC"
 
-            '    Else
-            '        qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "'  order by Lastname ASC"
 
-            '    End If
-            'End If
-            qryStatement = "select salesdate,cluster,municipality,rider,coordinator,agent,comm,username,overallgross,overallcomm,overallnet,overallhits,revenue from tb_SalesSummaryImported  where SALESDATE ='" & Format(CDate(FrmReceiversEntry.rfsalesdate), "yyyy-MM-dd").ToString & "' and RIDER ='" & FrmReceiversEntry.rfridername.ToString & "'  order by Coordinator ASC"
-
-            Call connectSQL(conString)
+        Call connectSQL(conString)
             mycommand = mysqlconn.CreateCommand
             mycommand.CommandText = qryStatement
             myadapter.SelectCommand = mycommand
-            myadapter.Fill(mydataset, "tb_SalesSummaryImported")
-            mydataTable = mydataset.Tables("tb_SalesSummaryImported")
+            myadapter.Fill(mydataset, "tbl_DailySalesAccountRemittance")
+            mydataTable = mydataset.Tables("tbl_DailySalesAccountRemittance")
             recCounter = 0
             tempName = ""
             If mydataTable.Rows.Count > 0 Then
-                For Each lrow As DataRow In mydataTable.Rows
-                    Dim tapada As String = "0"
-                    Dim claimedhits As String = "0"
-                    Dim previoushits As String = "0"
-                    Dim collectibles As String = "0"
+            For Each lrow As DataRow In mydataTable.Rows
+                Dim net As Double
+                Dim ondatehits As Double
+                Dim tapada As Double
+                Dim claimedhits As Double
+                Dim previoushits As Double
+                Dim collectibles As Double
 
-                    'Format(CDate(lrow("salesdate")), "MM/dd/yyyy").ToString,
-                    Dim row As String() = New String() {lrow("username").ToString, lrow("coordinator").ToString, Format(CDbl(lrow("overallnet").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallhits").ToString), "###,###,###.#0"), Format(CDbl(previoushits), "###,###,###.#0"), Format(CDbl(claimedhits), "###,###,###.#0"), Format(CDbl(tapada), "###,###,###.#0"), Format(CDbl(collectibles), "###,###,###.#0")}
-                    FrmReceiversForm.dtgRidersCollection.Rows.Add(row)
+                If lrow("net").ToString = "" Then
+                    net = 0
+                Else
+                    net = lrow("net").ToString
+                End If
+                If lrow("ondatehits").ToString = "" Then
+                    ondatehits = 0
+                Else
+                    ondatehits = lrow("ondatehits").ToString
+                End If
 
-                Next
-            End If
+                If lrow("previoushits").ToString = "" Then
+                    previoushits = 0
+                Else
+                    previoushits = lrow("previoushits").ToString
+                End If
+                If lrow("claimedhits").ToString = "" Then
+                    claimedhits = 0
+                Else
+                    claimedhits = lrow("claimedhits").ToString
+                End If
+                If lrow("tapada").ToString = "" Then
+                    tapada = 0
+                Else
+                    tapada = lrow("tapada").ToString
+                End If
+                If lrow("collectibles").ToString = "" Then
+                    collectibles = 0
+                Else
+                    collectibles = lrow("collectibles").ToString
+                End If
+
+                recCounter += 1
+                'Format(CDate(lrow("salesdate")), "MM/dd/yyyy").ToString,
+                Dim row As String() = New String() {recCounter, lrow("username").ToString, lrow("coordinator").ToString, Format(CDbl(net.ToString), "###,###,###.#0"), Format(CDbl(ondatehits.ToString), "###,###,###.#0"), Format(CDbl(previoushits.ToString), "###,###,###.#0"), Format(CDbl(claimedhits.ToString), "###,###,###.#0"), Format(CDbl(tapada.ToString), "###,###,###.#0"), Format(CDbl(collectibles.ToString), "###,###,###.#0")}
+                FrmReceiversForm.dtgRidersCollection.Rows.Add(row)
+
+            Next
+        End If
             FrmReceiversForm.txtCollector.Text = FrmReceiversEntry.rfridername
-            FrmReceiversForm.txtDateofSales.Text = FrmReceiversEntry.rfsalesdate
+        FrmReceiversForm.txtDateofSales.Text = FrmReceiversEntry.rfsalesdate
+        FrmReceiversForm.txtrfNum.Text = FrmReceiversEntry.rfnumber
 
-            'If viewWithSched = True Then
-            '    Dim i As Integer = 0
-            '    For Each RW As DataGridViewRow In FrmRidersDailySummary.dtgRidersCollection.Rows
+        'If viewWithSched = True Then
+        '    Dim i As Integer = 0
+        '    For Each RW As DataGridViewRow In FrmRidersDailySummary.dtgRidersCollection.Rows
 
-            '        If RW.Cells(8).Value.ToString = "NONE" Then
-            '            FrmRidersDailySummary.dtgRidersCollection.Rows(i).DefaultCellStyle.BackColor = Color.IndianRed
-            '            FrmRidersDailySummary.dtgRidersCollection.Rows(i).DefaultCellStyle.ForeColor = Color.White
-            '        Else
-            '            FrmRidersDailySummary.dtgRidersCollection.Rows(i).DefaultCellStyle.BackColor = Color.White
-            '            FrmRidersDailySummary.dtgRidersCollection.Rows(i).DefaultCellStyle.ForeColor = Color.Black
+        '        If RW.Cells(8).Value.ToString = "NONE" Then
+        '            FrmRidersDailySummary.dtgRidersCollection.Rows(i).DefaultCellStyle.BackColor = Color.IndianRed
+        '            FrmRidersDailySummary.dtgRidersCollection.Rows(i).DefaultCellStyle.ForeColor = Color.White
+        '        Else
+        '            FrmRidersDailySummary.dtgRidersCollection.Rows(i).DefaultCellStyle.BackColor = Color.White
+        '            FrmRidersDailySummary.dtgRidersCollection.Rows(i).DefaultCellStyle.ForeColor = Color.Black
 
-            '        End If : i += 1
+        '        End If : i += 1
 
 
-            '        'totdiscount += CDbl(RW.Cells(4).Value.ToString)
-            '    Next
+        '        'totdiscount += CDbl(RW.Cells(4).Value.ToString)
+        '    Next
 
-            'End If
+        'End If
 
-            If FrmReceiversForm.dtgRidersCollection.Rows.Count <> 0 Then
+        If FrmReceiversForm.dtgRidersCollection.Rows.Count <> 0 Then
                 Dim totalnet As Double = 0
                 Dim totaltotalondatehits As Double = 0
                 Dim totalprevioushits As Double = 0
@@ -179,19 +205,21 @@
                 Dim i As Integer = 0
 
                 For Each RW As DataGridViewRow In FrmReceiversForm.dtgRidersCollection.Rows
-                    totalnet += CDbl(RW.Cells(2).Value)
-                    totaltotalondatehits += CDbl(RW.Cells(3).Value)
-                    totalprevioushits += CDbl(RW.Cells(4).Value)
-                    totalclaimedhits += CDbl(RW.Cells(5).Value)
-                    totaltapada += CDbl(RW.Cells(6).Value)
-                    totalcollectibles += CDbl(RW.Cells(7).Value)
+                    totalnet += CDbl(RW.Cells(3).Value)
+                totaltotalondatehits += CDbl(RW.Cells(4).Value)
+                totalprevioushits += CDbl(RW.Cells(5).Value)
+                totalclaimedhits += CDbl(RW.Cells(6).Value)
+                totaltapada += CDbl(RW.Cells(7).Value)
+                totalcollectibles += CDbl(RW.Cells(8).Value)
 
-                Next : i += 1
-                Dim linerow As String() = New String() {"==========", "==========", "==========", "==========", "==========", "==========", "==========", "=========="}
-                FrmReceiversForm.dtgRidersCollection.Rows.Add(linerow)
+            Next : i += 1
 
-                Dim nrow As String() = New String() {"", " TOTAL:", Format(totalnet, "###,###,###.#0"), Format(totaltotalondatehits, "###,###,###.#0"), Format(totalprevioushits, "###,###,###.#0"), Format(totalclaimedhits, "###,###,###.#0"), Format(totaltapada, "###,###,###.#0"), Format(totalcollectibles, "###,###,###.#0")}
-                FrmReceiversForm.dtgRidersCollection.Rows.Add(nrow)
+
+            Dim linerow As String() = New String() {"==========", "==========", "==========", "==========", "==========", "==========", "==========", "==========", "=========="}
+            FrmReceiversForm.dtgRidersCollection.Rows.Add(linerow)
+
+            Dim nrow As String() = New String() {"", "", " TOTAL:", Format(totalnet, "###,###,###.#0"), Format(totaltotalondatehits, "###,###,###.#0"), Format(totalprevioushits, "###,###,###.#0"), Format(totalclaimedhits, "###,###,###.#0"), Format(totaltapada, "###,###,###.#0"), Format(totalcollectibles, "###,###,###.#0")}
+            FrmReceiversForm.dtgRidersCollection.Rows.Add(nrow)
 
             End If
             'frmClientLedger.txtRunningBalance.Text = Format(CDbl(totalplanamount - (totalpaid - totalpenalty)), "###,###,###.#0")
@@ -200,9 +228,9 @@
             'frmClientLedger.txtRemaingNumPayment.Text = remainno
 
 
-        Catch ex As Exception
-            MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
-        End Try
+        'Catch ex As Exception
+        '    MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
+        'End Try
     End Sub
 
     Sub LoadRidersDailySummary()
@@ -282,15 +310,15 @@
             recCounter = 0
             tempName = ""
             If mydataTable.Rows.Count > 0 Then
-                Dim num As Integer = 0
+
                 For Each lrow As DataRow In mydataTable.Rows
-                    num += 1
+                    recCounter += 1
                     Dim tapada As String = "0"
                     Dim claimedhits As String = "0"
                     Dim collectibles As String = "0"
 
                     'Format(CDate(lrow("salesdate")), "MM/dd/yyyy").ToString,
-                    Dim row As String() = New String() {num, lrow("username").ToString, lrow("coordinator").ToString, Format(CDbl(lrow("overallgross").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallcomm").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallnet").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallhits").ToString), "###,###,###.#0")}
+                    Dim row As String() = New String() {recCounter, lrow("username").ToString, lrow("coordinator").ToString, Format(CDbl(lrow("overallgross").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallcomm").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallnet").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallhits").ToString), "###,###,###.#0")}
                     FrmRidersDailySummary.dtgRidersCollection.Rows.Add(row)
                 Next
             End If

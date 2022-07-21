@@ -56,7 +56,7 @@
             getRFNumber(rfID)
             mycommand = mysqlconn.CreateCommand
             mycommand.CommandText = "Insert into tbl_ReceiversForm (ID,SALESDATE,RIDER,CASHIER,DATECREATED,DATERECEIVED,STATUS)" &
-            "Values ('" & rfID & "','" & lblDate.Text.ToString & "','" & Trim(lblridername.Text) & "','" & cashier & "','" & Format(DateAndTime.Now, "Short Date") & "','" & Format(DateAndTime.Now, "Short Date") & "','')"
+            "Values ('" & rfID & "','" & Format(CDate(lblDate.Text), "yyyy-MM-dd").ToString & "','" & Trim(lblridername.Text) & "','" & cashier & "','" & Format(CDate(Date.Now), "yyyy-MM-dd").ToString & "','" & System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "','')"
             'Format(DateAndTime.Now, "Short Date")
             mycommand.ExecuteNonQuery()
 
@@ -67,7 +67,7 @@
 
                 mycommand = mysqlconn.CreateCommand
                 mycommand.CommandText = "Insert into tbl_DailySalesAccountRemittance (RFID,SALESDATE,USERNAME,COORDINATOR,GROSS,COMM,NET,ONDATEHITS,PREVIOUSHITS,CLAIMEDHITS,TAPADA,COLLECTIBLES,RIDER,CASHIER,TRANSDATE)" &
-            "Values ('" & rfID & "','" & Trim(lblDate.Text.ToString) & "','" & Trim(dtgRidersCollection.Item(1, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(2, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(3, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(4, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(5, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(6, i).Value.ToString()) & "','','','','', '" & Trim(lblridername.Text) & "','" & Trim(cashier) & "','')"
+            "Values ('" & rfID & "','" & Format(CDate(lblDate.Text), "yyyy-MM-dd") & "','" & Trim(dtgRidersCollection.Item(1, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(2, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(3, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(4, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(5, i).Value.ToString()) & "','" & Trim(dtgRidersCollection.Item(6, i).Value.ToString()) & "','','','','', '" & Trim(lblridername.Text) & "','" & Trim(cashier) & "','')"
                 mycommand.ExecuteNonQuery()
 
             Next
