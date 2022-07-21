@@ -40,4 +40,10 @@
         BackForeColorMe(txtSearch, False)
         lfind = False
     End Sub
+
+    Private Sub dtgRidersCollection_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgRidersCollection.CellDoubleClick
+        PanelInputRemittance.Visible = True
+        myreceiver.LoadCoorSalesRecord()
+
+    End Sub
 End Class

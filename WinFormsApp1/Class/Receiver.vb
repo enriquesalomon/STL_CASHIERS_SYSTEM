@@ -127,4 +127,43 @@
             MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
         End Try
     End Sub
+
+
+    Sub LoadCoorSalesRecord()
+        Dim GridRow As DataGridViewRow = FrmReceiversForm.dtgRidersCollection.CurrentRow
+        examineeno = ""
+        For Each datagrd As DataGridViewRow In FrmReceiversForm.dtgRidersCollection.SelectedRows
+            FrmReceiversForm.txtAgentCode.Text = CStr(GridRow.Cells.Item("username").Value)
+            FrmReceiversForm.txtCoor.Text = CStr(GridRow.Cells.Item("coordinator").Value)
+            FrmReceiversForm.txtNetOndate.Text = CStr(GridRow.Cells.Item("overallnet").Value)
+        Next datagrd
+
+
+        'Try
+        '    mydataTable.Rows.Clear()
+        '    mydataset.Clear()
+        '    Call connectSQL(conString)
+        '    mycommand = mysqlconn.CreateCommand
+        '    mycommand.CommandText = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno  where ExamineeInfo.Examineeno='" & Trim(lblExamineeno.Text) & "' "
+        '    myadapter.SelectCommand = mycommand
+        '    myadapter.Fill(mydataset, "ExamineeInfo")
+        '    mydataTable = mydataset.Tables("ExamineeInfo")
+        '    'cboChoice1.Text = ""
+        '    If mydataTable.Rows.Count > 0 Then
+        '        For Each mrow As DataRow In mydataTable.Rows
+        '            lbladdnum.Text = mrow("Addnum").ToString
+        '            txtLname.Text = mrow("Lastname").ToString
+        '            txtMname.Text = mrow("Middlename").ToString
+        '            txtFname.Text = mrow("Firstname").ToString
+
+
+        '        Next
+        '    End If
+
+
+
+        'Catch ex As Exception
+        '    MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
+        'End Try
+    End Sub
 End Class
