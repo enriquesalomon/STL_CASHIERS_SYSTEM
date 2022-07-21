@@ -108,6 +108,11 @@ Public Class FrmImportExcelSales
 
     Private Sub btnImport_Click(sender As Object, e As EventArgs) Handles btnImport.Click
 
+        If myimporttable.checkExistingSalesImport Then
+            MsgBox("Sales Report already exist!", MsgBoxStyle.Exclamation, "Message")
+            Exit Sub
+        End If
+
         Try
 
             Dim list As List(Of ImportTable) = TryCast(ImportTableBindingSource.DataSource, List(Of ImportTable))

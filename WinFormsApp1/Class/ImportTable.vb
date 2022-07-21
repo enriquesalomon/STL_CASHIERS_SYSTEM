@@ -39,4 +39,45 @@
     Public Property overallnet As String
     Public Property overallhits As String
     Public Property revenue As String
+
+
+
+    Public Function checkExistingSalesImport() As Boolean
+
+        Dim salesdatInExceltoImport As String
+        Dim GridRow As DataGridViewRow = FrmImportExcelSales.dtgImportSales.CurrentRow
+        For Each datagrd As DataGridViewRow In FrmImportExcelSales.dtgImportSales.SelectedRows
+            salesdatInExceltoImport = Format(CDate(FrmImportExcelSales.dtgImportSales.Item(0, 0).Value.ToString()), "yyyy-MM-dd")
+
+        Next datagrd
+
+
+
+        Dim ntable As New DataTable
+        Dim ndataset As New DataSet
+
+
+
+        Try
+            Call connectSQL(conString)
+            mycommand = mysqlconn.CreateCommand
+            mycommand.CommandText = "select  *  from [tb_SalesSummaryImported]  where SALESDATE='" & salesdatInExceltoImport & "'"
+
+            myadapter.SelectCommand = mycommand
+            myadapter.Fill(ndataset, "tb_SalesSummaryImported")
+            ntable = ndataset.Tables("tb_SalesSummaryImported")
+
+            If ntable.Rows.Count > 0 Then
+                checkExistingSalesImport = True
+            Else
+                checkExistingSalesImport = False
+            End If
+            ntable.Rows.Clear()
+            ndataset.Clear()
+
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
+        End Try
+
+    End Function
 End Class

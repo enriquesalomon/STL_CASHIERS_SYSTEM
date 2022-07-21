@@ -19,7 +19,7 @@ Public Class Login
                     username = mysqlreader("Username").ToString
                     password = mysqlreader("UserPassword").ToString
                     'tempName = (mysqlreader("Fullname")).ToString & Space(1) & Mid((mysqlreader("Mname")), 1, 1).ToString & "." & Space(1) & (mysqlreader("Lname")).ToString & "  "
-                    tempName = (mysqlreader("Fullname")).ToString
+                    cashier = (mysqlreader("Fullname")).ToString
                     'lblposition.Text = Trim(mysqlreader("Designation").ToString)
 
 

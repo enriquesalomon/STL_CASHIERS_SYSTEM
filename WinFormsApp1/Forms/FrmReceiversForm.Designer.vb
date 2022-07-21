@@ -29,6 +29,8 @@ Partial Class FrmReceiversForm
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txtrfNum = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtCollector = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtDateofSales = New System.Windows.Forms.TextBox()
@@ -44,14 +46,16 @@ Partial Class FrmReceiversForm
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dtgRidersCollection = New System.Windows.Forms.DataGridView()
-        Me.txtrfNum = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.PanelSearch = New System.Windows.Forms.Panel()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.PanelInputRemittance.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.dtgRidersCollection, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelSearch.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -102,6 +106,25 @@ Partial Class FrmReceiversForm
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(334, 576)
         Me.Panel2.TabIndex = 5
+        '
+        'txtrfNum
+        '
+        Me.txtrfNum.BackColor = System.Drawing.Color.White
+        Me.txtrfNum.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.txtrfNum.Location = New System.Drawing.Point(97, 44)
+        Me.txtrfNum.Name = "txtrfNum"
+        Me.txtrfNum.ReadOnly = True
+        Me.txtrfNum.Size = New System.Drawing.Size(191, 23)
+        Me.txtrfNum.TabIndex = 16
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(56, 52)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(33, 15)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "RF #:"
         '
         'txtCollector
         '
@@ -156,9 +179,9 @@ Partial Class FrmReceiversForm
         Me.Panel3.Controls.Add(Me.PanelInputRemittance)
         Me.Panel3.Controls.Add(Me.dtgRidersCollection)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(0, 31)
+        Me.Panel3.Location = New System.Drawing.Point(0, 86)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(685, 576)
+        Me.Panel3.Size = New System.Drawing.Size(685, 521)
         Me.Panel3.TabIndex = 6
         '
         'PanelInputRemittance
@@ -175,7 +198,7 @@ Partial Class FrmReceiversForm
         Me.PanelInputRemittance.Controls.Add(Me.Panel4)
         Me.PanelInputRemittance.Location = New System.Drawing.Point(109, 122)
         Me.PanelInputRemittance.Name = "PanelInputRemittance"
-        Me.PanelInputRemittance.Size = New System.Drawing.Size(428, 169)
+        Me.PanelInputRemittance.Size = New System.Drawing.Size(428, 206)
         Me.PanelInputRemittance.TabIndex = 14
         Me.PanelInputRemittance.Visible = False
         '
@@ -218,7 +241,7 @@ Partial Class FrmReceiversForm
         'btnLoad
         '
         Me.btnLoad.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.btnLoad.Location = New System.Drawing.Point(0, 130)
+        Me.btnLoad.Location = New System.Drawing.Point(0, 167)
         Me.btnLoad.Name = "btnLoad"
         Me.btnLoad.Size = New System.Drawing.Size(426, 37)
         Me.btnLoad.TabIndex = 17
@@ -291,26 +314,36 @@ Partial Class FrmReceiversForm
         Me.dtgRidersCollection.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dtgRidersCollection.RowTemplate.Height = 25
         Me.dtgRidersCollection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgRidersCollection.Size = New System.Drawing.Size(685, 576)
+        Me.dtgRidersCollection.Size = New System.Drawing.Size(685, 521)
         Me.dtgRidersCollection.TabIndex = 3
         '
-        'txtrfNum
+        'PanelSearch
         '
-        Me.txtrfNum.BackColor = System.Drawing.Color.White
-        Me.txtrfNum.Location = New System.Drawing.Point(97, 44)
-        Me.txtrfNum.Name = "txtrfNum"
-        Me.txtrfNum.ReadOnly = True
-        Me.txtrfNum.Size = New System.Drawing.Size(191, 23)
-        Me.txtrfNum.TabIndex = 16
+        Me.PanelSearch.BackColor = System.Drawing.SystemColors.Control
+        Me.PanelSearch.Controls.Add(Me.txtSearch)
+        Me.PanelSearch.Controls.Add(Me.Label9)
+        Me.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelSearch.Location = New System.Drawing.Point(0, 31)
+        Me.PanelSearch.Name = "PanelSearch"
+        Me.PanelSearch.Size = New System.Drawing.Size(685, 55)
+        Me.PanelSearch.TabIndex = 15
         '
-        'Label6
+        'txtSearch
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(56, 52)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(33, 15)
-        Me.Label6.TabIndex = 15
-        Me.Label6.Text = "RF #:"
+        Me.txtSearch.BackColor = System.Drawing.Color.White
+        Me.txtSearch.Location = New System.Drawing.Point(136, 14)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(468, 23)
+        Me.txtSearch.TabIndex = 25
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(89, 17)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(45, 15)
+        Me.Label9.TabIndex = 24
+        Me.Label9.Text = "Search:"
         '
         'FrmReceiversForm
         '
@@ -318,6 +351,7 @@ Partial Class FrmReceiversForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1019, 607)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.PanelSearch)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -335,6 +369,8 @@ Partial Class FrmReceiversForm
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.dtgRidersCollection, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelSearch.ResumeLayout(False)
+        Me.PanelSearch.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -360,4 +396,7 @@ Partial Class FrmReceiversForm
     Friend WithEvents Label4 As Label
     Friend WithEvents txtrfNum As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents PanelSearch As Panel
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents Label9 As Label
 End Class
