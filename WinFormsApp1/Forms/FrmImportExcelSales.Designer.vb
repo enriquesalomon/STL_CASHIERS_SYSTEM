@@ -23,9 +23,9 @@ Partial Class FrmImportExcelSales
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -37,6 +37,7 @@ Partial Class FrmImportExcelSales
         Me.txtFilename = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.panelcenter = New System.Windows.Forms.Panel()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.dtgImportSales = New System.Windows.Forms.DataGridView()
         Me.SalesdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClusterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -68,6 +69,7 @@ Partial Class FrmImportExcelSales
         Me.OverallhitsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RevenueDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImportTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         Me.panelbottom.SuspendLayout()
         Me.panelcenter.SuspendLayout()
@@ -177,12 +179,23 @@ Partial Class FrmImportExcelSales
         '
         'panelcenter
         '
+        Me.panelcenter.Controls.Add(Me.ProgressBar1)
         Me.panelcenter.Controls.Add(Me.dtgImportSales)
         Me.panelcenter.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelcenter.Location = New System.Drawing.Point(0, 31)
         Me.panelcenter.Name = "panelcenter"
         Me.panelcenter.Size = New System.Drawing.Size(1042, 427)
         Me.panelcenter.TabIndex = 5
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(350, 279)
+        Me.ProgressBar1.Minimum = 1
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(429, 23)
+        Me.ProgressBar1.TabIndex = 10
+        Me.ProgressBar1.Value = 1
+        Me.ProgressBar1.Visible = False
         '
         'dtgImportSales
         '
@@ -196,14 +209,14 @@ Partial Class FrmImportExcelSales
         Me.dtgImportSales.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.dtgImportSales.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtgImportSales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgImportSales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgImportSales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dtgImportSales.ColumnHeadersHeight = 26
         Me.dtgImportSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dtgImportSales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SalesdateDataGridViewTextBoxColumn, Me.ClusterDataGridViewTextBoxColumn, Me.MunicipalityDataGridViewTextBoxColumn, Me.RiderDataGridViewTextBoxColumn, Me.TypeDataGridViewTextBoxColumn, Me.CoordinatorDataGridViewTextBoxColumn, Me.AgentDataGridViewTextBoxColumn, Me.CommDataGridViewTextBoxColumn, Me.UsernameDataGridViewTextBoxColumn, Me.Draw1DataGridViewTextBoxColumn, Me.Comm1DataGridViewTextBoxColumn, Me.Net1DataGridViewTextBoxColumn, Me.Hits1DataGridViewTextBoxColumn, Me.Total1DataGridViewTextBoxColumn, Me.Draw2DataGridViewTextBoxColumn, Me.Comm2DataGridViewTextBoxColumn, Me.Net2DataGridViewTextBoxColumn, Me.Hits2DataGridViewTextBoxColumn, Me.Total2DataGridViewTextBoxColumn, Me.Draw3DataGridViewTextBoxColumn, Me.Comm3DataGridViewTextBoxColumn, Me.Net3DataGridViewTextBoxColumn, Me.Hits3DataGridViewTextBoxColumn, Me.Total3DataGridViewTextBoxColumn, Me.OverallgrossDataGridViewTextBoxColumn, Me.OverallcommDataGridViewTextBoxColumn, Me.OverallnetDataGridViewTextBoxColumn, Me.OverallhitsDataGridViewTextBoxColumn, Me.RevenueDataGridViewTextBoxColumn})
@@ -216,19 +229,19 @@ Partial Class FrmImportExcelSales
         Me.dtgImportSales.Name = "dtgImportSales"
         Me.dtgImportSales.ReadOnly = True
         Me.dtgImportSales.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgImportSales.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgImportSales.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dtgImportSales.RowHeadersVisible = False
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black
-        Me.dtgImportSales.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black
+        Me.dtgImportSales.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dtgImportSales.RowTemplate.Height = 25
         Me.dtgImportSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgImportSales.Size = New System.Drawing.Size(1042, 427)
@@ -469,6 +482,9 @@ Partial Class FrmImportExcelSales
         '
         Me.ImportTableBindingSource.DataSource = GetType(STL_CASHIERS_SYSTEM.ImportTable)
         '
+        'Timer1
+        '
+        '
         'FrmImportExcelSales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -537,4 +553,6 @@ Partial Class FrmImportExcelSales
     Friend WithEvents OverallnetDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents OverallhitsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents RevenueDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Timer1 As Timer
 End Class

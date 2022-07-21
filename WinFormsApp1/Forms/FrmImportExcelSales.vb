@@ -40,13 +40,22 @@ Public Class FrmImportExcelSales
 
     Private Sub cboSheet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSheet.SelectedIndexChanged
         Try
+
+
+
+
             Dim dt As DataTable = tables(cboSheet.SelectedItem.ToString())
             'dtgImportSales.DataSource = dt
             If dt IsNot Nothing Then
-                Dim list As List(Of ImportTable) = New List(Of ImportTable)()
-                For i As Integer = 0 To dt.Rows.Count - 1
-                    Dim importable As ImportTable = New ImportTable()
+                MsgBox(dt.Rows.Count.ToString)
 
+
+                Dim list As List(Of ImportTable) = New List(Of ImportTable)()
+
+
+                For i As Integer = 0 To dt.Rows.Count - 1
+
+                    Dim importable As ImportTable = New ImportTable()
                     importable.salesdate = dt.Rows(i)("DATE").ToString()
                     importable.cluster = dt.Rows(i)("CLUSTER").ToString()
                     importable.municipality = dt.Rows(i)("BARANGAY").ToString()
@@ -86,10 +95,12 @@ Public Class FrmImportExcelSales
 
                     list.Add(importable)
                 Next
+
                 ImportTableBindingSource.DataSource = list
 
             End If
         Catch ex As Exception
+            'MsgBox(ex.ToString)
 
             MessageBox.Show("Invalid Report Format!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
@@ -98,11 +109,16 @@ Public Class FrmImportExcelSales
     Private Sub btnImport_Click(sender As Object, e As EventArgs) Handles btnImport.Click
 
         Try
+
             Dim list As List(Of ImportTable) = TryCast(ImportTableBindingSource.DataSource, List(Of ImportTable))
             If list IsNot Nothing Then
+
+
                 DapperPlusManager.Entity(Of ImportTable).Table("tb_SalesSummaryImported")
                 Using db As IDbConnection = New SqlClient.SqlConnection(mstring)
+
                     db.BulkInsert(list)
+
 
                 End Using
                 MessageBox.Show("Successfully Saved", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -118,5 +134,15 @@ Public Class FrmImportExcelSales
             MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
         End Try
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        'If ProgressBar1.Value <= ProgressBar1.Maximum - 1 Then
+        '    ProgressBar1.Value += 10
+        'End If
+    End Sub
+
+    Private Sub FrmImportExcelSales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ProgressBar1.Location = New Point((Me.Width - ProgressBar1.Width) \ 2, (Me.Height - ProgressBar1.Height) \ 2)
     End Sub
 End Class
