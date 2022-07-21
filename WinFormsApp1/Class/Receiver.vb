@@ -136,6 +136,7 @@
             FrmReceiversForm.txtAgentCode.Text = CStr(GridRow.Cells.Item("username").Value)
             FrmReceiversForm.txtCoor.Text = CStr(GridRow.Cells.Item("coordinator").Value)
             FrmReceiversForm.txtNetOndate.Text = CStr(GridRow.Cells.Item("overallnet").Value)
+            FrmReceiversForm.txtHitsOndate.Text = CStr(GridRow.Cells.Item("ondatehits").Value)
         Next datagrd
 
 
