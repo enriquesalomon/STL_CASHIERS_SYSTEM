@@ -11,6 +11,8 @@ Public Class FrmImportExcelSales
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
         Try
 
+            dtgImportSales.Rows.Clear()
+            txtFilename.Text = ""
 
             Using ofd As OpenFileDialog = New OpenFileDialog() With {.Filter = "Excel Workbook|*.xlsx|Excel 97-2003 Workbook|*.xls"}
                 If ofd.ShowDialog = DialogResult.OK Then
@@ -47,7 +49,7 @@ Public Class FrmImportExcelSales
             Dim dt As DataTable = tables(cboSheet.SelectedItem.ToString())
             'dtgImportSales.DataSource = dt
             If dt IsNot Nothing Then
-                MsgBox(dt.Rows.Count.ToString)
+
 
 
                 Dim list As List(Of ImportTable) = New List(Of ImportTable)()
@@ -149,5 +151,11 @@ Public Class FrmImportExcelSales
 
     Private Sub FrmImportExcelSales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ProgressBar1.Location = New Point((Me.Width - ProgressBar1.Width) \ 2, (Me.Height - ProgressBar1.Height) \ 2)
+    End Sub
+
+    Private Sub dtgImportSales_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dtgImportSales.CellEnter
+        If dtgImportSales.Rows.Count > 0 Then
+            lblrec.Text = "RECORD COUNT: " & (dtgImportSales.CurrentRow.Index) + 1 & " of " & dtgImportSales.Rows.Count
+        End If
     End Sub
 End Class

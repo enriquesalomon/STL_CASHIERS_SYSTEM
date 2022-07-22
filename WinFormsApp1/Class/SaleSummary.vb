@@ -100,8 +100,18 @@
 
             '    End If
             'End If
-            qryStatement = "select salesdate,cluster,municipality,rider,coordinator,agent,comm,username,overallgross,overallcomm,overallnet,overallhits,revenue from tb_SalesSummaryImported "
 
+
+            'qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where DateInserted between'" & Format(CDate(dtFromdate.Text), "yyyy-MM-dd").ToString & "' and '" & Format(CDate(dtTodate.Text), "yyyy-MM-dd").ToString & "'  order by ExamineeInfo.ExamineeNo ASC "
+
+
+            If lfind Then
+                qryStatement = "select * from [stl_cashier_db].[dbo].[tb_SalesSummaryImported] where CLUSTER like '%" & FrmGameAccountsSummary.txtSearch.Text & "%' or  MUNICIPALITY like '%" & FrmGameAccountsSummary.txtSearch.Text & "%' or  RIDER like '%" & FrmGameAccountsSummary.txtSearch.Text & "%'  or  COORDINATOR like '%" & FrmGameAccountsSummary.txtSearch.Text & "%'  or  AGENT like '%" & FrmGameAccountsSummary.txtSearch.Text & "%'  or  USERNAME like '%" & FrmGameAccountsSummary.txtSearch.Text & "%'   order by Coordinator ASC"
+
+            Else
+                qryStatement = "select salesdate,cluster,municipality,rider,coordinator,agent,comm,username,overallgross,overallcomm,overallnet,overallhits,revenue from tb_SalesSummaryImported "
+
+            End If
             Call connectSQL(conString)
             mycommand = mysqlconn.CreateCommand
             mycommand.CommandText = qryStatement
@@ -115,7 +125,7 @@
 
                     recCounter += 1
 
-                    Dim row As String() = New String() {recCounter & ".", Format(CDate(lrow("salesdate")), "MM/dd/yyyy").ToString, lrow("cluster").ToString, lrow("municipality").ToString, lrow("coordinator").ToString, lrow("agent").ToString, lrow("comm").ToString, lrow("username").ToString, lrow("overallgross").ToString, lrow("overallcomm").ToString, lrow("overallnet").ToString, lrow("overallhits").ToString, lrow("revenue").ToString, lrow("rider").ToString}
+                    Dim row As String() = New String() {recCounter & ".", Format(CDate(lrow("salesdate")), "MM/dd/yyyy").ToString, lrow("cluster").ToString, lrow("municipality").ToString, lrow("coordinator").ToString, lrow("agent").ToString, lrow("comm").ToString, lrow("username").ToString, Format(CDbl(lrow("overallgross").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallcomm").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallnet").ToString), "###,###,###.#0"), Format(CDbl(lrow("overallhits").ToString), "###,###,###.#0"), Format(CDbl(lrow("revenue").ToString), "###,###,###.#0"), lrow("rider").ToString}
                     FrmGameAccountsSummary.dtgSummary.Rows.Add(row)
                 Next
             End If

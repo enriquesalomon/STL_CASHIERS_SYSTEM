@@ -29,11 +29,17 @@ Partial Class FrmGameAccountsSummary
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.panelbottom = New System.Windows.Forms.Panel()
+        Me.lblrec = New System.Windows.Forms.Label()
         Me.panelcenter = New System.Windows.Forms.Panel()
         Me.dtgSummary = New System.Windows.Forms.DataGridView()
+        Me.paneltop = New System.Windows.Forms.Panel()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        Me.panelbottom.SuspendLayout()
         Me.panelcenter.SuspendLayout()
         CType(Me.dtgSummary, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.paneltop.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -73,19 +79,31 @@ Partial Class FrmGameAccountsSummary
         'panelbottom
         '
         Me.panelbottom.BackColor = System.Drawing.Color.White
+        Me.panelbottom.Controls.Add(Me.lblrec)
         Me.panelbottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.panelbottom.Location = New System.Drawing.Point(0, 508)
         Me.panelbottom.Name = "panelbottom"
         Me.panelbottom.Size = New System.Drawing.Size(1058, 29)
         Me.panelbottom.TabIndex = 5
         '
+        'lblrec
+        '
+        Me.lblrec.AutoSize = True
+        Me.lblrec.Dock = System.Windows.Forms.DockStyle.Right
+        Me.lblrec.Location = New System.Drawing.Point(1017, 0)
+        Me.lblrec.Name = "lblrec"
+        Me.lblrec.Size = New System.Drawing.Size(41, 15)
+        Me.lblrec.TabIndex = 0
+        Me.lblrec.Text = "Label1"
+        Me.lblrec.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'panelcenter
         '
         Me.panelcenter.Controls.Add(Me.dtgSummary)
         Me.panelcenter.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelcenter.Location = New System.Drawing.Point(0, 31)
+        Me.panelcenter.Location = New System.Drawing.Point(0, 75)
         Me.panelcenter.Name = "panelcenter"
-        Me.panelcenter.Size = New System.Drawing.Size(1058, 477)
+        Me.panelcenter.Size = New System.Drawing.Size(1058, 433)
         Me.panelcenter.TabIndex = 6
         '
         'dtgSummary
@@ -131,8 +149,35 @@ Partial Class FrmGameAccountsSummary
         Me.dtgSummary.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dtgSummary.RowTemplate.Height = 25
         Me.dtgSummary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgSummary.Size = New System.Drawing.Size(1058, 477)
+        Me.dtgSummary.Size = New System.Drawing.Size(1058, 433)
         Me.dtgSummary.TabIndex = 1
+        '
+        'paneltop
+        '
+        Me.paneltop.Controls.Add(Me.txtSearch)
+        Me.paneltop.Controls.Add(Me.Label9)
+        Me.paneltop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.paneltop.Location = New System.Drawing.Point(0, 31)
+        Me.paneltop.Name = "paneltop"
+        Me.paneltop.Size = New System.Drawing.Size(1058, 44)
+        Me.paneltop.TabIndex = 7
+        '
+        'txtSearch
+        '
+        Me.txtSearch.BackColor = System.Drawing.Color.White
+        Me.txtSearch.Location = New System.Drawing.Point(319, 11)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(468, 23)
+        Me.txtSearch.TabIndex = 27
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(272, 14)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(45, 15)
+        Me.Label9.TabIndex = 26
+        Me.Label9.Text = "Search:"
         '
         'FrmGameAccountsSummary
         '
@@ -141,6 +186,7 @@ Partial Class FrmGameAccountsSummary
         Me.ClientSize = New System.Drawing.Size(1058, 537)
         Me.Controls.Add(Me.panelcenter)
         Me.Controls.Add(Me.panelbottom)
+        Me.Controls.Add(Me.paneltop)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmGameAccountsSummary"
@@ -149,8 +195,12 @@ Partial Class FrmGameAccountsSummary
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.panelbottom.ResumeLayout(False)
+        Me.panelbottom.PerformLayout()
         Me.panelcenter.ResumeLayout(False)
         CType(Me.dtgSummary, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.paneltop.ResumeLayout(False)
+        Me.paneltop.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -161,4 +211,8 @@ Partial Class FrmGameAccountsSummary
     Friend WithEvents panelbottom As Panel
     Friend WithEvents panelcenter As Panel
     Friend WithEvents dtgSummary As DataGridView
+    Friend WithEvents paneltop As Panel
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents lblrec As Label
 End Class

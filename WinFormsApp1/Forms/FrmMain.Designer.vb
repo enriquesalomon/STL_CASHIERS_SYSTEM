@@ -104,8 +104,8 @@ Partial Class FrmMain
         Me.COLLECTIONToolStripMenuItem.Image = CType(resources.GetObject("COLLECTIONToolStripMenuItem.Image"), System.Drawing.Image)
         Me.COLLECTIONToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.COLLECTIONToolStripMenuItem.Name = "COLLECTIONToolStripMenuItem"
-        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(156, 54)
-        Me.COLLECTIONToolStripMenuItem.Text = "COLLECTIBLES"
+        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(214, 54)
+        Me.COLLECTIONToolStripMenuItem.Text = "GROSS SALES SUMMARY"
         '
         'GameAccountsSummaryToolStripMenuItem
         '
