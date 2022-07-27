@@ -39,7 +39,7 @@ Partial Class FrmReceiversForm
         Me.PaneldtgRemittances = New System.Windows.Forms.Panel()
         Me.dtgRidersCollection = New System.Windows.Forms.DataGridView()
         Me.PanelInputRemittance = New System.Windows.Forms.Panel()
-        Me.txtClaimed_OndateHits = New System.Windows.Forms.TextBox()
+        Me.txtNetRemittance = New System.Windows.Forms.TextBox()
         Me.btnPostRemittance = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnManageUnremitted = New System.Windows.Forms.Button()
@@ -247,7 +247,7 @@ Partial Class FrmReceiversForm
         'PanelInputRemittance
         '
         Me.PanelInputRemittance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PanelInputRemittance.Controls.Add(Me.txtClaimed_OndateHits)
+        Me.PanelInputRemittance.Controls.Add(Me.txtNetRemittance)
         Me.PanelInputRemittance.Controls.Add(Me.btnPostRemittance)
         Me.PanelInputRemittance.Controls.Add(Me.Panel3)
         Me.PanelInputRemittance.Controls.Add(Me.btnManageUnremitted)
@@ -267,26 +267,26 @@ Partial Class FrmReceiversForm
         Me.PanelInputRemittance.Controls.Add(Me.Panel4)
         Me.PanelInputRemittance.Location = New System.Drawing.Point(169, 79)
         Me.PanelInputRemittance.Name = "PanelInputRemittance"
-        Me.PanelInputRemittance.Size = New System.Drawing.Size(593, 402)
+        Me.PanelInputRemittance.Size = New System.Drawing.Size(593, 340)
         Me.PanelInputRemittance.TabIndex = 14
         Me.PanelInputRemittance.Visible = False
         '
-        'txtClaimed_OndateHits
+        'txtNetRemittance
         '
-        Me.txtClaimed_OndateHits.BackColor = System.Drawing.Color.White
-        Me.txtClaimed_OndateHits.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.txtClaimed_OndateHits.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.txtClaimed_OndateHits.Location = New System.Drawing.Point(10, 324)
-        Me.txtClaimed_OndateHits.Name = "txtClaimed_OndateHits"
-        Me.txtClaimed_OndateHits.Size = New System.Drawing.Size(255, 35)
-        Me.txtClaimed_OndateHits.TabIndex = 47
-        Me.txtClaimed_OndateHits.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtNetRemittance.BackColor = System.Drawing.Color.White
+        Me.txtNetRemittance.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.txtNetRemittance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.txtNetRemittance.Location = New System.Drawing.Point(23, 262)
+        Me.txtNetRemittance.Name = "txtNetRemittance"
+        Me.txtNetRemittance.Size = New System.Drawing.Size(255, 43)
+        Me.txtNetRemittance.TabIndex = 47
+        Me.txtNetRemittance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnPostRemittance
         '
-        Me.btnPostRemittance.Location = New System.Drawing.Point(10, 360)
+        Me.btnPostRemittance.Location = New System.Drawing.Point(299, 253)
         Me.btnPostRemittance.Name = "btnPostRemittance"
-        Me.btnPostRemittance.Size = New System.Drawing.Size(255, 34)
+        Me.btnPostRemittance.Size = New System.Drawing.Size(255, 64)
         Me.btnPostRemittance.TabIndex = 46
         Me.btnPostRemittance.Text = "Post Remittance"
         Me.btnPostRemittance.UseVisualStyleBackColor = True
@@ -294,15 +294,14 @@ Partial Class FrmReceiversForm
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Green
-        Me.Panel3.Location = New System.Drawing.Point(10, 215)
+        Me.Panel3.Location = New System.Drawing.Point(10, 242)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(573, 5)
         Me.Panel3.TabIndex = 45
         '
         'btnManageUnremitted
         '
-        Me.btnManageUnremitted.Enabled = False
-        Me.btnManageUnremitted.Location = New System.Drawing.Point(366, 364)
+        Me.btnManageUnremitted.Location = New System.Drawing.Point(366, 192)
         Me.btnManageUnremitted.Name = "btnManageUnremitted"
         Me.btnManageUnremitted.Size = New System.Drawing.Size(217, 34)
         Me.btnManageUnremitted.TabIndex = 44
@@ -311,18 +310,17 @@ Partial Class FrmReceiversForm
         '
         'btnManagePrevtickets
         '
-        Me.btnManagePrevtickets.Enabled = False
-        Me.btnManagePrevtickets.Location = New System.Drawing.Point(366, 324)
+        Me.btnManagePrevtickets.Location = New System.Drawing.Point(366, 152)
         Me.btnManagePrevtickets.Name = "btnManagePrevtickets"
         Me.btnManagePrevtickets.Size = New System.Drawing.Size(217, 34)
         Me.btnManagePrevtickets.TabIndex = 43
-        Me.btnManagePrevtickets.Text = "Manage Previous Tickets"
+        Me.btnManagePrevtickets.Text = "Manage Tickets"
         Me.btnManagePrevtickets.UseVisualStyleBackColor = True
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(18, 177)
+        Me.Label16.Location = New System.Drawing.Point(18, 204)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(126, 15)
         Me.Label16.TabIndex = 42
@@ -331,7 +329,7 @@ Partial Class FrmReceiversForm
         'TextBox3
         '
         Me.TextBox3.BackColor = System.Drawing.Color.White
-        Me.TextBox3.Location = New System.Drawing.Point(149, 174)
+        Me.TextBox3.Location = New System.Drawing.Point(149, 201)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(116, 23)
@@ -340,7 +338,7 @@ Partial Class FrmReceiversForm
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(23, 151)
+        Me.Label14.Location = New System.Drawing.Point(23, 178)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(120, 15)
         Me.Label14.TabIndex = 40
@@ -349,7 +347,7 @@ Partial Class FrmReceiversForm
         'TextBox2
         '
         Me.TextBox2.BackColor = System.Drawing.Color.White
-        Me.TextBox2.Location = New System.Drawing.Point(149, 148)
+        Me.TextBox2.Location = New System.Drawing.Point(149, 175)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(116, 23)
@@ -358,7 +356,7 @@ Partial Class FrmReceiversForm
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(70, 125)
+        Me.Label13.Location = New System.Drawing.Point(70, 152)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(73, 15)
         Me.Label13.TabIndex = 38
@@ -367,7 +365,7 @@ Partial Class FrmReceiversForm
         'txtHitsOndate
         '
         Me.txtHitsOndate.BackColor = System.Drawing.Color.White
-        Me.txtHitsOndate.Location = New System.Drawing.Point(149, 122)
+        Me.txtHitsOndate.Location = New System.Drawing.Point(149, 149)
         Me.txtHitsOndate.Name = "txtHitsOndate"
         Me.txtHitsOndate.ReadOnly = True
         Me.txtHitsOndate.Size = New System.Drawing.Size(116, 23)
@@ -376,7 +374,7 @@ Partial Class FrmReceiversForm
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(74, 99)
+        Me.Label10.Location = New System.Drawing.Point(74, 126)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(69, 15)
         Me.Label10.TabIndex = 22
@@ -386,7 +384,7 @@ Partial Class FrmReceiversForm
         '
         Me.txtAgentCode.BackColor = System.Drawing.Color.White
         Me.txtAgentCode.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.txtAgentCode.Location = New System.Drawing.Point(149, 44)
+        Me.txtAgentCode.Location = New System.Drawing.Point(149, 71)
         Me.txtAgentCode.Name = "txtAgentCode"
         Me.txtAgentCode.ReadOnly = True
         Me.txtAgentCode.Size = New System.Drawing.Size(116, 23)
@@ -395,7 +393,7 @@ Partial Class FrmReceiversForm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(81, 47)
+        Me.Label4.Location = New System.Drawing.Point(81, 74)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(63, 15)
         Me.Label4.TabIndex = 20
@@ -404,7 +402,7 @@ Partial Class FrmReceiversForm
         'txtNetOndate
         '
         Me.txtNetOndate.BackColor = System.Drawing.Color.White
-        Me.txtNetOndate.Location = New System.Drawing.Point(149, 96)
+        Me.txtNetOndate.Location = New System.Drawing.Point(149, 123)
         Me.txtNetOndate.Name = "txtNetOndate"
         Me.txtNetOndate.ReadOnly = True
         Me.txtNetOndate.Size = New System.Drawing.Size(116, 23)
@@ -413,7 +411,7 @@ Partial Class FrmReceiversForm
         'txtCoor
         '
         Me.txtCoor.BackColor = System.Drawing.Color.White
-        Me.txtCoor.Location = New System.Drawing.Point(149, 70)
+        Me.txtCoor.Location = New System.Drawing.Point(149, 97)
         Me.txtCoor.Name = "txtCoor"
         Me.txtCoor.ReadOnly = True
         Me.txtCoor.Size = New System.Drawing.Size(405, 23)
@@ -422,7 +420,7 @@ Partial Class FrmReceiversForm
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(70, 73)
+        Me.Label8.Location = New System.Drawing.Point(70, 100)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(74, 15)
         Me.Label8.TabIndex = 17
@@ -437,7 +435,7 @@ Partial Class FrmReceiversForm
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(591, 27)
+        Me.Panel4.Size = New System.Drawing.Size(591, 41)
         Me.Panel4.TabIndex = 0
         '
         'Label11
@@ -445,11 +443,11 @@ Partial Class FrmReceiversForm
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Goldenrod
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(564, 0)
+        Me.Label11.Location = New System.Drawing.Point(559, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(23, 23)
+        Me.Label11.Size = New System.Drawing.Size(28, 28)
         Me.Label11.TabIndex = 8
         Me.Label11.Text = "X"
         '
@@ -457,11 +455,11 @@ Partial Class FrmReceiversForm
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Goldenrod
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(2, 4)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(179, 16)
+        Me.Label7.Size = New System.Drawing.Size(283, 25)
         Me.Label7.TabIndex = 7
         Me.Label7.Text = "INPUT REMITTANCE DETAILS"
         '
@@ -570,6 +568,6 @@ Partial Class FrmReceiversForm
     Friend WithEvents btnManageUnremitted As Button
     Friend WithEvents btnManagePrevtickets As Button
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents txtClaimed_OndateHits As TextBox
+    Friend WithEvents txtNetRemittance As TextBox
     Friend WithEvents btnPostRemittance As Button
 End Class

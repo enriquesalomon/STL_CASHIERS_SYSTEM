@@ -100,23 +100,23 @@
         Me.Cursor = Cursors.Default
     End Sub
 
-    Private Sub txtClaimed_OndateHits_GotFocus(sender As Object, e As EventArgs) Handles txtClaimed_OndateHits.GotFocus
-        BackForeColorMeDigitTextbox(txtClaimed_OndateHits, True)
+    Private Sub txtClaimed_OndateHits_GotFocus(sender As Object, e As EventArgs) Handles txtNetRemittance.GotFocus
+        BackForeColorMeDigitTextbox(txtNetRemittance, True)
 
     End Sub
 
-    Private Sub txtClaimed_OndateHits_LostFocus(sender As Object, e As EventArgs) Handles txtClaimed_OndateHits.LostFocus
-        BackForeColorMeDigitTextbox(txtClaimed_OndateHits, False)
+    Private Sub txtClaimed_OndateHits_LostFocus(sender As Object, e As EventArgs) Handles txtNetRemittance.LostFocus
+        BackForeColorMeDigitTextbox(txtNetRemittance, False)
     End Sub
 
     Private Sub btnPostRemittance_Click(sender As Object, e As EventArgs) Handles btnPostRemittance.Click
-        If txtClaimed_OndateHits.Text = "" Then
+        'If txtNetRemittance.Text = "" Then
 
-            Exit Sub
-        Else
-            btnManagePrevtickets.Enabled = True
-            btnManageUnremitted.Enabled = True
-        End If
+        '    Exit Sub
+        'Else
+        '    btnManagePrevtickets.Enabled = True
+        '    btnManageUnremitted.Enabled = True
+        'End If
     End Sub
 
     Private Sub PanelInputRemittance_LostFocus(sender As Object, e As EventArgs) Handles PanelInputRemittance.LostFocus
@@ -128,20 +128,20 @@
     End Sub
 
     Private Sub dtgRidersCollection_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgRidersCollection.CellClick
-        btnManagePrevtickets.Enabled = False
-        btnManageUnremitted.Enabled = False
+        'btnManagePrevtickets.Enabled = False
+        'btnManageUnremitted.Enabled = False
     End Sub
 
     Private Sub dtgRidersCollection_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dtgRidersCollection.CellEnter
-        btnManagePrevtickets.Enabled = False
-        btnManageUnremitted.Enabled = False
+        'btnManagePrevtickets.Enabled = False
+        'btnManageUnremitted.Enabled = False
     End Sub
 
-    Private Sub txtClaimed_OndateHits_TextChanged(sender As Object, e As EventArgs) Handles txtClaimed_OndateHits.TextChanged
+    Private Sub txtClaimed_OndateHits_TextChanged(sender As Object, e As EventArgs) Handles txtNetRemittance.TextChanged
 
     End Sub
 
-    Private Sub txtClaimed_OndateHits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtClaimed_OndateHits.KeyPress
+    Private Sub txtClaimed_OndateHits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNetRemittance.KeyPress
         Try
             If Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar) Then
                 MsgBox("Input Only Number Value", MsgBoxStyle.Information)
@@ -151,5 +151,9 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub btnManagePrevtickets_Click(sender As Object, e As EventArgs) Handles btnManagePrevtickets.Click
+        FrmTicketEntry.ShowDialog()
     End Sub
 End Class
