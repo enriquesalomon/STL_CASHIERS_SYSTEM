@@ -46,4 +46,10 @@
 
         End If
     End Sub
+
+    Private Sub dtgReceiversFormList_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dtgReceiversFormList.CellEnter
+        If dtgReceiversFormList.Rows.Count > 0 Then
+            lblrec.Text = "RECORD COUNT: " & (dtgReceiversFormList.CurrentRow.Index) + 1 & " of " & dtgReceiversFormList.Rows.Count
+        End If
+    End Sub
 End Class

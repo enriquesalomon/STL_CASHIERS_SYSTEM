@@ -42,6 +42,7 @@ Partial Class FrmReceiversEntry
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ManageRemittanceFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteRemittanceFormRecordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblrec = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.panelbottom.SuspendLayout()
@@ -109,6 +110,7 @@ Partial Class FrmReceiversEntry
         'panelbottom
         '
         Me.panelbottom.BackColor = System.Drawing.Color.White
+        Me.panelbottom.Controls.Add(Me.lblrec)
         Me.panelbottom.Controls.Add(Me.Button6)
         Me.panelbottom.Controls.Add(Me.Button5)
         Me.panelbottom.Controls.Add(Me.Button4)
@@ -240,6 +242,17 @@ Partial Class FrmReceiversEntry
         Me.DeleteRemittanceFormRecordToolStripMenuItem.Size = New System.Drawing.Size(241, 22)
         Me.DeleteRemittanceFormRecordToolStripMenuItem.Text = "Delete Remittance Form Record"
         '
+        'lblrec
+        '
+        Me.lblrec.AutoSize = True
+        Me.lblrec.Dock = System.Windows.Forms.DockStyle.Right
+        Me.lblrec.Location = New System.Drawing.Point(1197, 0)
+        Me.lblrec.Name = "lblrec"
+        Me.lblrec.Size = New System.Drawing.Size(41, 15)
+        Me.lblrec.TabIndex = 5
+        Me.lblrec.Text = "Label1"
+        Me.lblrec.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'FrmReceiversEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -258,6 +271,7 @@ Partial Class FrmReceiversEntry
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.panelbottom.ResumeLayout(False)
+        Me.panelbottom.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         CType(Me.dtgReceiversFormList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
@@ -281,4 +295,5 @@ Partial Class FrmReceiversEntry
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents ManageRemittanceFormToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteRemittanceFormRecordToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents lblrec As Label
 End Class

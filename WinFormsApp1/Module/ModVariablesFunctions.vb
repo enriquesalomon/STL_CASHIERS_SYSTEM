@@ -60,6 +60,18 @@ Module ModVariablesFunctions
         End If
 
     End Sub
+
+    Public Sub BackForeColorMeDigitTextbox(ByVal Textbox As Object, ByVal lfocus As Boolean)
+
+        If lfocus Then
+            Textbox.backcolor = Color.Black
+            Textbox.forecolor = Color.White
+        Else
+            Textbox.backcolor = Color.White
+            Textbox.forecolor = Color.Black
+        End If
+
+    End Sub
     Public Function remove_mask(ByVal m_parameter As String) As Object
         Dim retval As String, ctr As Integer
         Dim mskval As Double

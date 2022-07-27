@@ -91,7 +91,7 @@
         FrmReceiversForm.dtgRidersCollection.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
 
-        FrmReceiversForm.dtgRidersCollection.Columns(6).HeaderText = "CLAIMED HITS"
+        FrmReceiversForm.dtgRidersCollection.Columns(6).HeaderText = "TOTAL CLAIMED HITS"
         FrmReceiversForm.dtgRidersCollection.Columns(6).Width = 70
         FrmReceiversForm.dtgRidersCollection.Columns(6).Name = "claimedhits"
         FrmReceiversForm.dtgRidersCollection.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
