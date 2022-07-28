@@ -31,10 +31,21 @@
         lfind = True
     End Sub
 
-
+    Public searchagentcode As Boolean
+    Public searchcoor As Boolean
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         If lfind Then
-            myriders.LoadRidersCollectionRecord()
+            If cmbSearch.Text <> Nothing Then
+                If cmbSearch.Text = "AGENT CODE" Then
+                    searchagentcode = True
+                    searchcoor = False
+                Else
+                    searchagentcode = False
+                    searchcoor = True
+                End If
+                myriders.LoadRidersCollectionRecord()
+            End If
+
         End If
     End Sub
 
@@ -155,5 +166,11 @@
 
     Private Sub btnManagePrevtickets_Click(sender As Object, e As EventArgs) Handles btnManagePrevtickets.Click
         FrmTicketEntry.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        cmbSearch.Text = Nothing
+        txtSearch.Clear()
+        myriders.LoadRidersCollectionRecord()
     End Sub
 End Class

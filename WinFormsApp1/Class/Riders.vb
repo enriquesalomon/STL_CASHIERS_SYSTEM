@@ -114,10 +114,18 @@
         qryStatement = ""
 
         If lfind Then
-            qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_DailySalesAccountRemittance] where RFID='" & FrmReceiversEntry.rfnumber & "' and  RIDER ='" & FrmReceiversEntry.rfridername & "' and USERNAME like '%" & Trim(FrmReceiversForm.txtSearch.Text) & "%' or COORDINATOR like '%" & Trim(FrmReceiversForm.txtSearch.Text) & "%'  order by Coordinator ASC"
+
+            If FrmReceiversForm.searchagentcode Then
+                qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_DailySalesAccountRemittance] where  USERNAME like '%" & Trim(FrmReceiversForm.txtSearch.Text) & "%' AND RFID='" & FrmReceiversEntry.rfnumber & "' AND  RIDER ='" & FrmReceiversEntry.rfridername & "'  order by Coordinator ASC"
+
+            ElseIf FrmReceiversForm.searchcoor Then
+                qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_DailySalesAccountRemittance] where   COORDINATOR like '%" & Trim(FrmReceiversForm.txtSearch.Text) & "%' AND RFID='" & FrmReceiversEntry.rfnumber & "' AND  RIDER ='" & FrmReceiversEntry.rfridername & "'  order by Coordinator ASC"
+
+
+            End If
 
         Else
-            qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_DailySalesAccountRemittance] where RFID='" & FrmReceiversEntry.rfnumber & "' and  RIDER ='" & FrmReceiversEntry.rfridername & "'  order by Coordinator ASC"
+            qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_DailySalesAccountRemittance] where  RIDER ='" & FrmReceiversEntry.rfridername & "' AND  RFID='" & FrmReceiversEntry.rfnumber & "'   order by Coordinator ASC"
 
         End If
 

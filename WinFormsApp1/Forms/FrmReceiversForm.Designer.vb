@@ -39,6 +39,7 @@ Partial Class FrmReceiversForm
         Me.PaneldtgRemittances = New System.Windows.Forms.Panel()
         Me.dtgRidersCollection = New System.Windows.Forms.DataGridView()
         Me.PanelInputRemittance = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.txtNetRemittance = New System.Windows.Forms.TextBox()
         Me.btnPostRemittance = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -60,6 +61,8 @@ Partial Class FrmReceiversForm
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PanelSearch = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.cmbSearch = New System.Windows.Forms.ComboBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.panelBottom = New System.Windows.Forms.Panel()
@@ -247,6 +250,7 @@ Partial Class FrmReceiversForm
         'PanelInputRemittance
         '
         Me.PanelInputRemittance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelInputRemittance.Controls.Add(Me.Label12)
         Me.PanelInputRemittance.Controls.Add(Me.txtNetRemittance)
         Me.PanelInputRemittance.Controls.Add(Me.btnPostRemittance)
         Me.PanelInputRemittance.Controls.Add(Me.Panel3)
@@ -267,24 +271,33 @@ Partial Class FrmReceiversForm
         Me.PanelInputRemittance.Controls.Add(Me.Panel4)
         Me.PanelInputRemittance.Location = New System.Drawing.Point(169, 79)
         Me.PanelInputRemittance.Name = "PanelInputRemittance"
-        Me.PanelInputRemittance.Size = New System.Drawing.Size(593, 340)
+        Me.PanelInputRemittance.Size = New System.Drawing.Size(551, 338)
         Me.PanelInputRemittance.TabIndex = 14
         Me.PanelInputRemittance.Visible = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(22, 262)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(127, 15)
+        Me.Label12.TabIndex = 48
+        Me.Label12.Text = "Net Amount Remitted:"
         '
         'txtNetRemittance
         '
         Me.txtNetRemittance.BackColor = System.Drawing.Color.White
         Me.txtNetRemittance.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.txtNetRemittance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.txtNetRemittance.Location = New System.Drawing.Point(23, 262)
+        Me.txtNetRemittance.Location = New System.Drawing.Point(23, 280)
         Me.txtNetRemittance.Name = "txtNetRemittance"
-        Me.txtNetRemittance.Size = New System.Drawing.Size(255, 43)
+        Me.txtNetRemittance.Size = New System.Drawing.Size(242, 43)
         Me.txtNetRemittance.TabIndex = 47
         Me.txtNetRemittance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnPostRemittance
         '
-        Me.btnPostRemittance.Location = New System.Drawing.Point(299, 253)
+        Me.btnPostRemittance.Location = New System.Drawing.Point(271, 259)
         Me.btnPostRemittance.Name = "btnPostRemittance"
         Me.btnPostRemittance.Size = New System.Drawing.Size(255, 64)
         Me.btnPostRemittance.TabIndex = 46
@@ -296,12 +309,12 @@ Partial Class FrmReceiversForm
         Me.Panel3.BackColor = System.Drawing.Color.Green
         Me.Panel3.Location = New System.Drawing.Point(10, 242)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(573, 5)
+        Me.Panel3.Size = New System.Drawing.Size(529, 5)
         Me.Panel3.TabIndex = 45
         '
         'btnManageUnremitted
         '
-        Me.btnManageUnremitted.Location = New System.Drawing.Point(366, 192)
+        Me.btnManageUnremitted.Location = New System.Drawing.Point(309, 192)
         Me.btnManageUnremitted.Name = "btnManageUnremitted"
         Me.btnManageUnremitted.Size = New System.Drawing.Size(217, 34)
         Me.btnManageUnremitted.TabIndex = 44
@@ -310,7 +323,7 @@ Partial Class FrmReceiversForm
         '
         'btnManagePrevtickets
         '
-        Me.btnManagePrevtickets.Location = New System.Drawing.Point(366, 152)
+        Me.btnManagePrevtickets.Location = New System.Drawing.Point(309, 154)
         Me.btnManagePrevtickets.Name = "btnManagePrevtickets"
         Me.btnManagePrevtickets.Size = New System.Drawing.Size(217, 34)
         Me.btnManagePrevtickets.TabIndex = 43
@@ -414,7 +427,7 @@ Partial Class FrmReceiversForm
         Me.txtCoor.Location = New System.Drawing.Point(149, 97)
         Me.txtCoor.Name = "txtCoor"
         Me.txtCoor.ReadOnly = True
-        Me.txtCoor.Size = New System.Drawing.Size(405, 23)
+        Me.txtCoor.Size = New System.Drawing.Size(327, 23)
         Me.txtCoor.TabIndex = 18
         '
         'Label8
@@ -435,7 +448,7 @@ Partial Class FrmReceiversForm
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(591, 41)
+        Me.Panel4.Size = New System.Drawing.Size(549, 41)
         Me.Panel4.TabIndex = 0
         '
         'Label11
@@ -445,7 +458,7 @@ Partial Class FrmReceiversForm
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(559, 0)
+        Me.Label11.Location = New System.Drawing.Point(517, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(28, 28)
         Me.Label11.TabIndex = 8
@@ -466,6 +479,8 @@ Partial Class FrmReceiversForm
         'PanelSearch
         '
         Me.PanelSearch.BackColor = System.Drawing.SystemColors.Control
+        Me.PanelSearch.Controls.Add(Me.Button1)
+        Me.PanelSearch.Controls.Add(Me.cmbSearch)
         Me.PanelSearch.Controls.Add(Me.txtSearch)
         Me.PanelSearch.Controls.Add(Me.Label9)
         Me.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top
@@ -474,18 +489,37 @@ Partial Class FrmReceiversForm
         Me.PanelSearch.Size = New System.Drawing.Size(685, 55)
         Me.PanelSearch.TabIndex = 15
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(605, 13)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(59, 26)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Refresh"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'cmbSearch
+        '
+        Me.cmbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbSearch.FormattingEnabled = True
+        Me.cmbSearch.Items.AddRange(New Object() {"AGENT CODE", "COORDINATOR"})
+        Me.cmbSearch.Location = New System.Drawing.Point(13, 13)
+        Me.cmbSearch.Name = "cmbSearch"
+        Me.cmbSearch.Size = New System.Drawing.Size(121, 23)
+        Me.cmbSearch.TabIndex = 26
+        '
         'txtSearch
         '
         Me.txtSearch.BackColor = System.Drawing.Color.White
-        Me.txtSearch.Location = New System.Drawing.Point(136, 14)
+        Me.txtSearch.Location = New System.Drawing.Point(192, 14)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(468, 23)
+        Me.txtSearch.Size = New System.Drawing.Size(407, 23)
         Me.txtSearch.TabIndex = 25
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(89, 17)
+        Me.Label9.Location = New System.Drawing.Point(145, 17)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(45, 15)
         Me.Label9.TabIndex = 24
@@ -570,4 +604,7 @@ Partial Class FrmReceiversForm
     Friend WithEvents Panel3 As Panel
     Friend WithEvents txtNetRemittance As TextBox
     Friend WithEvents btnPostRemittance As Button
+    Friend WithEvents cmbSearch As ComboBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label12 As Label
 End Class

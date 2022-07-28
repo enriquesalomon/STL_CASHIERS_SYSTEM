@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmRidersDailySummary
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmRidersDailySummary
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -45,7 +45,6 @@ Partial Class FrmRidersDailySummary
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnGenerateRFForm = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dtgRidersCollection, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelRider.SuspendLayout()
@@ -226,7 +225,6 @@ Partial Class FrmRidersDailySummary
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.lblridername)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.lblDate)
@@ -312,15 +310,6 @@ Partial Class FrmRidersDailySummary
         Me.Panel5.Size = New System.Drawing.Size(649, 449)
         Me.Panel5.TabIndex = 16
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(555, 15)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'FrmRidersDailySummary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -369,5 +358,4 @@ Partial Class FrmRidersDailySummary
     Friend WithEvents Label7 As Label
     Friend WithEvents btnGenerateRFForm As Button
     Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents Button1 As Button
 End Class
