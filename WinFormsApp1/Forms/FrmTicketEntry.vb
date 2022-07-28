@@ -21,6 +21,7 @@
 
     Private Sub FrmTicketEntry_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Panelentry.Location = New Point((Me.Width - Panelentry.Width) \ 2, (Me.Height - Panelentry.Height) \ 2)
+        dtpDrawDate.CustomFormat = "MM/dd/yyyy"
 
     End Sub
 
@@ -29,6 +30,53 @@
     End Sub
 
     Private Sub btnSaveOndate_Click(sender As Object, e As EventArgs) Handles btnSaveOndate.Click
-        Panelentry.Visible = False
+
+        'validate draw date inputted is previous
+        If dateValueinDrawdate = dtpDrawDate.Value Then
+            MessageBox.Show("Ticket is not a Previous", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+        If dateValueinDrawdate < dtpDrawDate.Value Then
+            MessageBox.Show("Ticket is not a Previous", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        End If
+        If dateValueinDrawdate > dtpDrawDate.Value Then
+            MessageBox.Show("Ticket is  a Previous", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Panelentry.Visible = False
+        End If
+
+
+    End Sub
+    Dim dateValueinDrawdate As Date
+    Private Sub cmbSearch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTicketType.SelectedIndexChanged
+        If cmbTicketType.Text = "ONDATE" Then
+            Dim dateString As String = FrmReceiversForm.txtDateofSales.Text
+            Dim dateFormat As String = "MM/dd/yyyy"
+
+            dateValueinDrawdate = DateTime.ParseExact(dateString, dateFormat, Globalization.CultureInfo.InvariantCulture)
+            dtpDrawDate.Value = dateValueinDrawdate
+            dtpDrawDate.Enabled = False
+        ElseIf cmbTicketType.Text = "PREVIOUS" Then
+            dtpDrawDate.Enabled = True
+
+
+        Else
+
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+        Me.Close()
+    End Sub
+
+    Private Sub txtWinningAmount_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtWinningAmount.KeyPress
+        Try
+            If Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar) Then
+                MsgBox("Input Only Number Value", MsgBoxStyle.Information)
+                e.Handled = True
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

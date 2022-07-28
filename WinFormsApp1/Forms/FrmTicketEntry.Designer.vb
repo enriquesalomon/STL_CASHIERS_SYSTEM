@@ -37,9 +37,9 @@ Partial Class FrmTicketEntry
         Me.paneldtgList = New System.Windows.Forms.Panel()
         Me.Panelentry = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.cmbSearch = New System.Windows.Forms.ComboBox()
+        Me.cmbTicketType = New System.Windows.Forms.ComboBox()
         Me.txtWinningAmount = New System.Windows.Forms.TextBox()
-        Me.dtpOndateDrawDate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDrawDate = New System.Windows.Forms.DateTimePicker()
         Me.btnSaveOndate = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -178,9 +178,9 @@ Partial Class FrmTicketEntry
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panelentry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panelentry.Controls.Add(Me.Label1)
-        Me.Panelentry.Controls.Add(Me.cmbSearch)
+        Me.Panelentry.Controls.Add(Me.cmbTicketType)
         Me.Panelentry.Controls.Add(Me.txtWinningAmount)
-        Me.Panelentry.Controls.Add(Me.dtpOndateDrawDate)
+        Me.Panelentry.Controls.Add(Me.dtpDrawDate)
         Me.Panelentry.Controls.Add(Me.btnSaveOndate)
         Me.Panelentry.Controls.Add(Me.Label2)
         Me.Panelentry.Controls.Add(Me.Label4)
@@ -203,15 +203,15 @@ Partial Class FrmTicketEntry
         Me.Label1.TabIndex = 50
         Me.Label1.Text = "TICKET TYPE:"
         '
-        'cmbSearch
+        'cmbTicketType
         '
-        Me.cmbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbSearch.FormattingEnabled = True
-        Me.cmbSearch.Items.AddRange(New Object() {"ONDATE", "PREVIOUS"})
-        Me.cmbSearch.Location = New System.Drawing.Point(132, 38)
-        Me.cmbSearch.Name = "cmbSearch"
-        Me.cmbSearch.Size = New System.Drawing.Size(174, 23)
-        Me.cmbSearch.TabIndex = 49
+        Me.cmbTicketType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTicketType.FormattingEnabled = True
+        Me.cmbTicketType.Items.AddRange(New Object() {"ONDATE", "PREVIOUS"})
+        Me.cmbTicketType.Location = New System.Drawing.Point(132, 38)
+        Me.cmbTicketType.Name = "cmbTicketType"
+        Me.cmbTicketType.Size = New System.Drawing.Size(174, 23)
+        Me.cmbTicketType.TabIndex = 49
         '
         'txtWinningAmount
         '
@@ -224,13 +224,13 @@ Partial Class FrmTicketEntry
         Me.txtWinningAmount.TabIndex = 48
         Me.txtWinningAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'dtpOndateDrawDate
+        'dtpDrawDate
         '
-        Me.dtpOndateDrawDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpOndateDrawDate.Location = New System.Drawing.Point(132, 67)
-        Me.dtpOndateDrawDate.Name = "dtpOndateDrawDate"
-        Me.dtpOndateDrawDate.Size = New System.Drawing.Size(174, 23)
-        Me.dtpOndateDrawDate.TabIndex = 19
+        Me.dtpDrawDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDrawDate.Location = New System.Drawing.Point(132, 67)
+        Me.dtpDrawDate.Name = "dtpDrawDate"
+        Me.dtpDrawDate.Size = New System.Drawing.Size(174, 23)
+        Me.dtpDrawDate.TabIndex = 19
         '
         'btnSaveOndate
         '
@@ -357,10 +357,12 @@ Partial Class FrmTicketEntry
         Me.Controls.Add(Me.panelBottom)
         Me.Controls.Add(Me.PanelSearch)
         Me.Controls.Add(Me.Panel4)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(487, 598)
+        Me.MinimizeBox = False
         Me.Name = "FrmTicketEntry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmTicketEntry"
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.PanelSearch.ResumeLayout(False)
@@ -389,7 +391,7 @@ Partial Class FrmTicketEntry
     Friend WithEvents btnAdd As Button
     Friend WithEvents Panelentry As Panel
     Friend WithEvents txtWinningAmount As TextBox
-    Friend WithEvents dtpOndateDrawDate As DateTimePicker
+    Friend WithEvents dtpDrawDate As DateTimePicker
     Friend WithEvents btnSaveOndate As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
@@ -397,5 +399,5 @@ Partial Class FrmTicketEntry
     Friend WithEvents Label5 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents cmbSearch As ComboBox
+    Friend WithEvents cmbTicketType As ComboBox
 End Class

@@ -32,6 +32,7 @@ Partial Class FrmReceiversEntry
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.panelbottom = New System.Windows.Forms.Panel()
+        Me.lblrec = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -42,7 +43,6 @@ Partial Class FrmReceiversEntry
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ManageRemittanceFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteRemittanceFormRecordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.lblrec = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.panelbottom.SuspendLayout()
@@ -121,6 +121,17 @@ Partial Class FrmReceiversEntry
         Me.panelbottom.Name = "panelbottom"
         Me.panelbottom.Size = New System.Drawing.Size(1238, 39)
         Me.panelbottom.TabIndex = 5
+        '
+        'lblrec
+        '
+        Me.lblrec.AutoSize = True
+        Me.lblrec.Dock = System.Windows.Forms.DockStyle.Right
+        Me.lblrec.Location = New System.Drawing.Point(1197, 0)
+        Me.lblrec.Name = "lblrec"
+        Me.lblrec.Size = New System.Drawing.Size(41, 15)
+        Me.lblrec.TabIndex = 5
+        Me.lblrec.Text = "Label1"
+        Me.lblrec.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Button6
         '
@@ -241,17 +252,6 @@ Partial Class FrmReceiversEntry
         Me.DeleteRemittanceFormRecordToolStripMenuItem.Name = "DeleteRemittanceFormRecordToolStripMenuItem"
         Me.DeleteRemittanceFormRecordToolStripMenuItem.Size = New System.Drawing.Size(241, 22)
         Me.DeleteRemittanceFormRecordToolStripMenuItem.Text = "Delete Remittance Form Record"
-        '
-        'lblrec
-        '
-        Me.lblrec.AutoSize = True
-        Me.lblrec.Dock = System.Windows.Forms.DockStyle.Right
-        Me.lblrec.Location = New System.Drawing.Point(1197, 0)
-        Me.lblrec.Name = "lblrec"
-        Me.lblrec.Size = New System.Drawing.Size(41, 15)
-        Me.lblrec.TabIndex = 5
-        Me.lblrec.Text = "Label1"
-        Me.lblrec.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FrmReceiversEntry
         '
