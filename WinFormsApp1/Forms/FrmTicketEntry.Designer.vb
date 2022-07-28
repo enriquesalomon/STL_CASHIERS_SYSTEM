@@ -26,6 +26,8 @@ Partial Class FrmTicketEntry
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lblagentcode = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PanelSearch = New System.Windows.Forms.Panel()
         Me.txtSearch = New System.Windows.Forms.TextBox()
@@ -60,12 +62,38 @@ Partial Class FrmTicketEntry
         '
         Me.Panel4.BackColor = System.Drawing.Color.Goldenrod
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel4.Controls.Add(Me.lblagentcode)
+        Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Controls.Add(Me.Label7)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(471, 41)
+        Me.Panel4.Size = New System.Drawing.Size(612, 41)
         Me.Panel4.TabIndex = 1
+        '
+        'lblagentcode
+        '
+        Me.lblagentcode.AutoSize = True
+        Me.lblagentcode.BackColor = System.Drawing.Color.Goldenrod
+        Me.lblagentcode.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lblagentcode.ForeColor = System.Drawing.Color.White
+        Me.lblagentcode.Location = New System.Drawing.Point(393, 7)
+        Me.lblagentcode.Name = "lblagentcode"
+        Me.lblagentcode.Size = New System.Drawing.Size(154, 25)
+        Me.lblagentcode.TabIndex = 9
+        Me.lblagentcode.Text = "AGENT CODE:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Goldenrod
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(233, 6)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(154, 25)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "AGENT CODE:"
         '
         'Label7
         '
@@ -87,7 +115,7 @@ Partial Class FrmTicketEntry
         Me.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSearch.Location = New System.Drawing.Point(0, 41)
         Me.PanelSearch.Name = "PanelSearch"
-        Me.PanelSearch.Size = New System.Drawing.Size(471, 55)
+        Me.PanelSearch.Size = New System.Drawing.Size(612, 55)
         Me.PanelSearch.TabIndex = 16
         '
         'txtSearch
@@ -98,7 +126,7 @@ Partial Class FrmTicketEntry
         Me.txtSearch.BackColor = System.Drawing.Color.White
         Me.txtSearch.Location = New System.Drawing.Point(94, 11)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(320, 23)
+        Me.txtSearch.Size = New System.Drawing.Size(461, 23)
         Me.txtSearch.TabIndex = 25
         '
         'Label9
@@ -122,7 +150,7 @@ Partial Class FrmTicketEntry
         Me.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.panelBottom.Location = New System.Drawing.Point(0, 518)
         Me.panelBottom.Name = "panelBottom"
-        Me.panelBottom.Size = New System.Drawing.Size(471, 41)
+        Me.panelBottom.Size = New System.Drawing.Size(612, 41)
         Me.panelBottom.TabIndex = 17
         '
         'btnDelete
@@ -130,9 +158,9 @@ Partial Class FrmTicketEntry
         Me.btnDelete.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDelete.Location = New System.Drawing.Point(298, 6)
+        Me.btnDelete.Location = New System.Drawing.Point(342, 6)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(99, 27)
+        Me.btnDelete.Size = New System.Drawing.Size(111, 27)
         Me.btnDelete.TabIndex = 2
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
@@ -142,9 +170,9 @@ Partial Class FrmTicketEntry
         Me.btnEdit.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnEdit.Location = New System.Drawing.Point(196, 6)
+        Me.btnEdit.Location = New System.Drawing.Point(240, 6)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(99, 27)
+        Me.btnEdit.Size = New System.Drawing.Size(96, 27)
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.UseVisualStyleBackColor = True
@@ -154,9 +182,9 @@ Partial Class FrmTicketEntry
         Me.btnAdd.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAdd.Location = New System.Drawing.Point(94, 6)
+        Me.btnAdd.Location = New System.Drawing.Point(138, 6)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(99, 27)
+        Me.btnAdd.Size = New System.Drawing.Size(96, 27)
         Me.btnAdd.TabIndex = 0
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -168,7 +196,7 @@ Partial Class FrmTicketEntry
         Me.paneldtgList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.paneldtgList.Location = New System.Drawing.Point(0, 96)
         Me.paneldtgList.Name = "paneldtgList"
-        Me.paneldtgList.Size = New System.Drawing.Size(471, 422)
+        Me.paneldtgList.Size = New System.Drawing.Size(612, 422)
         Me.paneldtgList.TabIndex = 18
         '
         'Panelentry
@@ -185,9 +213,9 @@ Partial Class FrmTicketEntry
         Me.Panelentry.Controls.Add(Me.Label2)
         Me.Panelentry.Controls.Add(Me.Label4)
         Me.Panelentry.Controls.Add(Me.Panel2)
-        Me.Panelentry.Location = New System.Drawing.Point(76, 81)
+        Me.Panelentry.Location = New System.Drawing.Point(152, 84)
         Me.Panelentry.Name = "Panelentry"
-        Me.Panelentry.Size = New System.Drawing.Size(318, 170)
+        Me.Panelentry.Size = New System.Drawing.Size(333, 170)
         Me.Panelentry.TabIndex = 17
         Me.Panelentry.Visible = False
         '
@@ -247,11 +275,11 @@ Partial Class FrmTicketEntry
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(9, 97)
+        Me.Label2.Location = New System.Drawing.Point(32, 97)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(122, 17)
+        Me.Label2.Size = New System.Drawing.Size(98, 17)
         Me.Label2.TabIndex = 16
-        Me.Label2.Text = "WINNING AMOUNT:"
+        Me.Label2.Text = "WON AMOUNT:"
         '
         'Label4
         '
@@ -259,7 +287,7 @@ Partial Class FrmTicketEntry
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(50, 72)
+        Me.Label4.Location = New System.Drawing.Point(49, 72)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(81, 17)
         Me.Label4.TabIndex = 15
@@ -273,7 +301,7 @@ Partial Class FrmTicketEntry
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(316, 27)
+        Me.Panel2.Size = New System.Drawing.Size(331, 27)
         Me.Panel2.TabIndex = 0
         '
         'Label5
@@ -283,7 +311,7 @@ Partial Class FrmTicketEntry
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(288, 0)
+        Me.Label5.Location = New System.Drawing.Point(303, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(28, 28)
         Me.Label5.TabIndex = 9
@@ -345,21 +373,21 @@ Partial Class FrmTicketEntry
         Me.dtgTickets.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dtgTickets.RowTemplate.Height = 25
         Me.dtgTickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgTickets.Size = New System.Drawing.Size(471, 422)
+        Me.dtgTickets.Size = New System.Drawing.Size(612, 422)
         Me.dtgTickets.TabIndex = 4
         '
         'FrmTicketEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(471, 559)
+        Me.ClientSize = New System.Drawing.Size(612, 559)
         Me.Controls.Add(Me.paneldtgList)
         Me.Controls.Add(Me.panelBottom)
         Me.Controls.Add(Me.PanelSearch)
         Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(487, 598)
+        Me.MaximumSize = New System.Drawing.Size(628, 598)
         Me.MinimizeBox = False
         Me.Name = "FrmTicketEntry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -400,4 +428,6 @@ Partial Class FrmTicketEntry
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents cmbTicketType As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents lblagentcode As Label
 End Class

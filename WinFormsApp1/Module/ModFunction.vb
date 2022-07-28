@@ -20,6 +20,7 @@ Module ModFunction
     Public mysalessummary As New SaleSummary
     Public myriders As New Riders
     Public myreceiver As New Receiver
+    Public mytickets As New Tickets
 
 
 

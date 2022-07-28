@@ -22,6 +22,8 @@
     Private Sub FrmTicketEntry_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Panelentry.Location = New Point((Me.Width - Panelentry.Width) \ 2, (Me.Height - Panelentry.Height) \ 2)
         dtpDrawDate.CustomFormat = "MM/dd/yyyy"
+        lblagentcode.Text = FrmReceiversForm.txtAgentCode.Text
+        mytickets.LoadRecord()
 
     End Sub
 
@@ -30,19 +32,31 @@
     End Sub
 
     Private Sub btnSaveOndate_Click(sender As Object, e As EventArgs) Handles btnSaveOndate.Click
+        If cmbTicketType.Text = Nothing Then
+            MessageBox.Show("Please Select Ticket Type", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            Exit Sub
+        End If
         'validate draw date inputted is previous
-        If dateValueinDrawdate = dtpDrawDate.Value Then
-            MessageBox.Show("Ticket is not a Previous", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-        If dateValueinDrawdate < dtpDrawDate.Value Then
-            MessageBox.Show("Ticket is not a Previous", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        If cmbTicketType.Text = "PREVIOUS" Then
+            If dateValueinDrawdate = dtpDrawDate.Value Then
+                MessageBox.Show("Ticket is not a Previous", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            End If
+            If dateValueinDrawdate < dtpDrawDate.Value Then
+                MessageBox.Show("Ticket is not a Previous", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            End If
+            If dateValueinDrawdate > dtpDrawDate.Value Then
+                'saving
+                mytickets.Save()
+            End If
 
+        Else
+            'saving
+            mytickets.Save()
         End If
-        If dateValueinDrawdate > dtpDrawDate.Value Then
-            MessageBox.Show("Ticket is  a Previous", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Panelentry.Visible = False
-        End If
+
 
 
     End Sub
