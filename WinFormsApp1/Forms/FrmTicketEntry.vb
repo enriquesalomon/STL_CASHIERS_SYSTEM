@@ -37,6 +37,9 @@
 
             Exit Sub
         End If
+        If txtWinningAmount.Text = "" Then
+            Exit Sub
+        End If
         'validate draw date inputted is previous
         If cmbTicketType.Text = "PREVIOUS" Then
             If dateValueinDrawdate = dtpDrawDate.Value Then
@@ -48,6 +51,10 @@
                 Exit Sub
             End If
             If dateValueinDrawdate > dtpDrawDate.Value Then
+                'saving
+                mytickets.Save()
+            End If
+            If dateValueinDrawdate < dtpDrawDate.Value Then
                 'saving
                 mytickets.Save()
             End If

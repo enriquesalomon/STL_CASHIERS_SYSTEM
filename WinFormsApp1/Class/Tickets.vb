@@ -117,6 +117,7 @@
 
 
     Sub Save()
+
         If CDbl(FrmTicketEntry.txtWinningAmount.Text) <= 0 Then
             Exit Sub
         End If
@@ -128,7 +129,7 @@
             mycommand = mysqlconn.CreateCommand
             Dim agenttype As String = ""
             mycommand.CommandText = "Insert into tbl_ClaimedTicket (AGENTCODE,AGENTTYPE,AMOUNT,DRAWDATE,CLAIMEDDATE,TICKET_TYPE,OFFICE_SHARE,RIDER,CASHIER,RFID)" &
-            "Values ('" & FrmTicketEntry.lblagentcode.Text & "','" & FrmTicketEntry.txtWinningAmount.Text & "','" & agenttype & "','" & Format(CDate(FrmTicketEntry.dtpDrawDate.Text), "yyyy-MM-dd").ToString & "','" & Format(CDate(Date.Now), "yyyy-MM-dd").ToString & "','" & FrmTicketEntry.cmbTicketType.Text & "','" & "" & "','" & FrmReceiversForm.txtCollector.Text & "','" & cashier & "','" & FrmReceiversForm.txtrfNum.Text & "')"
+            "Values ('" & FrmTicketEntry.lblagentcode.Text & "','" & agenttype & "','" & FrmTicketEntry.txtWinningAmount.Text & "','" & Format(CDate(FrmTicketEntry.dtpDrawDate.Text), "yyyy-MM-dd").ToString & "','" & Format(CDate(Date.Now), "yyyy-MM-dd").ToString & "','" & FrmTicketEntry.cmbTicketType.Text & "','" & "" & "','" & FrmReceiversForm.txtCollector.Text & "','" & cashier & "','" & FrmReceiversForm.txtrfNum.Text & "')"
             mycommand.ExecuteNonQuery()
 
 
