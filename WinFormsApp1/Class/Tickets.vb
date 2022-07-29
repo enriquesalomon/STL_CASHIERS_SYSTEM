@@ -8,7 +8,7 @@
 
             FrmTicketEntry.dtgTickets.Columns(0).HeaderText = "NO.O"
             FrmTicketEntry.dtgTickets.Columns(0).Width = 70
-            FrmTicketEntry.dtgTickets.Columns(0).Name = "seqnox"
+            FrmTicketEntry.dtgTickets.Columns(0).Name = "id"
             FrmTicketEntry.dtgTickets.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
             FrmTicketEntry.dtgTickets.Columns(1).HeaderText = "DRAW DATE"
@@ -68,7 +68,7 @@
                 'qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_ClaimedTicket] where RFID ='" & FrmReceiversForm.txtrfNum.Text & "' AND   order by Coordinator ASC"
 
             Else
-                qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_ClaimedTicket] where RFID ='" & FrmReceiversForm.txtrfNum.Text & "' AND RIDER = '" & FrmReceiversForm.txtCollector.Text & "' order by ID ASC"
+                qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_ClaimedTicket] where RFID ='" & FrmReceiversForm.txtrfNum.Text & "' AND RIDER = '" & FrmReceiversForm.txtCollector.Text & "' AND AGENTCODE = '" & FrmReceiversForm.txtAgentCode.Text & "'order by ID ASC"
             End If
             Call connectSQL(conString)
             mycommand = mysqlconn.CreateCommand
@@ -83,7 +83,7 @@
 
                     recCounter += 1
                     'Format(CDate(lrow("DRAWDATE")), "MM/dd/yyyy")
-                    Dim row As String() = New String() {recCounter & ".", Format(CDate(lrow("DRAWDATE")), "yyyy-MM-dd"), lrow("AGENTCODE").ToString, Format(CDbl(lrow("AMOUNT").ToString), "###,###,###.#0"), Format(CDate(lrow("CLAIMEDDATE")), "MM/dd/yyyy").ToString, lrow("TICKET_TYPE").ToString}
+                    Dim row As String() = New String() {lrow("ID").ToString, Format(CDate(lrow("DRAWDATE")), "yyyy-MM-dd"), lrow("AGENTCODE").ToString, Format(CDbl(lrow("AMOUNT").ToString), "###,###,###.#0"), Format(CDate(lrow("CLAIMEDDATE")), "MM/dd/yyyy").ToString, lrow("TICKET_TYPE").ToString}
                     FrmTicketEntry.dtgTickets.Rows.Add(row)
                 Next
             End If
@@ -147,12 +147,13 @@
         Dim agentcode As String
         Dim claimeddate As String
         Dim rfid As String
-
+        Dim id As String
 
         Dim GridRow As DataGridViewRow = FrmTicketEntry.dtgTickets.CurrentRow
 
 
         For Each datagrd As DataGridViewRow In FrmTicketEntry.dtgTickets.SelectedRows
+            id = CStr(GridRow.Cells.Item("id").Value)
             amountwon = CStr(GridRow.Cells.Item("amountwon").Value)
             datestring = CStr(GridRow.Cells.Item("drawdate").Value)
             agentcode = CStr(GridRow.Cells.Item("agentcode").Value)
@@ -171,12 +172,13 @@
         If MessageBox.Show("Are you sure you want to Delete this Record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = MsgBoxResult.Yes Then
             Call connectSQL(conString)
             mycommand = mysqlconn.CreateCommand
-            mycommand.CommandText = "DELETE TOP(1) FROM tbl_ClaimedTicket WHERE AMOUNT='" & amountwon & "' AND DRAWDATE='" & datestring & "' "
+            mycommand.CommandText = "DELETE TOP(1) FROM tbl_ClaimedTicket WHERE AMOUNT='" & amountwon & "' AND DRAWDATE='" & datestring & "'  AND ID='" & id & "' "
             mycommand.ExecuteNonQuery()
-
-
             LoadRecord()
             MsgBox("Ticket  record has been successfully Deleted", MsgBoxStyle.OkOnly, "Message")
+            FrmTicketEntry.txtWinningAmount.Clear()
+            FrmTicketEntry.txtWinningAmount.Focus()
+
         End If
     End Sub
 End Class

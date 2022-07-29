@@ -103,4 +103,28 @@
 
         End Try
     End Sub
+
+    Private Sub FrmTicketEntry_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Panelentry.Visible = False
+        cmbTicketType.Text = Nothing
+        txtWinningAmount.Clear()
+        txtSearch.Clear()
+
+    End Sub
+
+    Private Sub txtWinningAmount_GotFocus(sender As Object, e As EventArgs) Handles txtWinningAmount.GotFocus
+        BackForeColorMe(txtWinningAmount, True)
+    End Sub
+
+    Private Sub txtWinningAmount_LostFocus(sender As Object, e As EventArgs) Handles txtWinningAmount.LostFocus
+        BackForeColorMe(txtWinningAmount, False)
+    End Sub
+
+    Private Sub txtSearch_GotFocus(sender As Object, e As EventArgs) Handles txtSearch.GotFocus
+        BackForeColorMe(txtSearch, True)
+    End Sub
+
+    Private Sub txtSearch_LostFocus(sender As Object, e As EventArgs) Handles txtSearch.LostFocus
+        BackForeColorMe(txtSearch, False)
+    End Sub
 End Class

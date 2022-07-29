@@ -158,7 +158,7 @@ Partial Class FrmTicketEntry
         Me.btnDelete.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDelete.Location = New System.Drawing.Point(342, 6)
+        Me.btnDelete.Location = New System.Drawing.Point(498, 6)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(111, 27)
         Me.btnDelete.TabIndex = 2
@@ -170,7 +170,7 @@ Partial Class FrmTicketEntry
         Me.btnEdit.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnEdit.Location = New System.Drawing.Point(240, 6)
+        Me.btnEdit.Location = New System.Drawing.Point(396, 6)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(96, 27)
         Me.btnEdit.TabIndex = 1
@@ -182,7 +182,7 @@ Partial Class FrmTicketEntry
         Me.btnAdd.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAdd.Location = New System.Drawing.Point(138, 6)
+        Me.btnAdd.Location = New System.Drawing.Point(294, 6)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(96, 27)
         Me.btnAdd.TabIndex = 0
