@@ -82,8 +82,8 @@
                 For Each lrow As DataRow In mydataTable.Rows
 
                     recCounter += 1
-
-                    Dim row As String() = New String() {recCounter & ".", Format(CDate(lrow("DRAWDATE")), "MM/dd/yyyy").ToString, lrow("AGENTCODE").ToString, Format(CDbl(lrow("AMOUNT").ToString), "###,###,###.#0"), Format(CDate(lrow("CLAIMEDDATE")), "MM/dd/yyyy").ToString, lrow("TICKET_TYPE").ToString}
+                    'Format(CDate(lrow("DRAWDATE")), "MM/dd/yyyy")
+                    Dim row As String() = New String() {recCounter & ".", Format(CDate(lrow("DRAWDATE")), "yyyy-MM-dd"), lrow("AGENTCODE").ToString, Format(CDbl(lrow("AMOUNT").ToString), "###,###,###.#0"), Format(CDate(lrow("CLAIMEDDATE")), "MM/dd/yyyy").ToString, lrow("TICKET_TYPE").ToString}
                     FrmTicketEntry.dtgTickets.Rows.Add(row)
                 Next
             End If
@@ -131,14 +131,52 @@
             mycommand.CommandText = "Insert into tbl_ClaimedTicket (AGENTCODE,AGENTTYPE,AMOUNT,DRAWDATE,CLAIMEDDATE,TICKET_TYPE,OFFICE_SHARE,RIDER,CASHIER,RFID)" &
             "Values ('" & FrmTicketEntry.lblagentcode.Text & "','" & agenttype & "','" & FrmTicketEntry.txtWinningAmount.Text & "','" & Format(CDate(FrmTicketEntry.dtpDrawDate.Text), "yyyy-MM-dd").ToString & "','" & Format(CDate(Date.Now), "yyyy-MM-dd").ToString & "','" & FrmTicketEntry.cmbTicketType.Text & "','" & "" & "','" & FrmReceiversForm.txtCollector.Text & "','" & cashier & "','" & FrmReceiversForm.txtrfNum.Text & "')"
             mycommand.ExecuteNonQuery()
-
-
-
-
-
             MsgBox("New Receivers Form has been successfully Saved ", MsgBoxStyle.OkOnly, "Message")
             mytickets.LoadRecord()
 
+        End If
+    End Sub
+
+
+
+
+    Public Sub Delete()
+
+        Dim amountwon As Double
+        Dim datestring As String
+        Dim agentcode As String
+        Dim claimeddate As String
+        Dim rfid As String
+
+
+        Dim GridRow As DataGridViewRow = FrmTicketEntry.dtgTickets.CurrentRow
+
+
+        For Each datagrd As DataGridViewRow In FrmTicketEntry.dtgTickets.SelectedRows
+            amountwon = CStr(GridRow.Cells.Item("amountwon").Value)
+            datestring = CStr(GridRow.Cells.Item("drawdate").Value)
+            agentcode = CStr(GridRow.Cells.Item("agentcode").Value)
+            claimeddate = CStr(GridRow.Cells.Item("claimeddate").Value)
+            rfid = FrmReceiversForm.txtrfNum.Text
+
+
+        Next datagrd
+        If datestring = "" Then
+            Exit Sub
+        End If
+
+
+
+
+        If MessageBox.Show("Are you sure you want to Delete this Record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = MsgBoxResult.Yes Then
+            Call connectSQL(conString)
+            mycommand = mysqlconn.CreateCommand
+            mycommand.CommandText = "DELETE TOP(1) FROM tbl_ClaimedTicket WHERE AMOUNT='" & amountwon & "' AND DRAWDATE='" & datestring & "' "
+            mycommand.ExecuteNonQuery()
+
+
+            LoadRecord()
+            MsgBox("Ticket  record has been successfully Deleted", MsgBoxStyle.OkOnly, "Message")
         End If
     End Sub
 End Class

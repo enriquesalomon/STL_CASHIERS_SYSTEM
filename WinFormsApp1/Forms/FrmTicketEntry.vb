@@ -8,6 +8,7 @@
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        mytickets.Delete()
 
     End Sub
 
@@ -29,12 +30,30 @@
 
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
         Panelentry.Visible = False
+        cmbTicketType.Text = Nothing
+        txtWinningAmount.Clear()
+
     End Sub
 
+
+    Dim dateValueinDrawdate As Date
+    Dim dateFormat As String = "MM/dd/yyyy"
+    Private Sub cmbSearch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTicketType.SelectedIndexChanged
+        If cmbTicketType.Text = "ONDATE" Then
+            Dim dateString As String = FrmReceiversForm.txtDateofSales.Text
+            dateValueinDrawdate = DateTime.ParseExact(dateString, dateFormat, Globalization.CultureInfo.InvariantCulture)
+            dtpDrawDate.Value = dateValueinDrawdate
+            dtpDrawDate.Enabled = False
+        ElseIf cmbTicketType.Text = "PREVIOUS" Then
+            Dim dateString As String = FrmReceiversForm.txtDateofSales.Text
+            dateValueinDrawdate = DateTime.ParseExact(dateString, dateFormat, Globalization.CultureInfo.InvariantCulture)
+            dtpDrawDate.Enabled = True
+        Else
+        End If
+    End Sub
     Private Sub btnSaveOndate_Click(sender As Object, e As EventArgs) Handles btnSaveOndate.Click
         If cmbTicketType.Text = Nothing Then
             MessageBox.Show("Please Select Ticket Type", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
             Exit Sub
         End If
         If txtWinningAmount.Text = "" Then
@@ -59,7 +78,7 @@
                 mytickets.Save()
             End If
 
-        Else
+        ElseIf cmbTicketType.Text = "ONDATE" Then
             'saving
             mytickets.Save()
         End If
@@ -67,23 +86,7 @@
 
 
     End Sub
-    Dim dateValueinDrawdate As Date
-    Private Sub cmbSearch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTicketType.SelectedIndexChanged
-        If cmbTicketType.Text = "ONDATE" Then
-            Dim dateString As String = FrmReceiversForm.txtDateofSales.Text
-            Dim dateFormat As String = "MM/dd/yyyy"
 
-            dateValueinDrawdate = DateTime.ParseExact(dateString, dateFormat, Globalization.CultureInfo.InvariantCulture)
-            dtpDrawDate.Value = dateValueinDrawdate
-            dtpDrawDate.Enabled = False
-        ElseIf cmbTicketType.Text = "PREVIOUS" Then
-            dtpDrawDate.Enabled = True
-
-
-        Else
-
-        End If
-    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)
         Me.Close()

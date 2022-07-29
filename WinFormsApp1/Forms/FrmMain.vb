@@ -17,7 +17,15 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+        'Try
+        '    Dim currentDate As String = "03/03/2019"
+        '    'Dim convertedDate As DateTime = Convert.ToDateTime(currentDate, "dd-MM-yyyy")
+        '    Dim convertedDate As DateTime = Format(CDate(currentDate), "yyyy-MM-dd").ToString()
+        '    MessageBox.Show(convertedDate)
+        '    'MessageBox.Show("Day: " & convertedDate.Day & " Month: " & convertedDate.Month & " Year: " & convertedDate.Year)
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message)
+        'End Try
         mylogin.VerifyUser()
     End Sub
 
