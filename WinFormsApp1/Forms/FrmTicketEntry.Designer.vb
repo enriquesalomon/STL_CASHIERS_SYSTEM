@@ -33,6 +33,12 @@ Partial Class FrmTicketEntry
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.panelBottom = New System.Windows.Forms.Panel()
+        Me.lbltotalticket = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblprevticket = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblondateticket = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -68,7 +74,7 @@ Partial Class FrmTicketEntry
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(612, 41)
+        Me.Panel4.Size = New System.Drawing.Size(690, 41)
         Me.Panel4.TabIndex = 1
         '
         'lblagentcode
@@ -115,7 +121,7 @@ Partial Class FrmTicketEntry
         Me.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSearch.Location = New System.Drawing.Point(0, 41)
         Me.PanelSearch.Name = "PanelSearch"
-        Me.PanelSearch.Size = New System.Drawing.Size(612, 55)
+        Me.PanelSearch.Size = New System.Drawing.Size(690, 55)
         Me.PanelSearch.TabIndex = 16
         '
         'txtSearch
@@ -126,7 +132,7 @@ Partial Class FrmTicketEntry
         Me.txtSearch.BackColor = System.Drawing.Color.White
         Me.txtSearch.Location = New System.Drawing.Point(94, 11)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(461, 23)
+        Me.txtSearch.Size = New System.Drawing.Size(539, 23)
         Me.txtSearch.TabIndex = 25
         '
         'Label9
@@ -144,23 +150,107 @@ Partial Class FrmTicketEntry
         'panelBottom
         '
         Me.panelBottom.BackColor = System.Drawing.SystemColors.Control
+        Me.panelBottom.Controls.Add(Me.lbltotalticket)
+        Me.panelBottom.Controls.Add(Me.Label12)
+        Me.panelBottom.Controls.Add(Me.lblprevticket)
+        Me.panelBottom.Controls.Add(Me.Label10)
+        Me.panelBottom.Controls.Add(Me.lblondateticket)
+        Me.panelBottom.Controls.Add(Me.Label8)
         Me.panelBottom.Controls.Add(Me.btnDelete)
         Me.panelBottom.Controls.Add(Me.btnEdit)
         Me.panelBottom.Controls.Add(Me.btnAdd)
         Me.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelBottom.Location = New System.Drawing.Point(0, 518)
+        Me.panelBottom.Location = New System.Drawing.Point(0, 507)
         Me.panelBottom.Name = "panelBottom"
-        Me.panelBottom.Size = New System.Drawing.Size(612, 41)
+        Me.panelBottom.Size = New System.Drawing.Size(690, 52)
         Me.panelBottom.TabIndex = 17
+        '
+        'lbltotalticket
+        '
+        Me.lbltotalticket.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbltotalticket.AutoSize = True
+        Me.lbltotalticket.ForeColor = System.Drawing.Color.Maroon
+        Me.lbltotalticket.Location = New System.Drawing.Point(240, 25)
+        Me.lbltotalticket.Name = "lbltotalticket"
+        Me.lbltotalticket.Size = New System.Drawing.Size(13, 15)
+        Me.lbltotalticket.TabIndex = 30
+        Me.lbltotalticket.Text = "0"
+        '
+        'Label12
+        '
+        Me.Label12.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label12.Location = New System.Drawing.Point(239, 7)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(97, 15)
+        Me.Label12.TabIndex = 29
+        Me.Label12.Text = "TOTAL CLAIMED"
+        '
+        'lblprevticket
+        '
+        Me.lblprevticket.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblprevticket.AutoSize = True
+        Me.lblprevticket.ForeColor = System.Drawing.Color.Maroon
+        Me.lblprevticket.Location = New System.Drawing.Point(119, 25)
+        Me.lblprevticket.Name = "lblprevticket"
+        Me.lblprevticket.Size = New System.Drawing.Size(13, 15)
+        Me.lblprevticket.TabIndex = 28
+        Me.lblprevticket.Text = "0"
+        '
+        'Label10
+        '
+        Me.Label10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label10.Location = New System.Drawing.Point(116, 7)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(107, 15)
+        Me.Label10.TabIndex = 27
+        Me.Label10.Text = "PREVIOUS TICKET"
+        '
+        'lblondateticket
+        '
+        Me.lblondateticket.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblondateticket.AutoSize = True
+        Me.lblondateticket.ForeColor = System.Drawing.Color.Maroon
+        Me.lblondateticket.Location = New System.Drawing.Point(9, 25)
+        Me.lblondateticket.Name = "lblondateticket"
+        Me.lblondateticket.Size = New System.Drawing.Size(13, 15)
+        Me.lblondateticket.TabIndex = 26
+        Me.lblondateticket.Text = "0"
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label8.Location = New System.Drawing.Point(9, 7)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(96, 15)
+        Me.Label8.TabIndex = 25
+        Me.Label8.Text = "ONDATE TICKET"
         '
         'btnDelete
         '
         Me.btnDelete.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDelete.Location = New System.Drawing.Point(498, 6)
+        Me.btnDelete.Location = New System.Drawing.Point(584, 5)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(111, 27)
+        Me.btnDelete.Size = New System.Drawing.Size(103, 38)
         Me.btnDelete.TabIndex = 2
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
@@ -170,9 +260,9 @@ Partial Class FrmTicketEntry
         Me.btnEdit.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnEdit.Location = New System.Drawing.Point(396, 6)
+        Me.btnEdit.Location = New System.Drawing.Point(490, 5)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(96, 27)
+        Me.btnEdit.Size = New System.Drawing.Size(88, 38)
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.UseVisualStyleBackColor = True
@@ -182,9 +272,9 @@ Partial Class FrmTicketEntry
         Me.btnAdd.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAdd.Location = New System.Drawing.Point(294, 6)
+        Me.btnAdd.Location = New System.Drawing.Point(396, 5)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(96, 27)
+        Me.btnAdd.Size = New System.Drawing.Size(88, 38)
         Me.btnAdd.TabIndex = 0
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -196,7 +286,7 @@ Partial Class FrmTicketEntry
         Me.paneldtgList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.paneldtgList.Location = New System.Drawing.Point(0, 96)
         Me.paneldtgList.Name = "paneldtgList"
-        Me.paneldtgList.Size = New System.Drawing.Size(612, 422)
+        Me.paneldtgList.Size = New System.Drawing.Size(690, 411)
         Me.paneldtgList.TabIndex = 18
         '
         'Panelentry
@@ -215,7 +305,7 @@ Partial Class FrmTicketEntry
         Me.Panelentry.Controls.Add(Me.Panel2)
         Me.Panelentry.Location = New System.Drawing.Point(152, 84)
         Me.Panelentry.Name = "Panelentry"
-        Me.Panelentry.Size = New System.Drawing.Size(333, 170)
+        Me.Panelentry.Size = New System.Drawing.Size(411, 159)
         Me.Panelentry.TabIndex = 17
         Me.Panelentry.Visible = False
         '
@@ -301,7 +391,7 @@ Partial Class FrmTicketEntry
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(331, 27)
+        Me.Panel2.Size = New System.Drawing.Size(409, 27)
         Me.Panel2.TabIndex = 0
         '
         'Label5
@@ -311,7 +401,7 @@ Partial Class FrmTicketEntry
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(303, 0)
+        Me.Label5.Location = New System.Drawing.Point(381, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(28, 28)
         Me.Label5.TabIndex = 9
@@ -373,21 +463,20 @@ Partial Class FrmTicketEntry
         Me.dtgTickets.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dtgTickets.RowTemplate.Height = 25
         Me.dtgTickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgTickets.Size = New System.Drawing.Size(612, 422)
+        Me.dtgTickets.Size = New System.Drawing.Size(690, 411)
         Me.dtgTickets.TabIndex = 4
         '
         'FrmTicketEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(612, 559)
+        Me.ClientSize = New System.Drawing.Size(690, 559)
         Me.Controls.Add(Me.paneldtgList)
         Me.Controls.Add(Me.panelBottom)
         Me.Controls.Add(Me.PanelSearch)
         Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(628, 598)
         Me.MinimizeBox = False
         Me.Name = "FrmTicketEntry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -396,6 +485,7 @@ Partial Class FrmTicketEntry
         Me.PanelSearch.ResumeLayout(False)
         Me.PanelSearch.PerformLayout()
         Me.panelBottom.ResumeLayout(False)
+        Me.panelBottom.PerformLayout()
         Me.paneldtgList.ResumeLayout(False)
         Me.Panelentry.ResumeLayout(False)
         Me.Panelentry.PerformLayout()
@@ -430,4 +520,10 @@ Partial Class FrmTicketEntry
     Friend WithEvents cmbTicketType As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents lblagentcode As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents lblondateticket As Label
+    Friend WithEvents lbltotalticket As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents lblprevticket As Label
+    Friend WithEvents Label10 As Label
 End Class

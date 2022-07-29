@@ -1,6 +1,7 @@
 ﻿Public Class FrmReceiversForm
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         dtgRidersCollection.Rows.Clear()
+        clearTxt("frmreceiversform_inputremittancePanel")
         Me.Close()
     End Sub
 
@@ -55,7 +56,7 @@
     End Sub
 
     Private Sub dtgRidersCollection_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgRidersCollection.CellDoubleClick
-
+        clearTxt("frmreceiversform_inputremittancePanel")
         Dim GridRow As DataGridViewRow = dtgRidersCollection.CurrentRow
         Dim num As String = ""
         Dim username As String = ""
@@ -79,6 +80,8 @@
             Exit Sub
         End If
 
+        globalAgentCode = username
+        mytickets.getClaimedHits()
         PanelInputRemittance.Visible = True
         myreceiver.LoadCoorSalesRecord()
 
@@ -86,9 +89,10 @@
 
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
         PanelInputRemittance.Visible = False
-        txtAgentCode.Clear()
-        txtCoor.Clear()
-        txtNetOndate.Clear()
+        'txtAgentCode.Clear()
+        'txtCoor.Clear()
+        'txtNetOndate.Clear()
+        clearTxt("frmreceiversform_inputremittancePanel")
     End Sub
 
     Private allowCoolMove As Boolean = False

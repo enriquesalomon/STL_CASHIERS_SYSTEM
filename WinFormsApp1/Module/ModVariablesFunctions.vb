@@ -9,6 +9,7 @@ Module ModVariablesFunctions
 
     Public lsaving, lfind, xkey As Boolean
     Public recCounter, tempCounter As Integer
+    Public globalAgentCode As String
 
     Public cMonth, nday, nYear, mmonth As Integer
     Public tempcurrDate, strTemp, verifyExaminee As String
@@ -227,4 +228,36 @@ Module ModVariablesFunctions
             MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
         End Try
     End Function
+
+
+
+    Public Sub clearTxt(ByVal clas As String)
+        Select Case clas
+            Case "frmreceiversform_inputremittancePanel"
+                For Each t In FrmReceiversForm.PanelInputRemittance.Controls
+                    If TypeOf t Is TextBox Then
+                        t.clear()
+                    End If
+                Next
+                'Case "item"
+                '    For Each t In frmItemDetails.panelItemDetails.Controls
+                '        If TypeOf t Is TextBox Then
+                '            t.clear() : frmItemDetails.cmbCategory.Text = Nothing
+                '        End If
+                '    Next
+                'Case "stockitem"
+                '    For Each t In frmStockIn.panelStockinField.Controls
+                '        If TypeOf t Is TextBox Then
+                '            t.clear()
+                '        End If
+                '    Next
+                'Case "stockadjustdetail"
+                '    For Each t In frmStockAdjustDetail.panelStockAdjustDetail.Controls
+                '        If TypeOf t Is TextBox Then
+                '            t.clear() : frmStockAdjustDetail.cmbActionadjust.Text = Nothing
+                '        End If
+                '    Next
+        End Select
+
+    End Sub
 End Module

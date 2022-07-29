@@ -80,6 +80,10 @@
 
         ElseIf cmbTicketType.Text = "ONDATE" Then
             'saving
+            If CDbl(FrmReceiversForm.txtHitsOndate.Text) = 0 Then
+                MessageBox.Show("No record found of ondate hits", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            End If
             mytickets.Save()
         End If
 
@@ -122,9 +126,17 @@
 
     Private Sub txtSearch_GotFocus(sender As Object, e As EventArgs) Handles txtSearch.GotFocus
         BackForeColorMe(txtSearch, True)
+        lfind = True
     End Sub
 
     Private Sub txtSearch_LostFocus(sender As Object, e As EventArgs) Handles txtSearch.LostFocus
         BackForeColorMe(txtSearch, False)
+        lfind = False
+    End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        If lfind Then
+            mytickets.LoadRecord()
+        End If
     End Sub
 End Class

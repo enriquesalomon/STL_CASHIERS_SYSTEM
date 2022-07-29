@@ -42,7 +42,7 @@ Partial Class FrmReceiversForm
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtTotalHitsClaimed = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtNetRemittance = New System.Windows.Forms.TextBox()
         Me.btnPostRemittance = New System.Windows.Forms.Button()
@@ -50,9 +50,9 @@ Partial Class FrmReceiversForm
         Me.btnManageUnremitted = New System.Windows.Forms.Button()
         Me.btnManagePrevtickets = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtPreviousHitsClaimed = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtOndateHitsClaimed = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txtHitsOndate = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -257,7 +257,7 @@ Partial Class FrmReceiversForm
         Me.PanelInputRemittance.Controls.Add(Me.Panel6)
         Me.PanelInputRemittance.Controls.Add(Me.Panel5)
         Me.PanelInputRemittance.Controls.Add(Me.Label15)
-        Me.PanelInputRemittance.Controls.Add(Me.TextBox1)
+        Me.PanelInputRemittance.Controls.Add(Me.txtTotalHitsClaimed)
         Me.PanelInputRemittance.Controls.Add(Me.Label12)
         Me.PanelInputRemittance.Controls.Add(Me.txtNetRemittance)
         Me.PanelInputRemittance.Controls.Add(Me.btnPostRemittance)
@@ -265,9 +265,9 @@ Partial Class FrmReceiversForm
         Me.PanelInputRemittance.Controls.Add(Me.btnManageUnremitted)
         Me.PanelInputRemittance.Controls.Add(Me.btnManagePrevtickets)
         Me.PanelInputRemittance.Controls.Add(Me.Label16)
-        Me.PanelInputRemittance.Controls.Add(Me.TextBox3)
+        Me.PanelInputRemittance.Controls.Add(Me.txtPreviousHitsClaimed)
         Me.PanelInputRemittance.Controls.Add(Me.Label14)
-        Me.PanelInputRemittance.Controls.Add(Me.TextBox2)
+        Me.PanelInputRemittance.Controls.Add(Me.txtOndateHitsClaimed)
         Me.PanelInputRemittance.Controls.Add(Me.Label13)
         Me.PanelInputRemittance.Controls.Add(Me.txtHitsOndate)
         Me.PanelInputRemittance.Controls.Add(Me.Label10)
@@ -308,14 +308,14 @@ Partial Class FrmReceiversForm
         Me.Label15.TabIndex = 50
         Me.Label15.Text = "TOTAL CLAIMED HITS:"
         '
-        'TextBox1
+        'txtTotalHitsClaimed
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(160, 246)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(116, 23)
-        Me.TextBox1.TabIndex = 49
+        Me.txtTotalHitsClaimed.BackColor = System.Drawing.Color.White
+        Me.txtTotalHitsClaimed.Location = New System.Drawing.Point(160, 246)
+        Me.txtTotalHitsClaimed.Name = "txtTotalHitsClaimed"
+        Me.txtTotalHitsClaimed.ReadOnly = True
+        Me.txtTotalHitsClaimed.Size = New System.Drawing.Size(116, 23)
+        Me.txtTotalHitsClaimed.TabIndex = 49
         '
         'Label12
         '
@@ -381,14 +381,14 @@ Partial Class FrmReceiversForm
         Me.Label16.TabIndex = 42
         Me.Label16.Text = "PREVIOUS CLAIMED HITS:"
         '
-        'TextBox3
+        'txtPreviousHitsClaimed
         '
-        Me.TextBox3.BackColor = System.Drawing.Color.White
-        Me.TextBox3.Location = New System.Drawing.Point(160, 213)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(116, 23)
-        Me.TextBox3.TabIndex = 41
+        Me.txtPreviousHitsClaimed.BackColor = System.Drawing.Color.White
+        Me.txtPreviousHitsClaimed.Location = New System.Drawing.Point(160, 213)
+        Me.txtPreviousHitsClaimed.Name = "txtPreviousHitsClaimed"
+        Me.txtPreviousHitsClaimed.ReadOnly = True
+        Me.txtPreviousHitsClaimed.Size = New System.Drawing.Size(116, 23)
+        Me.txtPreviousHitsClaimed.TabIndex = 41
         '
         'Label14
         '
@@ -399,14 +399,14 @@ Partial Class FrmReceiversForm
         Me.Label14.TabIndex = 40
         Me.Label14.Text = "ONDATE CLAIMED HITS:"
         '
-        'TextBox2
+        'txtOndateHitsClaimed
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.White
-        Me.TextBox2.Location = New System.Drawing.Point(160, 187)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(116, 23)
-        Me.TextBox2.TabIndex = 39
+        Me.txtOndateHitsClaimed.BackColor = System.Drawing.Color.White
+        Me.txtOndateHitsClaimed.Location = New System.Drawing.Point(160, 187)
+        Me.txtOndateHitsClaimed.Name = "txtOndateHitsClaimed"
+        Me.txtOndateHitsClaimed.ReadOnly = True
+        Me.txtOndateHitsClaimed.Size = New System.Drawing.Size(116, 23)
+        Me.txtOndateHitsClaimed.TabIndex = 39
         '
         'Label13
         '
@@ -638,9 +638,9 @@ Partial Class FrmReceiversForm
     Friend WithEvents Label13 As Label
     Friend WithEvents txtHitsOndate As TextBox
     Friend WithEvents Label16 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtPreviousHitsClaimed As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtOndateHitsClaimed As TextBox
     Friend WithEvents btnManageUnremitted As Button
     Friend WithEvents btnManagePrevtickets As Button
     Friend WithEvents Panel3 As Panel
@@ -650,7 +650,7 @@ Partial Class FrmReceiversForm
     Friend WithEvents Button1 As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtTotalHitsClaimed As TextBox
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel6 As Panel
 End Class
