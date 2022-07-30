@@ -32,6 +32,11 @@ Partial Class FrmMain
         Me.GameAccountsSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RIDERSREMITTANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RidersShortOverRemittancesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReceivableLedgerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OfficeShareToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UnpaidBalanceRemittancesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PaidRemittancesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClaimedAndUnclaimHitsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IMPORTSALESREPORTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VIEWUNPAIDREMITTANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -115,18 +120,48 @@ Partial Class FrmMain
         '
         'RIDERSREMITTANCEToolStripMenuItem
         '
-        Me.RIDERSREMITTANCEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RidersShortOverRemittancesToolStripMenuItem})
+        Me.RIDERSREMITTANCEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RidersShortOverRemittancesToolStripMenuItem, Me.ReceivableLedgerToolStripMenuItem, Me.OfficeShareToolStripMenuItem, Me.UnpaidBalanceRemittancesToolStripMenuItem, Me.PaidRemittancesToolStripMenuItem, Me.ClaimedAndUnclaimHitsToolStripMenuItem})
         Me.RIDERSREMITTANCEToolStripMenuItem.Image = CType(resources.GetObject("RIDERSREMITTANCEToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RIDERSREMITTANCEToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.RIDERSREMITTANCEToolStripMenuItem.Name = "RIDERSREMITTANCEToolStripMenuItem"
-        Me.RIDERSREMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(181, 54)
-        Me.RIDERSREMITTANCEToolStripMenuItem.Text = "RIDERS ACCOUNT"
+        Me.RIDERSREMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(123, 54)
+        Me.RIDERSREMITTANCEToolStripMenuItem.Text = "REPORTS"
         '
         'RidersShortOverRemittancesToolStripMenuItem
         '
         Me.RidersShortOverRemittancesToolStripMenuItem.Name = "RidersShortOverRemittancesToolStripMenuItem"
         Me.RidersShortOverRemittancesToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
         Me.RidersShortOverRemittancesToolStripMenuItem.Text = "Riders Short/Over Remittances"
+        '
+        'ReceivableLedgerToolStripMenuItem
+        '
+        Me.ReceivableLedgerToolStripMenuItem.Name = "ReceivableLedgerToolStripMenuItem"
+        Me.ReceivableLedgerToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
+        Me.ReceivableLedgerToolStripMenuItem.Text = "Receivable Ledger"
+        '
+        'OfficeShareToolStripMenuItem
+        '
+        Me.OfficeShareToolStripMenuItem.Name = "OfficeShareToolStripMenuItem"
+        Me.OfficeShareToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
+        Me.OfficeShareToolStripMenuItem.Text = "Office Share"
+        '
+        'UnpaidBalanceRemittancesToolStripMenuItem
+        '
+        Me.UnpaidBalanceRemittancesToolStripMenuItem.Name = "UnpaidBalanceRemittancesToolStripMenuItem"
+        Me.UnpaidBalanceRemittancesToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
+        Me.UnpaidBalanceRemittancesToolStripMenuItem.Text = "Unpaid/Balance Remittances"
+        '
+        'PaidRemittancesToolStripMenuItem
+        '
+        Me.PaidRemittancesToolStripMenuItem.Name = "PaidRemittancesToolStripMenuItem"
+        Me.PaidRemittancesToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
+        Me.PaidRemittancesToolStripMenuItem.Text = "Paid Remittances"
+        '
+        'ClaimedAndUnclaimHitsToolStripMenuItem
+        '
+        Me.ClaimedAndUnclaimHitsToolStripMenuItem.Name = "ClaimedAndUnclaimHitsToolStripMenuItem"
+        Me.ClaimedAndUnclaimHitsToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
+        Me.ClaimedAndUnclaimHitsToolStripMenuItem.Text = "Claimed and Unclaim Hits"
         '
         'IMPORTSALESREPORTToolStripMenuItem
         '
@@ -350,4 +385,9 @@ Partial Class FrmMain
     Friend WithEvents IMPORTSALESREPORTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GrossSalesReportSummaryToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GameAccountsSummaryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReceivableLedgerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OfficeShareToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UnpaidBalanceRemittancesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PaidRemittancesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClaimedAndUnclaimHitsToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -25,9 +25,6 @@ Partial Class FrmReceiversForm
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtrfNum = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -69,8 +66,6 @@ Partial Class FrmReceiversForm
         Me.cmbSearch = New System.Windows.Forms.ComboBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.panelBottom = New System.Windows.Forms.Panel()
-        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.PaneldtgRemittances.SuspendLayout()
         CType(Me.dtgRidersCollection, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,40 +73,6 @@ Partial Class FrmReceiversForm
         Me.Panel4.SuspendLayout()
         Me.PanelSearch.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Goldenrod
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1019, 31)
-        Me.Panel1.TabIndex = 4
-        '
-        'Button2
-        '
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button2.Location = New System.Drawing.Point(955, 0)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(64, 31)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "x"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Goldenrod
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(7, 7)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(115, 16)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "RECEIVERS FORM"
         '
         'Panel2
         '
@@ -123,9 +84,9 @@ Partial Class FrmReceiversForm
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(685, 31)
+        Me.Panel2.Location = New System.Drawing.Point(685, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(334, 757)
+        Me.Panel2.Size = New System.Drawing.Size(334, 749)
         Me.Panel2.TabIndex = 5
         '
         'txtrfNum
@@ -199,9 +160,9 @@ Partial Class FrmReceiversForm
         '
         Me.PaneldtgRemittances.Controls.Add(Me.dtgRidersCollection)
         Me.PaneldtgRemittances.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PaneldtgRemittances.Location = New System.Drawing.Point(0, 86)
+        Me.PaneldtgRemittances.Location = New System.Drawing.Point(0, 55)
         Me.PaneldtgRemittances.Name = "PaneldtgRemittances"
-        Me.PaneldtgRemittances.Size = New System.Drawing.Size(685, 702)
+        Me.PaneldtgRemittances.Size = New System.Drawing.Size(685, 694)
         Me.PaneldtgRemittances.TabIndex = 6
         '
         'dtgRidersCollection
@@ -248,7 +209,7 @@ Partial Class FrmReceiversForm
         Me.dtgRidersCollection.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dtgRidersCollection.RowTemplate.Height = 25
         Me.dtgRidersCollection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgRidersCollection.Size = New System.Drawing.Size(685, 702)
+        Me.dtgRidersCollection.Size = New System.Drawing.Size(685, 694)
         Me.dtgRidersCollection.TabIndex = 3
         '
         'PanelInputRemittance
@@ -526,16 +487,16 @@ Partial Class FrmReceiversForm
         Me.PanelSearch.Controls.Add(Me.txtSearch)
         Me.PanelSearch.Controls.Add(Me.Label9)
         Me.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelSearch.Location = New System.Drawing.Point(0, 31)
+        Me.PanelSearch.Location = New System.Drawing.Point(0, 0)
         Me.PanelSearch.Name = "PanelSearch"
         Me.PanelSearch.Size = New System.Drawing.Size(685, 55)
         Me.PanelSearch.TabIndex = 15
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(605, 13)
+        Me.Button1.Location = New System.Drawing.Point(569, 12)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(59, 26)
+        Me.Button1.Size = New System.Drawing.Size(88, 29)
         Me.Button1.TabIndex = 27
         Me.Button1.Text = "Refresh"
         Me.Button1.UseVisualStyleBackColor = True
@@ -555,7 +516,7 @@ Partial Class FrmReceiversForm
         Me.txtSearch.BackColor = System.Drawing.Color.White
         Me.txtSearch.Location = New System.Drawing.Point(192, 14)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(407, 23)
+        Me.txtSearch.Size = New System.Drawing.Size(371, 23)
         Me.txtSearch.TabIndex = 25
         '
         'Label9
@@ -567,33 +528,20 @@ Partial Class FrmReceiversForm
         Me.Label9.TabIndex = 24
         Me.Label9.Text = "Search:"
         '
-        'panelBottom
-        '
-        Me.panelBottom.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelBottom.Location = New System.Drawing.Point(0, 771)
-        Me.panelBottom.Name = "panelBottom"
-        Me.panelBottom.Size = New System.Drawing.Size(685, 17)
-        Me.panelBottom.TabIndex = 16
-        '
         'FrmReceiversForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1019, 788)
+        Me.ClientSize = New System.Drawing.Size(1019, 749)
         Me.Controls.Add(Me.PanelInputRemittance)
-        Me.Controls.Add(Me.panelBottom)
         Me.Controls.Add(Me.PaneldtgRemittances)
         Me.Controls.Add(Me.PanelSearch)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "FrmReceiversForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmReceiversForm"
+        Me.Text = "RECEIVERS FORM"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.PaneldtgRemittances.ResumeLayout(False)
@@ -607,10 +555,6 @@ Partial Class FrmReceiversForm
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Label5 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PaneldtgRemittances As Panel
     Friend WithEvents dtgRidersCollection As DataGridView
@@ -633,7 +577,6 @@ Partial Class FrmReceiversForm
     Friend WithEvents txtNetOndate As TextBox
     Friend WithEvents txtCoor As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents panelBottom As Panel
     Friend WithEvents Label11 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents txtHitsOndate As TextBox

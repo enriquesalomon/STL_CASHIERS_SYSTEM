@@ -250,7 +250,7 @@ Partial Class FrmTicketEntry
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDelete.Location = New System.Drawing.Point(584, 5)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(103, 38)
+        Me.btnDelete.Size = New System.Drawing.Size(88, 29)
         Me.btnDelete.TabIndex = 2
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
@@ -262,7 +262,7 @@ Partial Class FrmTicketEntry
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEdit.Location = New System.Drawing.Point(490, 5)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(88, 38)
+        Me.btnEdit.Size = New System.Drawing.Size(88, 29)
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.UseVisualStyleBackColor = True
@@ -274,7 +274,7 @@ Partial Class FrmTicketEntry
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAdd.Location = New System.Drawing.Point(396, 5)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(88, 38)
+        Me.btnAdd.Size = New System.Drawing.Size(88, 29)
         Me.btnAdd.TabIndex = 0
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -305,7 +305,7 @@ Partial Class FrmTicketEntry
         Me.Panelentry.Controls.Add(Me.Panel2)
         Me.Panelentry.Location = New System.Drawing.Point(152, 84)
         Me.Panelentry.Name = "Panelentry"
-        Me.Panelentry.Size = New System.Drawing.Size(411, 159)
+        Me.Panelentry.Size = New System.Drawing.Size(332, 159)
         Me.Panelentry.TabIndex = 17
         Me.Panelentry.Visible = False
         '
@@ -354,7 +354,7 @@ Partial Class FrmTicketEntry
         '
         Me.btnSaveOndate.Location = New System.Drawing.Point(132, 120)
         Me.btnSaveOndate.Name = "btnSaveOndate"
-        Me.btnSaveOndate.Size = New System.Drawing.Size(174, 37)
+        Me.btnSaveOndate.Size = New System.Drawing.Size(174, 34)
         Me.btnSaveOndate.TabIndex = 17
         Me.btnSaveOndate.Text = "Save"
         Me.btnSaveOndate.UseVisualStyleBackColor = True
@@ -391,7 +391,7 @@ Partial Class FrmTicketEntry
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(409, 27)
+        Me.Panel2.Size = New System.Drawing.Size(330, 27)
         Me.Panel2.TabIndex = 0
         '
         'Label5
@@ -401,7 +401,7 @@ Partial Class FrmTicketEntry
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(381, 0)
+        Me.Label5.Location = New System.Drawing.Point(302, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(28, 28)
         Me.Label5.TabIndex = 9

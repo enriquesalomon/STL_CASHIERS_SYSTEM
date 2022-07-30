@@ -105,7 +105,7 @@ Partial Class FrmImportExcelSales
         '
         Me.btnImport.Location = New System.Drawing.Point(232, 35)
         Me.btnImport.Name = "btnImport"
-        Me.btnImport.Size = New System.Drawing.Size(127, 26)
+        Me.btnImport.Size = New System.Drawing.Size(157, 29)
         Me.btnImport.TabIndex = 5
         Me.btnImport.Text = "Import to Database"
         Me.btnImport.UseVisualStyleBackColor = True
@@ -129,9 +129,9 @@ Partial Class FrmImportExcelSales
         '
         'btnBrowse
         '
-        Me.btnBrowse.Location = New System.Drawing.Point(497, 6)
+        Me.btnBrowse.Location = New System.Drawing.Point(497, 3)
         Me.btnBrowse.Name = "btnBrowse"
-        Me.btnBrowse.Size = New System.Drawing.Size(95, 23)
+        Me.btnBrowse.Size = New System.Drawing.Size(88, 29)
         Me.btnBrowse.TabIndex = 2
         Me.btnBrowse.Text = "Browse"
         Me.btnBrowse.UseVisualStyleBackColor = True

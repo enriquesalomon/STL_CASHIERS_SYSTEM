@@ -1,8 +1,8 @@
 ﻿Public Class FrmReceiversForm
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        dtgRidersCollection.Rows.Clear()
-        clearTxt("frmreceiversform_inputremittancePanel")
-        Me.Close()
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+        'dtgRidersCollection.Rows.Clear()
+        'clearTxt("frmreceiversform_inputremittancePanel")
+        'Me.Close()
     End Sub
 
     Private Sub btnLoadRidersSummary_Click(sender As Object, e As EventArgs)
@@ -176,5 +176,10 @@
         cmbSearch.Text = Nothing
         txtSearch.Clear()
         myriders.LoadRidersCollectionRecord()
+    End Sub
+
+    Private Sub FrmReceiversForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        dtgRidersCollection.Rows.Clear()
+        clearTxt("frmreceiversform_inputremittancePanel")
     End Sub
 End Class

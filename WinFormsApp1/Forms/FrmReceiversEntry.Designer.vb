@@ -26,9 +26,6 @@ Partial Class FrmReceiversEntry
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.panelbottom = New System.Windows.Forms.Panel()
@@ -43,7 +40,6 @@ Partial Class FrmReceiversEntry
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ManageRemittanceFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteRemittanceFormRecordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.panelbottom.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -51,46 +47,12 @@ Partial Class FrmReceiversEntry
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Goldenrod
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1238, 31)
-        Me.Panel1.TabIndex = 3
-        '
-        'Button2
-        '
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button2.Location = New System.Drawing.Point(1174, 0)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(64, 31)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "x"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Goldenrod
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(7, 7)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(117, 16)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "RECEIVERS ENTRY"
-        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.Control
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 31)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1238, 43)
         Me.Panel2.TabIndex = 4
@@ -135,36 +97,36 @@ Partial Class FrmReceiversEntry
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(428, 5)
+        Me.Button6.Location = New System.Drawing.Point(380, 5)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(100, 26)
+        Me.Button6.Size = New System.Drawing.Size(88, 29)
         Me.Button6.TabIndex = 4
         Me.Button6.Text = "Print"
         Me.Button6.UseVisualStyleBackColor = True
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(322, 5)
+        Me.Button5.Location = New System.Drawing.Point(286, 5)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(100, 26)
+        Me.Button5.Size = New System.Drawing.Size(88, 29)
         Me.Button5.TabIndex = 3
         Me.Button5.Text = "Delete"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(216, 5)
+        Me.Button4.Location = New System.Drawing.Point(192, 6)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(100, 26)
+        Me.Button4.Size = New System.Drawing.Size(88, 29)
         Me.Button4.TabIndex = 2
         Me.Button4.Text = "Save"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(110, 5)
+        Me.Button3.Location = New System.Drawing.Point(98, 6)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(100, 26)
+        Me.Button3.Size = New System.Drawing.Size(88, 29)
         Me.Button3.TabIndex = 1
         Me.Button3.Text = "Edit"
         Me.Button3.UseVisualStyleBackColor = True
@@ -173,7 +135,7 @@ Partial Class FrmReceiversEntry
         '
         Me.Button1.Location = New System.Drawing.Point(4, 5)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 26)
+        Me.Button1.Size = New System.Drawing.Size(88, 29)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "New"
         Me.Button1.UseVisualStyleBackColor = True
@@ -183,9 +145,9 @@ Partial Class FrmReceiversEntry
         Me.Panel3.BackColor = System.Drawing.SystemColors.Control
         Me.Panel3.Controls.Add(Me.dtgReceiversFormList)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(0, 74)
+        Me.Panel3.Location = New System.Drawing.Point(0, 43)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1238, 429)
+        Me.Panel3.Size = New System.Drawing.Size(1238, 460)
         Me.Panel3.TabIndex = 6
         '
         'dtgReceiversFormList
@@ -232,7 +194,7 @@ Partial Class FrmReceiversEntry
         Me.dtgReceiversFormList.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dtgReceiversFormList.RowTemplate.Height = 25
         Me.dtgReceiversFormList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgReceiversFormList.Size = New System.Drawing.Size(1238, 429)
+        Me.dtgReceiversFormList.Size = New System.Drawing.Size(1238, 460)
         Me.dtgReceiversFormList.TabIndex = 2
         '
         'ContextMenuStrip1
@@ -261,13 +223,11 @@ Partial Class FrmReceiversEntry
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.panelbottom)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MinimizeBox = False
         Me.Name = "FrmReceiversEntry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmReceiversEntry"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Text = "RECEIVING"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.panelbottom.ResumeLayout(False)
@@ -278,10 +238,6 @@ Partial Class FrmReceiversEntry
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Label5 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents panelbottom As Panel
     Friend WithEvents Button6 As Button
