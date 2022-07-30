@@ -87,12 +87,8 @@
 
     End Sub
 
-    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-        PanelInputRemittance.Visible = False
-        'txtAgentCode.Clear()
-        'txtCoor.Clear()
-        'txtNetOndate.Clear()
-        clearTxt("frmreceiversform_inputremittancePanel")
+    Private Sub Label11_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private allowCoolMove As Boolean = False
@@ -180,6 +176,14 @@
 
     Private Sub FrmReceiversForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         dtgRidersCollection.Rows.Clear()
+        clearTxt("frmreceiversform_inputremittancePanel")
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        PanelInputRemittance.Visible = False
+        'txtAgentCode.Clear()
+        'txtCoor.Clear()
+        'txtNetOndate.Clear()
         clearTxt("frmreceiversform_inputremittancePanel")
     End Sub
 End Class

@@ -80,4 +80,10 @@
     Private Sub ListOfReceiversFormToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListOfReceiversFormToolStripMenuItem.Click
         FrmReceiversEntry.ShowDialog()
     End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles btnLogout.Click
+        PanelLogin.Visible = True
+        panelMenu.Enabled = False
+        btnLogout.Visible = False
+    End Sub
 End Class

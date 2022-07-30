@@ -22,13 +22,13 @@ Partial Class FrmTicketEntry
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTicketEntry))
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblagentcode = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.PanelSearch = New System.Windows.Forms.Panel()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -43,6 +43,7 @@ Partial Class FrmTicketEntry
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.paneldtgList = New System.Windows.Forms.Panel()
+        Me.dtgTickets = New System.Windows.Forms.DataGridView()
         Me.Panelentry = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbTicketType = New System.Windows.Forms.ComboBox()
@@ -52,16 +53,15 @@ Partial Class FrmTicketEntry
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.dtgTickets = New System.Windows.Forms.DataGridView()
         Me.Panel4.SuspendLayout()
         Me.PanelSearch.SuspendLayout()
         Me.panelBottom.SuspendLayout()
         Me.paneldtgList.SuspendLayout()
+        CType(Me.dtgTickets, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panelentry.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.dtgTickets, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel4
@@ -70,20 +70,20 @@ Partial Class FrmTicketEntry
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel4.Controls.Add(Me.lblagentcode)
         Me.Panel4.Controls.Add(Me.Label6)
-        Me.Panel4.Controls.Add(Me.Label7)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(690, 41)
+        Me.Panel4.Size = New System.Drawing.Size(690, 35)
         Me.Panel4.TabIndex = 1
         '
         'lblagentcode
         '
         Me.lblagentcode.AutoSize = True
         Me.lblagentcode.BackColor = System.Drawing.Color.Goldenrod
+        Me.lblagentcode.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblagentcode.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.lblagentcode.ForeColor = System.Drawing.Color.White
-        Me.lblagentcode.Location = New System.Drawing.Point(393, 7)
+        Me.lblagentcode.Location = New System.Drawing.Point(154, 0)
         Me.lblagentcode.Name = "lblagentcode"
         Me.lblagentcode.Size = New System.Drawing.Size(154, 25)
         Me.lblagentcode.TabIndex = 9
@@ -93,25 +93,14 @@ Partial Class FrmTicketEntry
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Goldenrod
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(233, 6)
+        Me.Label6.Location = New System.Drawing.Point(0, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(154, 25)
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "AGENT CODE:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Goldenrod
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(2, 4)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(143, 25)
-        Me.Label7.TabIndex = 7
-        Me.Label7.Text = "TICKET ENTRY"
         '
         'PanelSearch
         '
@@ -119,7 +108,7 @@ Partial Class FrmTicketEntry
         Me.PanelSearch.Controls.Add(Me.txtSearch)
         Me.PanelSearch.Controls.Add(Me.Label9)
         Me.PanelSearch.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelSearch.Location = New System.Drawing.Point(0, 41)
+        Me.PanelSearch.Location = New System.Drawing.Point(0, 35)
         Me.PanelSearch.Name = "PanelSearch"
         Me.PanelSearch.Size = New System.Drawing.Size(690, 55)
         Me.PanelSearch.TabIndex = 16
@@ -248,11 +237,13 @@ Partial Class FrmTicketEntry
         Me.btnDelete.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnDelete.Image = CType(resources.GetObject("btnDelete.Image"), System.Drawing.Image)
         Me.btnDelete.Location = New System.Drawing.Point(584, 5)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(88, 29)
+        Me.btnDelete.Size = New System.Drawing.Size(88, 32)
         Me.btnDelete.TabIndex = 2
         Me.btnDelete.Text = "Delete"
+        Me.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnDelete.UseVisualStyleBackColor = True
         '
         'btnEdit
@@ -260,11 +251,13 @@ Partial Class FrmTicketEntry
         Me.btnEdit.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnEdit.Image = CType(resources.GetObject("btnEdit.Image"), System.Drawing.Image)
         Me.btnEdit.Location = New System.Drawing.Point(490, 5)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(88, 29)
+        Me.btnEdit.Size = New System.Drawing.Size(88, 32)
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "Edit"
+        Me.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEdit.UseVisualStyleBackColor = True
         '
         'btnAdd
@@ -272,22 +265,70 @@ Partial Class FrmTicketEntry
         Me.btnAdd.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAdd.Image = CType(resources.GetObject("btnAdd.Image"), System.Drawing.Image)
         Me.btnAdd.Location = New System.Drawing.Point(396, 5)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(88, 29)
+        Me.btnAdd.Size = New System.Drawing.Size(88, 32)
         Me.btnAdd.TabIndex = 0
         Me.btnAdd.Text = "Add"
+        Me.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAdd.UseVisualStyleBackColor = True
         '
         'paneldtgList
         '
-        Me.paneldtgList.Controls.Add(Me.Panelentry)
         Me.paneldtgList.Controls.Add(Me.dtgTickets)
         Me.paneldtgList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.paneldtgList.Location = New System.Drawing.Point(0, 96)
+        Me.paneldtgList.Location = New System.Drawing.Point(0, 90)
         Me.paneldtgList.Name = "paneldtgList"
-        Me.paneldtgList.Size = New System.Drawing.Size(690, 411)
+        Me.paneldtgList.Size = New System.Drawing.Size(690, 417)
         Me.paneldtgList.TabIndex = 18
+        '
+        'dtgTickets
+        '
+        Me.dtgTickets.AllowUserToAddRows = False
+        Me.dtgTickets.AllowUserToDeleteRows = False
+        Me.dtgTickets.AllowUserToResizeColumns = False
+        Me.dtgTickets.AllowUserToResizeRows = False
+        Me.dtgTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.dtgTickets.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dtgTickets.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dtgTickets.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgTickets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dtgTickets.ColumnHeadersHeight = 35
+        Me.dtgTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dtgTickets.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtgTickets.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.dtgTickets.EnableHeadersVisualStyles = False
+        Me.dtgTickets.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dtgTickets.Location = New System.Drawing.Point(0, 0)
+        Me.dtgTickets.MultiSelect = False
+        Me.dtgTickets.Name = "dtgTickets"
+        Me.dtgTickets.ReadOnly = True
+        Me.dtgTickets.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgTickets.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.dtgTickets.RowHeadersVisible = False
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black
+        Me.dtgTickets.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.dtgTickets.RowTemplate.Height = 25
+        Me.dtgTickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtgTickets.Size = New System.Drawing.Size(690, 417)
+        Me.dtgTickets.TabIndex = 4
         '
         'Panelentry
         '
@@ -303,9 +344,9 @@ Partial Class FrmTicketEntry
         Me.Panelentry.Controls.Add(Me.Label2)
         Me.Panelentry.Controls.Add(Me.Label4)
         Me.Panelentry.Controls.Add(Me.Panel2)
-        Me.Panelentry.Location = New System.Drawing.Point(152, 84)
+        Me.Panelentry.Location = New System.Drawing.Point(152, 170)
         Me.Panelentry.Name = "Panelentry"
-        Me.Panelentry.Size = New System.Drawing.Size(332, 159)
+        Me.Panelentry.Size = New System.Drawing.Size(332, 165)
         Me.Panelentry.TabIndex = 17
         Me.Panelentry.Visible = False
         '
@@ -352,11 +393,14 @@ Partial Class FrmTicketEntry
         '
         'btnSaveOndate
         '
+        Me.btnSaveOndate.Image = CType(resources.GetObject("btnSaveOndate.Image"), System.Drawing.Image)
         Me.btnSaveOndate.Location = New System.Drawing.Point(132, 120)
         Me.btnSaveOndate.Name = "btnSaveOndate"
         Me.btnSaveOndate.Size = New System.Drawing.Size(174, 34)
         Me.btnSaveOndate.TabIndex = 17
         Me.btnSaveOndate.Text = "Save"
+        Me.btnSaveOndate.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSaveOndate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSaveOndate.UseVisualStyleBackColor = True
         '
         'Label2
@@ -386,26 +430,28 @@ Partial Class FrmTicketEntry
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Goldenrod
-        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(330, 27)
+        Me.Panel2.Size = New System.Drawing.Size(330, 32)
         Me.Panel2.TabIndex = 0
         '
-        'Label5
+        'Button1
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Goldenrod
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(302, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(28, 28)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "X"
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(293, 0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(35, 30)
+        Me.Button1.TabIndex = 18
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -419,67 +465,23 @@ Partial Class FrmTicketEntry
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "TICKET ENTRY"
         '
-        'dtgTickets
-        '
-        Me.dtgTickets.AllowUserToAddRows = False
-        Me.dtgTickets.AllowUserToDeleteRows = False
-        Me.dtgTickets.AllowUserToResizeColumns = False
-        Me.dtgTickets.AllowUserToResizeRows = False
-        Me.dtgTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
-        Me.dtgTickets.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dtgTickets.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dtgTickets.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgTickets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dtgTickets.ColumnHeadersHeight = 35
-        Me.dtgTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dtgTickets.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dtgTickets.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.dtgTickets.EnableHeadersVisualStyles = False
-        Me.dtgTickets.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dtgTickets.Location = New System.Drawing.Point(0, 0)
-        Me.dtgTickets.MultiSelect = False
-        Me.dtgTickets.Name = "dtgTickets"
-        Me.dtgTickets.ReadOnly = True
-        Me.dtgTickets.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgTickets.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dtgTickets.RowHeadersVisible = False
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black
-        Me.dtgTickets.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dtgTickets.RowTemplate.Height = 25
-        Me.dtgTickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgTickets.Size = New System.Drawing.Size(690, 411)
-        Me.dtgTickets.TabIndex = 4
-        '
         'FrmTicketEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(690, 559)
+        Me.Controls.Add(Me.Panelentry)
         Me.Controls.Add(Me.paneldtgList)
         Me.Controls.Add(Me.panelBottom)
         Me.Controls.Add(Me.PanelSearch)
         Me.Controls.Add(Me.Panel4)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmTicketEntry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "TICKET ENTRY"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.PanelSearch.ResumeLayout(False)
@@ -487,17 +489,16 @@ Partial Class FrmTicketEntry
         Me.panelBottom.ResumeLayout(False)
         Me.panelBottom.PerformLayout()
         Me.paneldtgList.ResumeLayout(False)
+        CType(Me.dtgTickets, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panelentry.ResumeLayout(False)
         Me.Panelentry.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.dtgTickets, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label7 As Label
     Friend WithEvents PanelSearch As Panel
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents Label9 As Label
@@ -514,7 +515,6 @@ Partial Class FrmTicketEntry
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents cmbTicketType As ComboBox
@@ -526,4 +526,5 @@ Partial Class FrmTicketEntry
     Friend WithEvents Label12 As Label
     Friend WithEvents lblprevticket As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents Button1 As Button
 End Class

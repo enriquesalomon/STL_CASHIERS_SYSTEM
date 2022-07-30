@@ -25,6 +25,7 @@ Partial Class FrmRidersDailySummary
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRidersDailySummary))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -160,11 +161,13 @@ Partial Class FrmRidersDailySummary
         'btnLoad
         '
         Me.btnLoad.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnLoad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLoad.Location = New System.Drawing.Point(0, 102)
         Me.btnLoad.Name = "btnLoad"
         Me.btnLoad.Size = New System.Drawing.Size(296, 37)
         Me.btnLoad.TabIndex = 17
         Me.btnLoad.Text = "Load Record"
+        Me.btnLoad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnLoad.UseVisualStyleBackColor = True
         '
         'Label2
@@ -295,11 +298,14 @@ Partial Class FrmRidersDailySummary
         '
         'btnGenerateRFForm
         '
-        Me.btnGenerateRFForm.Location = New System.Drawing.Point(29, 203)
+        Me.btnGenerateRFForm.Image = CType(resources.GetObject("btnGenerateRFForm.Image"), System.Drawing.Image)
+        Me.btnGenerateRFForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnGenerateRFForm.Location = New System.Drawing.Point(73, 199)
         Me.btnGenerateRFForm.Name = "btnGenerateRFForm"
-        Me.btnGenerateRFForm.Size = New System.Drawing.Size(296, 75)
+        Me.btnGenerateRFForm.Size = New System.Drawing.Size(221, 75)
         Me.btnGenerateRFForm.TabIndex = 18
         Me.btnGenerateRFForm.Text = "Generate Receivers Form"
+        Me.btnGenerateRFForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnGenerateRFForm.UseVisualStyleBackColor = True
         '
         'Panel5

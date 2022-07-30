@@ -40,6 +40,7 @@ Partial Class FrmMain
         Me.IMPORTSALESREPORTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VIEWUNPAIDREMITTANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnLogout = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PanelLogin = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -176,16 +177,32 @@ Partial Class FrmMain
         Me.VIEWUNPAIDREMITTANCEToolStripMenuItem.Name = "VIEWUNPAIDREMITTANCEToolStripMenuItem"
         Me.VIEWUNPAIDREMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(76, 54)
         Me.VIEWUNPAIDREMITTANCEToolStripMenuItem.Text = "LOG-OUT"
+        Me.VIEWUNPAIDREMITTANCEToolStripMenuItem.Visible = False
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Goldenrod
+        Me.Panel1.Controls.Add(Me.btnLogout)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1253, 31)
         Me.Panel1.TabIndex = 1
+        '
+        'btnLogout
+        '
+        Me.btnLogout.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnLogout.FlatAppearance.BorderSize = 0
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogout.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnLogout.Image = CType(resources.GetObject("btnLogout.Image"), System.Drawing.Image)
+        Me.btnLogout.Location = New System.Drawing.Point(1217, 0)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(36, 31)
+        Me.btnLogout.TabIndex = 9
+        Me.btnLogout.UseVisualStyleBackColor = True
+        Me.btnLogout.Visible = False
         '
         'Label5
         '
@@ -213,7 +230,7 @@ Partial Class FrmMain
         Me.PanelLogin.Controls.Add(Me.Label2)
         Me.PanelLogin.Location = New System.Drawing.Point(415, 248)
         Me.PanelLogin.Name = "PanelLogin"
-        Me.PanelLogin.Size = New System.Drawing.Size(411, 139)
+        Me.PanelLogin.Size = New System.Drawing.Size(411, 144)
         Me.PanelLogin.TabIndex = 2
         '
         'PictureBox1
@@ -258,21 +275,26 @@ Partial Class FrmMain
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.Location = New System.Drawing.Point(312, 107)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(88, 29)
+        Me.Button2.Size = New System.Drawing.Size(88, 32)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Close"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(222, 107)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(88, 29)
+        Me.Button1.Size = New System.Drawing.Size(88, 32)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Login"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Panel2
@@ -390,4 +412,5 @@ Partial Class FrmMain
     Friend WithEvents UnpaidBalanceRemittancesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PaidRemittancesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClaimedAndUnclaimHitsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnLogout As Button
 End Class

@@ -32,8 +32,6 @@ Module ModFunction
     'Public ReportPath As String = "C:\Users\Admin Staff\Desktop\CET EDITED\CET UPDATED\CET SCHEDULING AND RESULTS EVALUATION SYSTEM\CET SCHEDULING AND RESULTS EVALUATION SYSTEM\Reports"
 
 
-
-
     Public Function getConnectionPATH() As String
         mstring = ""
         'Local==============

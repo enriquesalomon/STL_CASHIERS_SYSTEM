@@ -28,10 +28,8 @@
 
     End Sub
 
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-        Panelentry.Visible = False
-        cmbTicketType.Text = Nothing
-        txtWinningAmount.Clear()
+    Private Sub Label5_Click(sender As Object, e As EventArgs)
+
 
     End Sub
 
@@ -139,4 +137,28 @@
             mytickets.LoadRecord()
         End If
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Panelentry.Visible = False
+        cmbTicketType.Text = Nothing
+        txtWinningAmount.Clear()
+    End Sub
+    Private allowCoolMove As Boolean = False
+    Private myCoolPoint As New Point
+    Private Sub Panelentry_MouseDown(sender As Object, e As MouseEventArgs) Handles Panelentry.MouseDown
+        myCoolPoint = New Point(e.X, e.Y)
+        Me.Cursor = Cursors.SizeAll
+    End Sub
+    Private Sub Panelentry_MouseMove(sender As Object, e As MouseEventArgs) Handles Panelentry.MouseMove
+        If allowCoolMove = True Then
+            Panelentry.Location = New Point(Panelentry.Location.X + e.X - myCoolPoint.X, Panelentry.Location.Y + e.Y - myCoolPoint.Y)
+        End If
+    End Sub
+
+    Private Sub Panelentry_MouseUp(sender As Object, e As MouseEventArgs) Handles Panelentry.MouseUp
+        allowCoolMove = False
+        Me.Cursor = Cursors.Default
+    End Sub
+
+
 End Class

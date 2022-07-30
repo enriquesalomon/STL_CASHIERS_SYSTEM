@@ -34,6 +34,7 @@ Public Class Login
                 FrmMain.Enabled = True
                 FrmMain.PanelLogin.Visible = False
                 FrmMain.panelMenu.Enabled = True
+                FrmMain.btnLogout.Visible = True
             Else
                 MessageBox.Show("Access denied Invalid username or password", "Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 FrmMain.txtPassword.Focus()

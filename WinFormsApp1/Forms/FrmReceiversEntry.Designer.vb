@@ -23,6 +23,7 @@ Partial Class FrmReceiversEntry
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReceiversEntry))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -32,7 +33,6 @@ Partial Class FrmReceiversEntry
         Me.lblrec = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -75,13 +75,12 @@ Partial Class FrmReceiversEntry
         Me.panelbottom.Controls.Add(Me.lblrec)
         Me.panelbottom.Controls.Add(Me.Button6)
         Me.panelbottom.Controls.Add(Me.Button5)
-        Me.panelbottom.Controls.Add(Me.Button4)
         Me.panelbottom.Controls.Add(Me.Button3)
         Me.panelbottom.Controls.Add(Me.Button1)
         Me.panelbottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelbottom.Location = New System.Drawing.Point(0, 503)
+        Me.panelbottom.Location = New System.Drawing.Point(0, 483)
         Me.panelbottom.Name = "panelbottom"
-        Me.panelbottom.Size = New System.Drawing.Size(1238, 39)
+        Me.panelbottom.Size = New System.Drawing.Size(1238, 42)
         Me.panelbottom.TabIndex = 5
         '
         'lblrec
@@ -97,47 +96,50 @@ Partial Class FrmReceiversEntry
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(380, 5)
+        Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
+        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button6.Location = New System.Drawing.Point(286, 6)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(88, 29)
+        Me.Button6.Size = New System.Drawing.Size(88, 31)
         Me.Button6.TabIndex = 4
         Me.Button6.Text = "Print"
+        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button6.UseVisualStyleBackColor = True
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(286, 5)
+        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(192, 6)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(88, 29)
+        Me.Button5.Size = New System.Drawing.Size(88, 31)
         Me.Button5.TabIndex = 3
         Me.Button5.Text = "Delete"
+        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(192, 6)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(88, 29)
-        Me.Button4.TabIndex = 2
-        Me.Button4.Text = "Save"
-        Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
         '
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button3.Location = New System.Drawing.Point(98, 6)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(88, 29)
+        Me.Button3.Size = New System.Drawing.Size(88, 31)
         Me.Button3.TabIndex = 1
         Me.Button3.Text = "Edit"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button1
         '
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(4, 5)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(88, 29)
+        Me.Button1.Size = New System.Drawing.Size(88, 31)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "New"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Panel3
@@ -147,7 +149,7 @@ Partial Class FrmReceiversEntry
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 43)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1238, 460)
+        Me.Panel3.Size = New System.Drawing.Size(1238, 440)
         Me.Panel3.TabIndex = 6
         '
         'dtgReceiversFormList
@@ -194,7 +196,7 @@ Partial Class FrmReceiversEntry
         Me.dtgReceiversFormList.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dtgReceiversFormList.RowTemplate.Height = 25
         Me.dtgReceiversFormList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgReceiversFormList.Size = New System.Drawing.Size(1238, 460)
+        Me.dtgReceiversFormList.Size = New System.Drawing.Size(1238, 440)
         Me.dtgReceiversFormList.TabIndex = 2
         '
         'ContextMenuStrip1
@@ -219,7 +221,7 @@ Partial Class FrmReceiversEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1238, 542)
+        Me.ClientSize = New System.Drawing.Size(1238, 525)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.panelbottom)
         Me.Controls.Add(Me.Panel2)
@@ -242,7 +244,6 @@ Partial Class FrmReceiversEntry
     Friend WithEvents panelbottom As Panel
     Friend WithEvents Button6 As Button
     Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel3 As Panel
