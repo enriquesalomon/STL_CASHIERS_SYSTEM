@@ -3,7 +3,6 @@ Imports System.Text
 Imports System.Data.SqlClient
 Public Class Login
     Sub VerifyUser()
-
         Try
 
             Call connectSQL(conString)
@@ -20,15 +19,10 @@ Public Class Login
                     password = mysqlreader("UserPassword").ToString
                     'tempName = (mysqlreader("Fullname")).ToString & Space(1) & Mid((mysqlreader("Mname")), 1, 1).ToString & "." & Space(1) & (mysqlreader("Lname")).ToString & "  "
                     cashier = (mysqlreader("Fullname")).ToString
-                    'lblposition.Text = Trim(mysqlreader("Designation").ToString)
-
-
                 End While
             Else
                 password = password
             End If
-
-
             If FrmMain.txtPassword.Text = "" And FrmMain.txtUsername.Text = "" Then
                 MessageBox.Show("Please enter username or password", "Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
@@ -39,18 +33,7 @@ Public Class Login
                 FrmMain.txtUsername.Text = ""
                 FrmMain.Enabled = True
                 FrmMain.PanelLogin.Visible = False
-
                 FrmMain.panelMenu.Enabled = True
-                'btnSchedule.Enabled = True
-                'btnPerformance.Enabled = True
-                'btnResults.Enabled = True
-                'btnLogout.Enabled = True
-                'If lblUserID.Text = "0001" Then
-                '    btnSetting.Visible = True
-                'Else
-                '    btnSetting.Visible = False
-                'End If
-
             Else
                 MessageBox.Show("Access denied Invalid username or password", "Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 FrmMain.txtPassword.Focus()

@@ -1,15 +1,4 @@
 ﻿Public Class ImportTable
-    'Public Property Cluster As String
-    'Public Property Barangay As String
-    'Public Property Rider As String
-    'Public Property Type As String
-    'Public Property Coordinator As String
-    'Public Property Agent As String
-    'Public Property Comm As String
-    'Public Property Username As String
-
-
-
     Public Property salesdate As Date
     Public Property cluster As String
     Public Property municipality As String
@@ -51,22 +40,15 @@
 
         Next datagrd
 
-
-
         Dim ntable As New DataTable
         Dim ndataset As New DataSet
-
-
-
         Try
             Call connectSQL(conString)
             mycommand = mysqlconn.CreateCommand
             mycommand.CommandText = "select  *  from [tb_SalesSummaryImported]  where SALESDATE='" & salesdatInExceltoImport & "'"
-
             myadapter.SelectCommand = mycommand
             myadapter.Fill(ndataset, "tb_SalesSummaryImported")
             ntable = ndataset.Tables("tb_SalesSummaryImported")
-
             If ntable.Rows.Count > 0 Then
                 checkExistingSalesImport = True
             Else
@@ -74,7 +56,6 @@
             End If
             ntable.Rows.Clear()
             ndataset.Clear()
-
         Catch ex As Exception
             MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
         End Try

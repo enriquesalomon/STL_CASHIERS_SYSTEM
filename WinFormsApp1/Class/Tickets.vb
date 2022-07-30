@@ -45,24 +45,6 @@
             qryStatement = ""
 
 
-            'If filterByTestSite Then
-            '    qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "' and TestingSite ='" & Trim(cboFilterTestSite.Text) & "'  order by ExamineeInfo.ExamineeNo ASC "
-            '    'qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where between'" & Format(CDate(dtFromdate.Text), "yyyy-MM-dd").ToString & "' and '" & Format(CDate(dtTodate.Text), "yyyy-MM-dd").ToString & "'  order by ExamineeInfo.ExamineeNo ASC "
-
-            'Else
-            '    If lfind Then
-            '        'qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(sched) & "' and Lastname like '%" & txtsearch.Text & "%' or ExamineeInfo.Examineeno  like '%" & txtsearch.Text & "%' or Firstname like '%" & txtsearch.Text & "%'"
-            '        qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "' and Lastname like '%" & txtsearch.Text & "%' "
-
-            '    Else
-            '        qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "'  order by Lastname ASC"
-
-            '    End If
-            'End If
-
-
-            'qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where DateInserted between'" & Format(CDate(dtFromdate.Text), "yyyy-MM-dd").ToString & "' and '" & Format(CDate(dtTodate.Text), "yyyy-MM-dd").ToString & "'  order by ExamineeInfo.ExamineeNo ASC "
-
 
             If lfind Then
                 'qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_ClaimedTicket] where RFID ='" & FrmReceiversForm.txtrfNum.Text & "' AND   order by Coordinator ASC"
@@ -111,17 +93,7 @@
                     FrmTicketEntry.lblprevticket.Text = Format(CDbl(TotalPrevious), "###,###,###.#0")
                     FrmTicketEntry.lbltotalticket.Text = Format(CDbl(TotalTIckets), "###,###,###.#0")
 
-                    'If RW.Cells(8).Value.ToString = "NONE" Then
-                    '    FrmTicketEntry.dtgTickets.Rows(i).DefaultCellStyle.BackColor = Color.IndianRed
-                    '    FrmTicketEntry.dtgTickets.Rows(i).DefaultCellStyle.ForeColor = Color.White
-                    'Else
-                    '    FrmTicketEntry.dtgTickets.Rows(i).DefaultCellStyle.BackColor = Color.White
-                    '    FrmTicketEntry.dtgTickets.Rows(i).DefaultCellStyle.ForeColor = Color.Black
 
-                    'End If : i += 1
-
-
-                    'totdiscount += CDbl(RW.Cells(4).Value.ToString)
                 Next
             Else
                 FrmTicketEntry.lblondateticket.Text = 0.00

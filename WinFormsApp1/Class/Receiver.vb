@@ -91,8 +91,6 @@
                 For Each lrow As DataRow In mydataTable.Rows
                     num += 1
 
-
-                    'Format(CDate(lrow("salesdate")), "MM/dd/yyyy").ToString,
                     Dim row As String() = New String() {num, lrow("ID").ToString, Format(CDate(lrow("SALESDATE")), "MM/dd/yyyy").ToString, lrow("RIDER").ToString, lrow("CASHIER").ToString, Format(CDate(lrow("DATECREATED")), "MM/dd/yyyy").ToString, Format(CDate(lrow("DATERECEIVED")), "MM/dd/yyyy").ToString, lrow("STATUS").ToString}
                     FrmReceiversEntry.dtgReceiversFormList.Rows.Add(row)
                 Next
@@ -116,13 +114,6 @@
             '    Next
 
             'End If
-
-
-            'If FrmReceiversEntry.dtgReceiversFormList.Rows.Count = 0 Then
-            '    MessageBox.Show("No Record Found", "System Response", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            'End If
-
         Catch ex As Exception
             MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
         End Try
@@ -139,33 +130,5 @@
             FrmReceiversForm.txtHitsOndate.Text = CStr(GridRow.Cells.Item("ondatehits").Value)
 
         Next datagrd
-
-
-        'Try
-        '    mydataTable.Rows.Clear()
-        '    mydataset.Clear()
-        '    Call connectSQL(conString)
-        '    mycommand = mysqlconn.CreateCommand
-        '    mycommand.CommandText = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno  where ExamineeInfo.Examineeno='" & Trim(lblExamineeno.Text) & "' "
-        '    myadapter.SelectCommand = mycommand
-        '    myadapter.Fill(mydataset, "ExamineeInfo")
-        '    mydataTable = mydataset.Tables("ExamineeInfo")
-        '    'cboChoice1.Text = ""
-        '    If mydataTable.Rows.Count > 0 Then
-        '        For Each mrow As DataRow In mydataTable.Rows
-        '            lbladdnum.Text = mrow("Addnum").ToString
-        '            txtLname.Text = mrow("Lastname").ToString
-        '            txtMname.Text = mrow("Middlename").ToString
-        '            txtFname.Text = mrow("Firstname").ToString
-
-
-        '        Next
-        '    End If
-
-
-
-        'Catch ex As Exception
-        '    MsgBox("Error: " & ex.Source & ": " & ex.Message, MsgBoxStyle.OkOnly, "Error !!")
-        'End Try
     End Sub
 End Class

@@ -86,24 +86,6 @@
             qryStatement = ""
 
 
-            'If filterByTestSite Then
-            '    qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "' and TestingSite ='" & Trim(cboFilterTestSite.Text) & "'  order by ExamineeInfo.ExamineeNo ASC "
-            '    'qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where between'" & Format(CDate(dtFromdate.Text), "yyyy-MM-dd").ToString & "' and '" & Format(CDate(dtTodate.Text), "yyyy-MM-dd").ToString & "'  order by ExamineeInfo.ExamineeNo ASC "
-
-            'Else
-            '    If lfind Then
-            '        'qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(sched) & "' and Lastname like '%" & txtsearch.Text & "%' or ExamineeInfo.Examineeno  like '%" & txtsearch.Text & "%' or Firstname like '%" & txtsearch.Text & "%'"
-            '        qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "' and Lastname like '%" & txtsearch.Text & "%' "
-
-            '    Else
-            '        qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "'  order by Lastname ASC"
-
-            '    End If
-            'End If
-
-
-            'qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where DateInserted between'" & Format(CDate(dtFromdate.Text), "yyyy-MM-dd").ToString & "' and '" & Format(CDate(dtTodate.Text), "yyyy-MM-dd").ToString & "'  order by ExamineeInfo.ExamineeNo ASC "
-
 
             If lfind Then
                 qryStatement = "select * from [stl_cashier_db].[dbo].[tb_SalesSummaryImported] where CLUSTER like '%" & FrmGameAccountsSummary.txtSearch.Text & "%' or  MUNICIPALITY like '%" & FrmGameAccountsSummary.txtSearch.Text & "%' or  RIDER like '%" & FrmGameAccountsSummary.txtSearch.Text & "%'  or  COORDINATOR like '%" & FrmGameAccountsSummary.txtSearch.Text & "%'  or  AGENT like '%" & FrmGameAccountsSummary.txtSearch.Text & "%'  or  USERNAME like '%" & FrmGameAccountsSummary.txtSearch.Text & "%'   order by Coordinator ASC"
@@ -129,25 +111,6 @@
                     FrmGameAccountsSummary.dtgSummary.Rows.Add(row)
                 Next
             End If
-
-            'If viewWithSched = True Then
-            '    Dim i As Integer = 0
-            '    For Each RW As DataGridViewRow In FrmGameAccountsSummary.dtgSummary.Rows
-
-            '        If RW.Cells(8).Value.ToString = "NONE" Then
-            '            FrmGameAccountsSummary.dtgSummary.Rows(i).DefaultCellStyle.BackColor = Color.IndianRed
-            '            FrmGameAccountsSummary.dtgSummary.Rows(i).DefaultCellStyle.ForeColor = Color.White
-            '        Else
-            '            FrmGameAccountsSummary.dtgSummary.Rows(i).DefaultCellStyle.BackColor = Color.White
-            '            FrmGameAccountsSummary.dtgSummary.Rows(i).DefaultCellStyle.ForeColor = Color.Black
-
-            '        End If : i += 1
-
-
-            '        'totdiscount += CDbl(RW.Cells(4).Value.ToString)
-            '    Next
-
-            'End If
 
 
 

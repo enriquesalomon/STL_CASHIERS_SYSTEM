@@ -1,38 +1,13 @@
 ﻿Public Class Riders
-    'Sub loadridersList()
-    '    FrmReceiversForm.cboRiders.Items.Clear()
-
-    '    qryStatement = "select DISTINCT Rider from tb_SalesSummaryImported "
-
-    '    Call connectSQL(conString)
-    '    mycommand = mysqlconn.CreateCommand
-    '    mycommand.CommandText = qryStatement
-    '    myadapter.SelectCommand = mycommand
-    '    myadapter.Fill(mydataset, "tb_SalesSummaryImported")
-    '    mydataTable = mydataset.Tables("tb_SalesSummaryImported")
-    '    mysqlreader = mycommand.ExecuteReader
-    '    If mydataTable.Rows.Count > 0 Then
-    '        While mysqlreader.Read()
-    '            FrmReceiversForm.cboRiders.Items.Add(mysqlreader("Rider").ToString)
-    '        End While
-    '    Else
-    '    End If
-    '    mysqlreader.Close()
-    '    mysqlconn.Close()
-    'End Sub
 
     Public Function checkExisting() As Boolean
         Dim ntable As New DataTable
         Dim ndataset As New DataSet
 
-
-
         'Try
         Call connectSQL(conString)
-            mycommand = mysqlconn.CreateCommand
-        'mycommand.CommandText = "select  *  from tbl_ReceiversForm  where SALESDATE='" & (Format(CDate(FrmRidersDailySummary.lblDate.Text), "yyyy-MM-dd").ToString) & "' and RIDER='" & (FrmRidersDailySummary.lblridername.Text) & "' "
+        mycommand = mysqlconn.CreateCommand
         mycommand.CommandText = "select  *  from tbl_ReceiversForm  where SALESDATE='" & Format(CDate(FrmRidersDailySummary.lblDate.Text), "yyyy-MM-dd") & "' and RIDER='" & (FrmRidersDailySummary.lblridername.Text) & "' "
-
         myadapter.SelectCommand = mycommand
             myadapter.Fill(ndataset, "tbl_ReceiversForm")
             ntable = ndataset.Tables("tbl_ReceiversForm")
@@ -54,8 +29,6 @@
 
     Sub LoadRidersCollectionRecord()
         'Try
-
-
         FrmReceiversForm.dtgRidersCollection.ColumnCount = 9
         FrmReceiversForm.dtgRidersCollection.RowsDefaultCellStyle.BackColor = Color.White
         FrmReceiversForm.dtgRidersCollection.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke
@@ -121,15 +94,10 @@
             ElseIf FrmReceiversForm.searchcoor Then
                 qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_DailySalesAccountRemittance] where   COORDINATOR like '%" & Trim(FrmReceiversForm.txtSearch.Text) & "%' AND RFID='" & FrmReceiversEntry.rfnumber & "' AND  RIDER ='" & FrmReceiversEntry.rfridername & "'  order by Coordinator ASC"
 
-
             End If
-
         Else
             qryStatement = "select * from [stl_cashier_db].[dbo].[tbl_DailySalesAccountRemittance] where  RIDER ='" & FrmReceiversEntry.rfridername & "' AND  RFID='" & FrmReceiversEntry.rfnumber & "'   order by Coordinator ASC"
-
         End If
-
-
 
         Call connectSQL(conString)
             mycommand = mysqlconn.CreateCommand
@@ -300,20 +268,6 @@
             qryStatement = ""
 
 
-            'If filterByTestSite Then
-            '    qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "' and TestingSite ='" & Trim(cboFilterTestSite.Text) & "'  order by ExamineeInfo.ExamineeNo ASC "
-            '    'qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where between'" & Format(CDate(dtFromdate.Text), "yyyy-MM-dd").ToString & "' and '" & Format(CDate(dtTodate.Text), "yyyy-MM-dd").ToString & "'  order by ExamineeInfo.ExamineeNo ASC "
-
-            'Else
-            '    If lfind Then
-            '        'qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(sched) & "' and Lastname like '%" & txtsearch.Text & "%' or ExamineeInfo.Examineeno  like '%" & txtsearch.Text & "%' or Firstname like '%" & txtsearch.Text & "%'"
-            '        qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "' and Lastname like '%" & txtsearch.Text & "%' "
-
-            '    Else
-            '        qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "'  order by Lastname ASC"
-
-            '    End If
-            'End If
             qryStatement = "select salesdate,cluster,municipality,rider,coordinator,agent,comm,username,overallgross,overallcomm,overallnet,overallhits,revenue from tb_SalesSummaryImported where Rider ='" & Trim(FrmRidersDailySummary.cboRiders.Text) & "' AND salesdate= '" & Format(CDate(FrmRidersDailySummary.DateTimePicker1.Text), "yyyy-MM-dd").ToString & "'  order by Coordinator ASC"
 
             Call connectSQL(conString)
