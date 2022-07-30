@@ -25,9 +25,6 @@ Partial Class FrmGameAccountsSummary
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.panelbottom = New System.Windows.Forms.Panel()
         Me.lblrec = New System.Windows.Forms.Label()
         Me.panelcenter = New System.Windows.Forms.Panel()
@@ -35,46 +32,11 @@ Partial Class FrmGameAccountsSummary
         Me.paneltop = New System.Windows.Forms.Panel()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout()
         Me.panelbottom.SuspendLayout()
         Me.panelcenter.SuspendLayout()
         CType(Me.dtgSummary, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.paneltop.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Goldenrod
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1058, 31)
-        Me.Panel1.TabIndex = 3
-        '
-        'Button2
-        '
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button2.Location = New System.Drawing.Point(994, 0)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(64, 31)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "x"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Goldenrod
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(7, 7)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(176, 16)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Game Accounts Summary"
         '
         'panelbottom
         '
@@ -101,9 +63,9 @@ Partial Class FrmGameAccountsSummary
         '
         Me.panelcenter.Controls.Add(Me.dtgSummary)
         Me.panelcenter.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelcenter.Location = New System.Drawing.Point(0, 75)
+        Me.panelcenter.Location = New System.Drawing.Point(0, 44)
         Me.panelcenter.Name = "panelcenter"
-        Me.panelcenter.Size = New System.Drawing.Size(1058, 433)
+        Me.panelcenter.Size = New System.Drawing.Size(1058, 464)
         Me.panelcenter.TabIndex = 6
         '
         'dtgSummary
@@ -149,15 +111,16 @@ Partial Class FrmGameAccountsSummary
         Me.dtgSummary.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dtgSummary.RowTemplate.Height = 25
         Me.dtgSummary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgSummary.Size = New System.Drawing.Size(1058, 433)
+        Me.dtgSummary.Size = New System.Drawing.Size(1058, 464)
         Me.dtgSummary.TabIndex = 1
         '
         'paneltop
         '
+        Me.paneltop.BackColor = System.Drawing.Color.White
         Me.paneltop.Controls.Add(Me.txtSearch)
         Me.paneltop.Controls.Add(Me.Label9)
         Me.paneltop.Dock = System.Windows.Forms.DockStyle.Top
-        Me.paneltop.Location = New System.Drawing.Point(0, 31)
+        Me.paneltop.Location = New System.Drawing.Point(0, 0)
         Me.paneltop.Name = "paneltop"
         Me.paneltop.Size = New System.Drawing.Size(1058, 44)
         Me.paneltop.TabIndex = 7
@@ -187,14 +150,12 @@ Partial Class FrmGameAccountsSummary
         Me.Controls.Add(Me.panelcenter)
         Me.Controls.Add(Me.panelbottom)
         Me.Controls.Add(Me.paneltop)
-        Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MinimizeBox = False
         Me.Name = "FrmGameAccountsSummary"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmGameAccountsSummary"
+        Me.Text = "Game Accounts Summary"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.panelbottom.ResumeLayout(False)
         Me.panelbottom.PerformLayout()
         Me.panelcenter.ResumeLayout(False)
@@ -206,8 +167,6 @@ Partial Class FrmGameAccountsSummary
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Label5 As Label
     Friend WithEvents panelbottom As Panel
     Friend WithEvents panelcenter As Panel
     Friend WithEvents dtgSummary As DataGridView

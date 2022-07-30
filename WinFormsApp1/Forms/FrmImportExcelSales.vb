@@ -4,8 +4,8 @@ Imports Z.Dapper.Plus
 Public Class FrmImportExcelSales
     Dim tables As DataTableCollection
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Close()
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+        'Me.Close()
     End Sub
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click

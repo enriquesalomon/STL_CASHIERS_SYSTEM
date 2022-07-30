@@ -26,9 +26,6 @@ Partial Class FrmImportExcelSales
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.panelbottom = New System.Windows.Forms.Panel()
         Me.lblrec = New System.Windows.Forms.Label()
         Me.btnImport = New System.Windows.Forms.Button()
@@ -71,46 +68,11 @@ Partial Class FrmImportExcelSales
         Me.RevenueDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImportTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel1.SuspendLayout()
         Me.panelbottom.SuspendLayout()
         Me.panelcenter.SuspendLayout()
         CType(Me.dtgImportSales, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ImportTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Goldenrod
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1042, 31)
-        Me.Panel1.TabIndex = 2
-        '
-        'Button2
-        '
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button2.Location = New System.Drawing.Point(978, 0)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(64, 31)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "x"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Goldenrod
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(7, 7)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(147, 16)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "IMPORT SALES REPORT"
         '
         'panelbottom
         '
@@ -196,9 +158,9 @@ Partial Class FrmImportExcelSales
         Me.panelcenter.Controls.Add(Me.ProgressBar1)
         Me.panelcenter.Controls.Add(Me.dtgImportSales)
         Me.panelcenter.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelcenter.Location = New System.Drawing.Point(0, 31)
+        Me.panelcenter.Location = New System.Drawing.Point(0, 0)
         Me.panelcenter.Name = "panelcenter"
-        Me.panelcenter.Size = New System.Drawing.Size(1042, 427)
+        Me.panelcenter.Size = New System.Drawing.Size(1042, 458)
         Me.panelcenter.TabIndex = 5
         '
         'ProgressBar1
@@ -258,7 +220,7 @@ Partial Class FrmImportExcelSales
         Me.dtgImportSales.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dtgImportSales.RowTemplate.Height = 25
         Me.dtgImportSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgImportSales.Size = New System.Drawing.Size(1042, 427)
+        Me.dtgImportSales.Size = New System.Drawing.Size(1042, 458)
         Me.dtgImportSales.TabIndex = 0
         '
         'SalesdateDataGridViewTextBoxColumn
@@ -506,14 +468,12 @@ Partial Class FrmImportExcelSales
         Me.ClientSize = New System.Drawing.Size(1042, 542)
         Me.Controls.Add(Me.panelcenter)
         Me.Controls.Add(Me.panelbottom)
-        Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MinimizeBox = False
         Me.Name = "FrmImportExcelSales"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmImportExcelSales"
+        Me.Text = "IMPORT SALES REPORT"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.panelbottom.ResumeLayout(False)
         Me.panelbottom.PerformLayout()
         Me.panelcenter.ResumeLayout(False)
@@ -522,10 +482,6 @@ Partial Class FrmImportExcelSales
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Button2 As Button
     Friend WithEvents panelbottom As Panel
     Friend WithEvents btnBrowse As Button
     Friend WithEvents txtFilename As TextBox
