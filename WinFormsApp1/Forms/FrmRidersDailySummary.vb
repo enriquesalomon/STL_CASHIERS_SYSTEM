@@ -1,6 +1,6 @@
 ﻿Public Class FrmRidersDailySummary
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        dtgRidersCollection.Rows.Clear()
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+
         Me.Close()
     End Sub
 
@@ -94,5 +94,9 @@
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) 
 
+    End Sub
+
+    Private Sub FrmRidersDailySummary_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        dtgRidersCollection.Rows.Clear()
     End Sub
 End Class

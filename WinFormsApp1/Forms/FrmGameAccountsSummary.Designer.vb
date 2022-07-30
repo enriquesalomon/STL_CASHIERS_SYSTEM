@@ -128,7 +128,7 @@ Partial Class FrmGameAccountsSummary
         'txtSearch
         '
         Me.txtSearch.BackColor = System.Drawing.Color.White
-        Me.txtSearch.Location = New System.Drawing.Point(319, 11)
+        Me.txtSearch.Location = New System.Drawing.Point(54, 11)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(468, 23)
         Me.txtSearch.TabIndex = 27
@@ -136,7 +136,7 @@ Partial Class FrmGameAccountsSummary
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(272, 14)
+        Me.Label9.Location = New System.Drawing.Point(3, 14)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(45, 15)
         Me.Label9.TabIndex = 26

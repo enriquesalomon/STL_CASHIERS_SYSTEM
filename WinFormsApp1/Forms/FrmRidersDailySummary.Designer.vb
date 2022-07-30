@@ -22,13 +22,10 @@ Partial Class FrmRidersDailySummary
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRidersDailySummary))
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.dtgRidersCollection = New System.Windows.Forms.DataGridView()
         Me.PanelRider = New System.Windows.Forms.Panel()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -46,47 +43,12 @@ Partial Class FrmRidersDailySummary
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnGenerateRFForm = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel1.SuspendLayout()
         CType(Me.dtgRidersCollection, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelRider.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Goldenrod
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1001, 31)
-        Me.Panel1.TabIndex = 5
-        '
-        'Button2
-        '
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button2.Location = New System.Drawing.Point(937, 0)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(64, 31)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "x"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Goldenrod
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(7, 7)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(163, 16)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "RIDER'S DAILY SUMMARY"
         '
         'dtgRidersCollection
         '
@@ -98,39 +60,39 @@ Partial Class FrmRidersDailySummary
         Me.dtgRidersCollection.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.dtgRidersCollection.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtgRidersCollection.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgRidersCollection.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgRidersCollection.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dtgRidersCollection.ColumnHeadersHeight = 35
         Me.dtgRidersCollection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dtgRidersCollection.EnableHeadersVisualStyles = False
         Me.dtgRidersCollection.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dtgRidersCollection.Location = New System.Drawing.Point(7, 89)
+        Me.dtgRidersCollection.Location = New System.Drawing.Point(7, 52)
         Me.dtgRidersCollection.MultiSelect = False
         Me.dtgRidersCollection.Name = "dtgRidersCollection"
         Me.dtgRidersCollection.ReadOnly = True
         Me.dtgRidersCollection.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgRidersCollection.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgRidersCollection.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dtgRidersCollection.RowHeadersVisible = False
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black
-        Me.dtgRidersCollection.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black
+        Me.dtgRidersCollection.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dtgRidersCollection.RowTemplate.Height = 25
         Me.dtgRidersCollection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgRidersCollection.Size = New System.Drawing.Size(642, 437)
+        Me.dtgRidersCollection.Size = New System.Drawing.Size(642, 474)
         Me.dtgRidersCollection.TabIndex = 6
         '
         'PanelRider
@@ -145,9 +107,9 @@ Partial Class FrmRidersDailySummary
         Me.PanelRider.Controls.Add(Me.Label4)
         Me.PanelRider.Controls.Add(Me.cboRiders)
         Me.PanelRider.Controls.Add(Me.Panel4)
-        Me.PanelRider.Location = New System.Drawing.Point(27, 34)
+        Me.PanelRider.Location = New System.Drawing.Point(27, 15)
         Me.PanelRider.Name = "PanelRider"
-        Me.PanelRider.Size = New System.Drawing.Size(298, 141)
+        Me.PanelRider.Size = New System.Drawing.Size(298, 155)
         Me.PanelRider.TabIndex = 13
         '
         'DateTimePicker1
@@ -155,14 +117,14 @@ Partial Class FrmRidersDailySummary
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker1.Location = New System.Drawing.Point(66, 41)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(214, 23)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(223, 23)
         Me.DateTimePicker1.TabIndex = 19
         '
         'btnLoad
         '
         Me.btnLoad.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.btnLoad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLoad.Location = New System.Drawing.Point(0, 102)
+        Me.btnLoad.Location = New System.Drawing.Point(0, 116)
         Me.btnLoad.Name = "btnLoad"
         Me.btnLoad.Size = New System.Drawing.Size(296, 37)
         Me.btnLoad.TabIndex = 17
@@ -233,9 +195,9 @@ Partial Class FrmRidersDailySummary
         Me.Panel2.Controls.Add(Me.lblDate)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 31)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1001, 58)
+        Me.Panel2.Size = New System.Drawing.Size(1001, 46)
         Me.Panel2.TabIndex = 14
         '
         'lblridername
@@ -244,11 +206,11 @@ Partial Class FrmRidersDailySummary
         Me.lblridername.BackColor = System.Drawing.Color.Transparent
         Me.lblridername.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblridername.ForeColor = System.Drawing.Color.Black
-        Me.lblridername.Location = New System.Drawing.Point(406, 34)
+        Me.lblridername.Location = New System.Drawing.Point(406, 17)
         Me.lblridername.Name = "lblridername"
-        Me.lblridername.Size = New System.Drawing.Size(48, 17)
+        Me.lblridername.Size = New System.Drawing.Size(20, 17)
         Me.lblridername.TabIndex = 12
-        Me.lblridername.Text = "Name"
+        Me.lblridername.Text = "..."
         '
         'Label7
         '
@@ -256,7 +218,7 @@ Partial Class FrmRidersDailySummary
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(352, 34)
+        Me.Label7.Location = New System.Drawing.Point(352, 17)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(48, 17)
         Me.Label7.TabIndex = 11
@@ -268,11 +230,11 @@ Partial Class FrmRidersDailySummary
         Me.lblDate.BackColor = System.Drawing.Color.Transparent
         Me.lblDate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblDate.ForeColor = System.Drawing.Color.Black
-        Me.lblDate.Location = New System.Drawing.Point(55, 34)
+        Me.lblDate.Location = New System.Drawing.Point(55, 17)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(40, 17)
+        Me.lblDate.Size = New System.Drawing.Size(20, 17)
         Me.lblDate.TabIndex = 10
-        Me.lblDate.Text = "Date"
+        Me.lblDate.Text = "..."
         '
         'Label1
         '
@@ -280,7 +242,7 @@ Partial Class FrmRidersDailySummary
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(6, 34)
+        Me.Label1.Location = New System.Drawing.Point(6, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(43, 17)
         Me.Label1.TabIndex = 9
@@ -291,16 +253,16 @@ Partial Class FrmRidersDailySummary
         Me.Panel3.Controls.Add(Me.btnGenerateRFForm)
         Me.Panel3.Controls.Add(Me.PanelRider)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(649, 89)
+        Me.Panel3.Location = New System.Drawing.Point(649, 46)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(352, 449)
+        Me.Panel3.Size = New System.Drawing.Size(352, 492)
         Me.Panel3.TabIndex = 15
         '
         'btnGenerateRFForm
         '
         Me.btnGenerateRFForm.Image = CType(resources.GetObject("btnGenerateRFForm.Image"), System.Drawing.Image)
         Me.btnGenerateRFForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnGenerateRFForm.Location = New System.Drawing.Point(73, 199)
+        Me.btnGenerateRFForm.Location = New System.Drawing.Point(73, 176)
         Me.btnGenerateRFForm.Name = "btnGenerateRFForm"
         Me.btnGenerateRFForm.Size = New System.Drawing.Size(221, 75)
         Me.btnGenerateRFForm.TabIndex = 18
@@ -311,9 +273,9 @@ Partial Class FrmRidersDailySummary
         'Panel5
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(0, 89)
+        Me.Panel5.Location = New System.Drawing.Point(0, 46)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(649, 449)
+        Me.Panel5.Size = New System.Drawing.Size(649, 492)
         Me.Panel5.TabIndex = 16
         '
         'FrmRidersDailySummary
@@ -325,13 +287,12 @@ Partial Class FrmRidersDailySummary
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmRidersDailySummary"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmRidersDailySummary"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Text = "RIDER'S DAILY SUMMARY"
         CType(Me.dtgRidersCollection, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelRider.ResumeLayout(False)
         Me.PanelRider.PerformLayout()
@@ -343,10 +304,6 @@ Partial Class FrmRidersDailySummary
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Label5 As Label
     Friend WithEvents dtgRidersCollection As DataGridView
     Friend WithEvents PanelRider As Panel
     Friend WithEvents btnLoad As Button
