@@ -82,6 +82,12 @@
                 MessageBox.Show("No record found of ondate hits", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Exit Sub
             End If
+
+            If CDbl(lblondateticket.Text) + CDbl(txtWinningAmount.Text) > CDbl(FrmReceiversForm.txtHitsOndate.Text) Then
+                MessageBox.Show("Total Inputed Ondate Hits Ticket should not more than the value of Ondate Hits Record in the Datebase", "Ticket Validation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            End If
+
             mytickets.Save()
         End If
 
