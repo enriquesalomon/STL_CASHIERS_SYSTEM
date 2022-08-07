@@ -37,6 +37,16 @@ Partial Class FrmReceiversEntry
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.dtgReceiversFormList = New System.Windows.Forms.DataGridView()
+        Me.num = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.formnum = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.salesdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rider = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.receiver = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.datecreated = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dateremitted = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.delete = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.manage = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ManageRemittanceFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteRemittanceFormRecordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -98,7 +108,7 @@ Partial Class FrmReceiversEntry
         '
         Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(286, 6)
+        Me.Button6.Location = New System.Drawing.Point(98, 6)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(88, 31)
         Me.Button6.TabIndex = 4
@@ -110,25 +120,27 @@ Partial Class FrmReceiversEntry
         '
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(192, 6)
+        Me.Button5.Location = New System.Drawing.Point(286, 5)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(88, 31)
         Me.Button5.TabIndex = 3
         Me.Button5.Text = "Delete"
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button5.UseVisualStyleBackColor = True
+        Me.Button5.Visible = False
         '
         'Button3
         '
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(98, 6)
+        Me.Button3.Location = New System.Drawing.Point(192, 5)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(88, 31)
         Me.Button3.TabIndex = 1
         Me.Button3.Text = "Edit"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Visible = False
         '
         'Button1
         '
@@ -172,6 +184,7 @@ Partial Class FrmReceiversEntry
         Me.dtgReceiversFormList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtgReceiversFormList.ColumnHeadersHeight = 35
         Me.dtgReceiversFormList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dtgReceiversFormList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.num, Me.formnum, Me.salesdate, Me.rider, Me.receiver, Me.datecreated, Me.dateremitted, Me.status, Me.delete, Me.manage})
         Me.dtgReceiversFormList.ContextMenuStrip = Me.ContextMenuStrip1
         Me.dtgReceiversFormList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtgReceiversFormList.EnableHeadersVisualStyles = False
@@ -198,6 +211,80 @@ Partial Class FrmReceiversEntry
         Me.dtgReceiversFormList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgReceiversFormList.Size = New System.Drawing.Size(1238, 440)
         Me.dtgReceiversFormList.TabIndex = 2
+        '
+        'num
+        '
+        Me.num.HeaderText = "NO."
+        Me.num.Name = "num"
+        Me.num.ReadOnly = True
+        Me.num.Width = 53
+        '
+        'formnum
+        '
+        Me.formnum.HeaderText = "FORM#"
+        Me.formnum.Name = "formnum"
+        Me.formnum.ReadOnly = True
+        Me.formnum.Width = 71
+        '
+        'salesdate
+        '
+        Me.salesdate.HeaderText = "SALES DATE"
+        Me.salesdate.Name = "salesdate"
+        Me.salesdate.ReadOnly = True
+        Me.salesdate.Width = 86
+        '
+        'rider
+        '
+        Me.rider.HeaderText = "RIDER"
+        Me.rider.Name = "rider"
+        Me.rider.ReadOnly = True
+        Me.rider.Width = 62
+        '
+        'receiver
+        '
+        Me.receiver.HeaderText = "RECEIVER"
+        Me.receiver.Name = "receiver"
+        Me.receiver.ReadOnly = True
+        Me.receiver.Width = 82
+        '
+        'datecreated
+        '
+        Me.datecreated.HeaderText = "DATE CREATED"
+        Me.datecreated.Name = "datecreated"
+        Me.datecreated.ReadOnly = True
+        Me.datecreated.Width = 101
+        '
+        'dateremitted
+        '
+        Me.dateremitted.HeaderText = "DATE REMITTED"
+        Me.dateremitted.Name = "dateremitted"
+        Me.dateremitted.ReadOnly = True
+        Me.dateremitted.Width = 102
+        '
+        'status
+        '
+        Me.status.HeaderText = "STATUS"
+        Me.status.Name = "status"
+        Me.status.ReadOnly = True
+        Me.status.Width = 69
+        '
+        'delete
+        '
+        Me.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.delete.HeaderText = "DELETE"
+        Me.delete.Image = CType(resources.GetObject("delete.Image"), System.Drawing.Image)
+        Me.delete.Name = "delete"
+        Me.delete.ReadOnly = True
+        Me.delete.Width = 49
+        '
+        'manage
+        '
+        Me.manage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.manage.HeaderText = "MANAGE"
+        Me.manage.Image = CType(resources.GetObject("manage.Image"), System.Drawing.Image)
+        Me.manage.Name = "manage"
+        Me.manage.ReadOnly = True
+        Me.manage.Width = 63
         '
         'ContextMenuStrip1
         '
@@ -253,4 +340,14 @@ Partial Class FrmReceiversEntry
     Friend WithEvents ManageRemittanceFormToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteRemittanceFormRecordToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblrec As Label
+    Friend WithEvents num As DataGridViewTextBoxColumn
+    Friend WithEvents formnum As DataGridViewTextBoxColumn
+    Friend WithEvents salesdate As DataGridViewTextBoxColumn
+    Friend WithEvents rider As DataGridViewTextBoxColumn
+    Friend WithEvents receiver As DataGridViewTextBoxColumn
+    Friend WithEvents datecreated As DataGridViewTextBoxColumn
+    Friend WithEvents dateremitted As DataGridViewTextBoxColumn
+    Friend WithEvents status As DataGridViewTextBoxColumn
+    Friend WithEvents delete As DataGridViewImageColumn
+    Friend WithEvents manage As DataGridViewImageColumn
 End Class

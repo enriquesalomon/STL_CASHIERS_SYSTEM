@@ -21,18 +21,13 @@
     Public rfreceivername As String = ""
 
     Private Sub dtgReceiversFormList_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgReceiversFormList.CellClick
-        'Dim rowcount As Integer = dtgPaymentSchedule.Rows.Count
-        'If e.RowIndex = rowcount - 1 Then
-        '    Dim GridRow As DataGridViewRow = dtgPaymentSchedule.CurrentRow
-        '    For Each datagrd As DataGridViewRow In dtgPaymentSchedule.SelectedRows
-        '        lblSchedID.Text = CStr(GridRow.Cells.Item("id").Value)
-        '    Next datagrd
-        'Else
-        '    lblSchedID.Text = "SCHED ID"
-        'End If
 
-        If e.ColumnIndex = 8 Then
 
+
+    End Sub
+    Private Sub dtgReceiversFormList_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgReceiversFormList.CellContentClick
+        Dim colName As String = dtgReceiversFormList.Columns(e.ColumnIndex).Name
+        If colName = "manage" Then
             Dim GridRow As DataGridViewRow = dtgReceiversFormList.CurrentRow
             For Each datagrd As DataGridViewRow In dtgReceiversFormList.SelectedRows
                 rfnumber = CStr(GridRow.Cells.Item("formnum").Value)
@@ -47,9 +42,13 @@
         End If
     End Sub
 
+
+
     Private Sub dtgReceiversFormList_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dtgReceiversFormList.CellEnter
         If dtgReceiversFormList.Rows.Count > 0 Then
             lblrec.Text = "RECORD COUNT: " & (dtgReceiversFormList.CurrentRow.Index) + 1 & " of " & dtgReceiversFormList.Rows.Count
         End If
     End Sub
+
+
 End Class

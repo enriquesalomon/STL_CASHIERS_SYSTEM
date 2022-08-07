@@ -39,8 +39,6 @@ Partial Class FrmTicketEntry
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblondateticket = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.paneldtgList = New System.Windows.Forms.Panel()
         Me.dtgTickets = New System.Windows.Forms.DataGridView()
@@ -55,6 +53,13 @@ Partial Class FrmTicketEntry
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.drawdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.agentcode = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.amountwon = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.claimeddate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tickettype = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.delete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel4.SuspendLayout()
         Me.PanelSearch.SuspendLayout()
         Me.panelBottom.SuspendLayout()
@@ -145,8 +150,6 @@ Partial Class FrmTicketEntry
         Me.panelBottom.Controls.Add(Me.Label10)
         Me.panelBottom.Controls.Add(Me.lblondateticket)
         Me.panelBottom.Controls.Add(Me.Label8)
-        Me.panelBottom.Controls.Add(Me.btnDelete)
-        Me.panelBottom.Controls.Add(Me.btnEdit)
         Me.panelBottom.Controls.Add(Me.btnAdd)
         Me.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.panelBottom.Location = New System.Drawing.Point(0, 507)
@@ -232,41 +235,13 @@ Partial Class FrmTicketEntry
         Me.Label8.TabIndex = 25
         Me.Label8.Text = "ONDATE TICKET"
         '
-        'btnDelete
-        '
-        Me.btnDelete.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDelete.Image = CType(resources.GetObject("btnDelete.Image"), System.Drawing.Image)
-        Me.btnDelete.Location = New System.Drawing.Point(584, 5)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(88, 32)
-        Me.btnDelete.TabIndex = 2
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnDelete.UseVisualStyleBackColor = True
-        '
-        'btnEdit
-        '
-        Me.btnEdit.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnEdit.Image = CType(resources.GetObject("btnEdit.Image"), System.Drawing.Image)
-        Me.btnEdit.Location = New System.Drawing.Point(490, 5)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(88, 32)
-        Me.btnEdit.TabIndex = 1
-        Me.btnEdit.Text = "Edit"
-        Me.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnEdit.UseVisualStyleBackColor = True
-        '
         'btnAdd
         '
         Me.btnAdd.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAdd.Image = CType(resources.GetObject("btnAdd.Image"), System.Drawing.Image)
-        Me.btnAdd.Location = New System.Drawing.Point(396, 5)
+        Me.btnAdd.Location = New System.Drawing.Point(590, 6)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(88, 32)
         Me.btnAdd.TabIndex = 0
@@ -303,6 +278,7 @@ Partial Class FrmTicketEntry
         Me.dtgTickets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtgTickets.ColumnHeadersHeight = 35
         Me.dtgTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dtgTickets.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.drawdate, Me.agentcode, Me.amountwon, Me.claimeddate, Me.tickettype, Me.delete})
         Me.dtgTickets.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtgTickets.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dtgTickets.EnableHeadersVisualStyles = False
@@ -465,6 +441,58 @@ Partial Class FrmTicketEntry
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "TICKET ENTRY"
         '
+        'id
+        '
+        Me.id.HeaderText = "ID"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Width = 42
+        '
+        'drawdate
+        '
+        Me.drawdate.HeaderText = "DRAWDATE"
+        Me.drawdate.Name = "drawdate"
+        Me.drawdate.ReadOnly = True
+        Me.drawdate.Width = 92
+        '
+        'agentcode
+        '
+        Me.agentcode.HeaderText = "AGENTCODE"
+        Me.agentcode.Name = "agentcode"
+        Me.agentcode.ReadOnly = True
+        '
+        'amountwon
+        '
+        Me.amountwon.HeaderText = "AMOUNT WON"
+        Me.amountwon.Name = "amountwon"
+        Me.amountwon.ReadOnly = True
+        Me.amountwon.Width = 102
+        '
+        'claimeddate
+        '
+        Me.claimeddate.HeaderText = "CLAIMED DATE"
+        Me.claimeddate.Name = "claimeddate"
+        Me.claimeddate.ReadOnly = True
+        '
+        'tickettype
+        '
+        Me.tickettype.HeaderText = "TICKET TYPE"
+        Me.tickettype.Name = "tickettype"
+        Me.tickettype.ReadOnly = True
+        Me.tickettype.Width = 86
+        '
+        'delete
+        '
+        Me.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.delete.HeaderText = ""
+        Me.delete.Image = CType(resources.GetObject("delete.Image"), System.Drawing.Image)
+        Me.delete.Name = "delete"
+        Me.delete.ReadOnly = True
+        Me.delete.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.delete.ToolTipText = "DELETE"
+        Me.delete.Width = 19
+        '
         'FrmTicketEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -504,8 +532,6 @@ Partial Class FrmTicketEntry
     Friend WithEvents panelBottom As Panel
     Friend WithEvents paneldtgList As Panel
     Friend WithEvents dtgTickets As DataGridView
-    Friend WithEvents btnDelete As Button
-    Friend WithEvents btnEdit As Button
     Friend WithEvents btnAdd As Button
     Friend WithEvents Panelentry As Panel
     Friend WithEvents txtWinningAmount As TextBox
@@ -526,4 +552,11 @@ Partial Class FrmTicketEntry
     Friend WithEvents lblprevticket As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents drawdate As DataGridViewTextBoxColumn
+    Friend WithEvents agentcode As DataGridViewTextBoxColumn
+    Friend WithEvents amountwon As DataGridViewTextBoxColumn
+    Friend WithEvents claimeddate As DataGridViewTextBoxColumn
+    Friend WithEvents tickettype As DataGridViewTextBoxColumn
+    Friend WithEvents delete As DataGridViewImageColumn
 End Class

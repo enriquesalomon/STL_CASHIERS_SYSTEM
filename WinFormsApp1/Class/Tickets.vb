@@ -2,41 +2,41 @@
 
     Public Sub LoadRecord()
         Try
-            FrmTicketEntry.dtgTickets.ColumnCount = 6
-            FrmTicketEntry.dtgTickets.RowsDefaultCellStyle.BackColor = Color.White
-            FrmTicketEntry.dtgTickets.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke
+            'FrmTicketEntry.dtgTickets.ColumnCount = 6
+            'FrmTicketEntry.dtgTickets.RowsDefaultCellStyle.BackColor = Color.White
+            'FrmTicketEntry.dtgTickets.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke
 
-            FrmTicketEntry.dtgTickets.Columns(0).HeaderText = "ID"
-            FrmTicketEntry.dtgTickets.Columns(0).Width = 70
-            FrmTicketEntry.dtgTickets.Columns(0).Name = "id"
-            FrmTicketEntry.dtgTickets.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            'FrmTicketEntry.dtgTickets.Columns(0).HeaderText = "ID"
+            'FrmTicketEntry.dtgTickets.Columns(0).Width = 70
+            'FrmTicketEntry.dtgTickets.Columns(0).Name = "id"
+            'FrmTicketEntry.dtgTickets.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-            FrmTicketEntry.dtgTickets.Columns(1).HeaderText = "DRAW DATE"
-            FrmTicketEntry.dtgTickets.Columns(1).Width = 100
-            FrmTicketEntry.dtgTickets.Columns(1).Name = "drawdate"
-            FrmTicketEntry.dtgTickets.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
-
-            FrmTicketEntry.dtgTickets.Columns(2).HeaderText = "AGENT CODE"
-            FrmTicketEntry.dtgTickets.Columns(2).Width = 70
-            FrmTicketEntry.dtgTickets.Columns(2).Name = "agentcode"
-            FrmTicketEntry.dtgTickets.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
-
-            FrmTicketEntry.dtgTickets.Columns(3).HeaderText = "AMOUNT WON"
-            FrmTicketEntry.dtgTickets.Columns(3).Width = 70
-            FrmTicketEntry.dtgTickets.Columns(3).Name = "amountwon"
-            FrmTicketEntry.dtgTickets.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
-            FrmTicketEntry.dtgTickets.Columns(4).HeaderText = "CLAIMED DATE"
-            FrmTicketEntry.dtgTickets.Columns(4).Width = 100
-            FrmTicketEntry.dtgTickets.Columns(4).Name = "claimeddate"
-            FrmTicketEntry.dtgTickets.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            'FrmTicketEntry.dtgTickets.Columns(1).HeaderText = "DRAW DATE"
+            'FrmTicketEntry.dtgTickets.Columns(1).Width = 100
+            'FrmTicketEntry.dtgTickets.Columns(1).Name = "drawdate"
+            'FrmTicketEntry.dtgTickets.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
-            FrmTicketEntry.dtgTickets.Columns(5).HeaderText = "TICKET TYPE"
-            FrmTicketEntry.dtgTickets.Columns(5).Width = 100
-            FrmTicketEntry.dtgTickets.Columns(5).Name = "tickettype"
-            FrmTicketEntry.dtgTickets.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            'FrmTicketEntry.dtgTickets.Columns(2).HeaderText = "AGENT CODE"
+            'FrmTicketEntry.dtgTickets.Columns(2).Width = 70
+            'FrmTicketEntry.dtgTickets.Columns(2).Name = "agentcode"
+            'FrmTicketEntry.dtgTickets.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+
+            'FrmTicketEntry.dtgTickets.Columns(3).HeaderText = "AMOUNT WON"
+            'FrmTicketEntry.dtgTickets.Columns(3).Width = 70
+            'FrmTicketEntry.dtgTickets.Columns(3).Name = "amountwon"
+            'FrmTicketEntry.dtgTickets.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            'FrmTicketEntry.dtgTickets.Columns(4).HeaderText = "CLAIMED DATE"
+            'FrmTicketEntry.dtgTickets.Columns(4).Width = 100
+            'FrmTicketEntry.dtgTickets.Columns(4).Name = "claimeddate"
+            'FrmTicketEntry.dtgTickets.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+            'FrmTicketEntry.dtgTickets.Columns(5).HeaderText = "TICKET TYPE"
+            'FrmTicketEntry.dtgTickets.Columns(5).Width = 100
+            'FrmTicketEntry.dtgTickets.Columns(5).Name = "tickettype"
+            'FrmTicketEntry.dtgTickets.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
             FrmTicketEntry.dtgTickets.Rows.Clear()

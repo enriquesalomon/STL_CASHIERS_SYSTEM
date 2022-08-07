@@ -4,50 +4,50 @@
 
             FrmReceiversEntry.dtgReceiversFormList.Rows.Clear()
 
-            FrmReceiversEntry.dtgReceiversFormList.ColumnCount = 8
+            'FrmReceiversEntry.dtgReceiversFormList.ColumnCount = 8
             FrmReceiversEntry.dtgReceiversFormList.RowsDefaultCellStyle.BackColor = Color.White
             FrmReceiversEntry.dtgReceiversFormList.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke
 
-            FrmReceiversEntry.dtgReceiversFormList.Columns(0).HeaderText = "NO."
-            FrmReceiversEntry.dtgReceiversFormList.Columns(0).Width = 50
-            FrmReceiversEntry.dtgReceiversFormList.Columns(0).Name = "num"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(0).HeaderText = "NO."
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(0).Width = 50
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(0).Name = "num"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
-            FrmReceiversEntry.dtgReceiversFormList.Columns(1).HeaderText = "FORM#"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(1).Width = 70
-            FrmReceiversEntry.dtgReceiversFormList.Columns(1).Name = "formnum"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(1).HeaderText = "FORM#"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(1).Width = 70
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(1).Name = "formnum"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
-            FrmReceiversEntry.dtgReceiversFormList.Columns(2).HeaderText = "SALESDATE"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(2).Width = 100
-            FrmReceiversEntry.dtgReceiversFormList.Columns(2).Name = "salesdate"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(2).HeaderText = "SALESDATE"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(2).Width = 100
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(2).Name = "salesdate"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-            FrmReceiversEntry.dtgReceiversFormList.Columns(3).HeaderText = "RIDER/COLLECTOR"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(3).Width = 70
-            FrmReceiversEntry.dtgReceiversFormList.Columns(3).Name = "rider"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(3).HeaderText = "RIDER/COLLECTOR"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(3).Width = 70
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(3).Name = "rider"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
-            FrmReceiversEntry.dtgReceiversFormList.Columns(4).HeaderText = "RECEIVER"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(4).Width = 70
-            FrmReceiversEntry.dtgReceiversFormList.Columns(4).Name = "receiver"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(4).HeaderText = "RECEIVER"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(4).Width = 70
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(4).Name = "receiver"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
-            FrmReceiversEntry.dtgReceiversFormList.Columns(5).HeaderText = "DATE CREATED"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(5).Width = 70
-            FrmReceiversEntry.dtgReceiversFormList.Columns(5).Name = "datecreated"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(5).HeaderText = "DATE CREATED"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(5).Width = 70
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(5).Name = "datecreated"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
 
-            FrmReceiversEntry.dtgReceiversFormList.Columns(6).HeaderText = "DATE REMMITED"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(6).Width = 70
-            FrmReceiversEntry.dtgReceiversFormList.Columns(6).Name = "dateremitted"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(6).HeaderText = "DATE REMMITED"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(6).Width = 70
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(6).Name = "dateremitted"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
-            FrmReceiversEntry.dtgReceiversFormList.Columns(7).HeaderText = "STATUS"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(7).Width = 70
-            FrmReceiversEntry.dtgReceiversFormList.Columns(7).Name = "status"
-            FrmReceiversEntry.dtgReceiversFormList.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(7).HeaderText = "STATUS"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(7).Width = 70
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(7).Name = "status"
+            'FrmReceiversEntry.dtgReceiversFormList.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
 
             FrmReceiversEntry.dtgReceiversFormList.Rows.Clear()
@@ -55,12 +55,12 @@
             mydataset.Clear()
             qryStatement = ""
 
-            Dim btn As New DataGridViewButtonColumn()
-            FrmReceiversEntry.dtgReceiversFormList.Columns.Add(btn)
-            btn.HeaderText = "ACTION"
-            btn.Text = "MANAGE RECORD"
-            btn.Name = "btn"
-            btn.UseColumnTextForButtonValue = True
+            'Dim btn As New DataGridViewButtonColumn()
+            'FrmReceiversEntry.dtgReceiversFormList.Columns.Add(btn)
+            'btn.HeaderText = "ACTION"
+            'btn.Text = "MANAGE RECORD"
+            'btn.Name = "btn"
+            'btn.UseColumnTextForButtonValue = True
 
             'If filterByTestSite Then
             '    qryStatement = "Select * from ExamineeInfo inner join Address on ExamineeInfo.Examineeno=Address.Examineeno where AdmissionSchedNo ='" & Trim(AdmissionSched) & "' and TestingSite ='" & Trim(cboFilterTestSite.Text) & "'  order by ExamineeInfo.ExamineeNo ASC "

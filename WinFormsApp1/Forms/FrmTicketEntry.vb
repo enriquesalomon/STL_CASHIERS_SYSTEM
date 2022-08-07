@@ -7,12 +7,12 @@
 
     End Sub
 
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        mytickets.Delete()
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs)
+
 
     End Sub
 
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -166,5 +166,10 @@
         Me.Cursor = Cursors.Default
     End Sub
 
-
+    Private Sub dtgTickets_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgTickets.CellContentClick
+        Dim colName As String = dtgTickets.Columns(e.ColumnIndex).Name
+        If colName = "delete" Then
+            mytickets.Delete()
+        End If
+    End Sub
 End Class
