@@ -42,6 +42,13 @@ Partial Class FrmTicketEntry
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.paneldtgList = New System.Windows.Forms.Panel()
         Me.dtgTickets = New System.Windows.Forms.DataGridView()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.drawdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.agentcode = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.amountwon = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.claimeddate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tickettype = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.delete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panelentry = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbTicketType = New System.Windows.Forms.ComboBox()
@@ -53,13 +60,6 @@ Partial Class FrmTicketEntry
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.drawdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.agentcode = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.amountwon = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.claimeddate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tickettype = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.delete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel4.SuspendLayout()
         Me.PanelSearch.SuspendLayout()
         Me.panelBottom.SuspendLayout()
@@ -306,6 +306,58 @@ Partial Class FrmTicketEntry
         Me.dtgTickets.Size = New System.Drawing.Size(690, 417)
         Me.dtgTickets.TabIndex = 4
         '
+        'id
+        '
+        Me.id.HeaderText = "ID"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Width = 42
+        '
+        'drawdate
+        '
+        Me.drawdate.HeaderText = "DRAWDATE"
+        Me.drawdate.Name = "drawdate"
+        Me.drawdate.ReadOnly = True
+        Me.drawdate.Width = 92
+        '
+        'agentcode
+        '
+        Me.agentcode.HeaderText = "AGENTCODE"
+        Me.agentcode.Name = "agentcode"
+        Me.agentcode.ReadOnly = True
+        '
+        'amountwon
+        '
+        Me.amountwon.HeaderText = "AMOUNT WON"
+        Me.amountwon.Name = "amountwon"
+        Me.amountwon.ReadOnly = True
+        Me.amountwon.Width = 102
+        '
+        'claimeddate
+        '
+        Me.claimeddate.HeaderText = "CLAIMED DATE"
+        Me.claimeddate.Name = "claimeddate"
+        Me.claimeddate.ReadOnly = True
+        '
+        'tickettype
+        '
+        Me.tickettype.HeaderText = "TICKET TYPE"
+        Me.tickettype.Name = "tickettype"
+        Me.tickettype.ReadOnly = True
+        Me.tickettype.Width = 86
+        '
+        'delete
+        '
+        Me.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.delete.HeaderText = ""
+        Me.delete.Image = CType(resources.GetObject("delete.Image"), System.Drawing.Image)
+        Me.delete.Name = "delete"
+        Me.delete.ReadOnly = True
+        Me.delete.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.delete.ToolTipText = "DELETE"
+        Me.delete.Width = 19
+        '
         'Panelentry
         '
         Me.Panelentry.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -440,58 +492,6 @@ Partial Class FrmTicketEntry
         Me.Label3.Size = New System.Drawing.Size(91, 16)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "TICKET ENTRY"
-        '
-        'id
-        '
-        Me.id.HeaderText = "ID"
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        Me.id.Width = 42
-        '
-        'drawdate
-        '
-        Me.drawdate.HeaderText = "DRAWDATE"
-        Me.drawdate.Name = "drawdate"
-        Me.drawdate.ReadOnly = True
-        Me.drawdate.Width = 92
-        '
-        'agentcode
-        '
-        Me.agentcode.HeaderText = "AGENTCODE"
-        Me.agentcode.Name = "agentcode"
-        Me.agentcode.ReadOnly = True
-        '
-        'amountwon
-        '
-        Me.amountwon.HeaderText = "AMOUNT WON"
-        Me.amountwon.Name = "amountwon"
-        Me.amountwon.ReadOnly = True
-        Me.amountwon.Width = 102
-        '
-        'claimeddate
-        '
-        Me.claimeddate.HeaderText = "CLAIMED DATE"
-        Me.claimeddate.Name = "claimeddate"
-        Me.claimeddate.ReadOnly = True
-        '
-        'tickettype
-        '
-        Me.tickettype.HeaderText = "TICKET TYPE"
-        Me.tickettype.Name = "tickettype"
-        Me.tickettype.ReadOnly = True
-        Me.tickettype.Width = 86
-        '
-        'delete
-        '
-        Me.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.delete.HeaderText = ""
-        Me.delete.Image = CType(resources.GetObject("delete.Image"), System.Drawing.Image)
-        Me.delete.Name = "delete"
-        Me.delete.ReadOnly = True
-        Me.delete.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.delete.ToolTipText = "DELETE"
-        Me.delete.Width = 19
         '
         'FrmTicketEntry
         '

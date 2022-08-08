@@ -94,16 +94,16 @@
   </metadata>
   <data name="delete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAHkSURBVDhPnVVbLwNBFO47gj/iEn6DF8luiwoSO6sPeFHxJngh0bomPPLo8gckbknT3yFBd7cl
-        2gaJSiuidZwzOzZ7mVK+5Eum53zny0znzNlQPRSj0WZL0aOmwraQh4JblqoNUU7IfofVP9ZuqtqGqbIK
-        EuqwYihsnbSiTI6MonWgmSkxqMe7rDLeK8q9MBWtGwWvvoJG+GqE9S5hY4O2bqksKxE3SgtN24Qd7k5l
-        mx7BQAxKpyl4mF91F3FSrHSW4hp33FD1NW52pcRaMOC5gOzoNHy+vUGtXIH7mUUnTmuKUY407hpkOd83
-        3hSywmzYl+AsrGwDVKtQfXyGXGwOcnocPoqPALUaFBO7AT1nmA0Gj+vi0/4hEN6vM5wEism0RGolNNSO
-        Zclvlk4uuRHhBdcyjUNsftrhUSDh4p8MVe2g8SPfGHz9tHcg1RL5keltypKFZf+lzDqXUljdCehtahE+
-        BPBHY20Tt9umVsG2GZly4oJ22xBoq54kNfZFGvILSXcBZ35pDUrnaTAjE544tl+CmxHsCcMst+Bv1Mzb
-        6GSrsLNBDxyT/xoOmUisU9h4YY8vZvgKfmIOj9ojyuWgqUEPHcVlX7GbZeyOZOCYP4FujN4m/j8bzieA
-        r/UB5zYDCIW+AK4RXC7jwlPZAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAeRJREFUOE+d
+        VVsvA0EU7juCP+ISfoMXyW6LChI7qw94UfEmeCHRuiY88ujyByRuSdPfIUF3tyXaBolKK6J1nDM7NnuZ
+        Ur7kS6bnfOfLTOfM2VA9FKPRZkvRo6bCtpCHgluWqg1RTsh+h9U/1m6q2oapsgoS6rBiKGydtKJMjoyi
+        daCZKTGox7usMt4ryr0wFa0bBa++gkb4aoT1LmFjg7ZuqSwrETdKC03bhB3uTmWbHsFADEqnKXiYX3UX
+        cVKsdJbiGnfcUPU1bnalxFow4LmA7Og0fL69Qa1cgfuZRSdOa4pRjjTuGmQ53zfeFLLCbNiX4CysbANU
+        q1B9fIZcbA5yehw+io8AtRoUE7sBPWeYDQaP6+LT/iEQ3q8znASKybREaiU01I5lyW+WTi65EeEF1zKN
+        Q2x+2uFRIOHinwxV7aDxI98YfP20dyDVEvmR6W3KkoVl/6XMOpdSWN0J6G1qET4E8EdjbRO326ZWwbYZ
+        mXLignbbEGirniQ19kUa8gtJdwFnfmkNSudpMCMTnji2X4KbEewJwyy34G/UzNvoZKuws0EPHJP/Gg6Z
+        SKxT2Hhhjy9m+Ap+Yg6P2iPK5aCpQQ8dxWVfsZtl7I5k4Jg/gW6M3ib+PxvOJ4Cv9QHnNgMIhb4ArhFc
+        LuPCU9kAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnSaveOndate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

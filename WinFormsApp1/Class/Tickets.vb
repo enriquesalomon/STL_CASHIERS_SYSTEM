@@ -117,6 +117,16 @@
         If CDbl(FrmTicketEntry.txtWinningAmount.Text) <= 0 Then
             Exit Sub
         End If
+        'getTotalDrawDateHits()
+        'getTotalClaimedHits()
+
+        'If AgentTotaClaimlHits < AgentTotalDrawDatelHits Then
+        '    If AgentTotalDrawDatelHits < AgentTotaClaimlHits + CDbl(FrmTicketEntry.txtWinningAmount.Text) Then
+        '        Exit Sub
+        '        If MessageBox.Show("Total Ticket to be claimed should not be more than Total Hits", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.OK Then : End If
+        '    End If
+        'End If
+
         If MessageBox.Show("Are you sure you want to save this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
 
 
@@ -250,5 +260,55 @@
         FrmReceiversForm.txtTotalHitsClaimed.Text = Format(ondateamount + prevhits, "###,###,###.#0")
 
     End Sub
+    '----------------------------pending for previous validation ticket
 
+    Public AgentTotaClaimlHits As Double
+    Sub getTotalClaimedHits()
+        Dim ntable As New DataTable
+        Dim ndataset As New DataSet
+        AgentTotaClaimlHits = 0
+
+        'Try
+        Call connectSQL(conString)
+        mycommand = mysqlconn.CreateCommand
+        mycommand.CommandText = "select  *  from [tbl_ClaimedTicket] where DRAWDATE='" & Format(CDate(FrmTicketEntry.dtpDrawDate.Text), "yyyy-MM-dd") & "' and AGENTCODE='" & (FrmTicketEntry.lblagentcode.Text) & "' "
+        myadapter.SelectCommand = mycommand
+        myadapter.Fill(ndataset, "tbl_ClaimedTicket")
+        ntable = ndataset.Tables("tbl_ClaimedTicket")
+
+        If mydataTable.Rows.Count > 0 Then
+            For Each mrow As DataRow In mydataTable.Rows
+                AgentTotaClaimlHits += CDbl(mrow("AMOUNT").ToString)
+            Next
+        End If
+
+        ntable.Rows.Clear()
+        ndataset.Clear()
+    End Sub
+
+
+    Public AgentTotalDrawDatelHits As Double
+    Sub getTotalDrawDateHits()
+        Dim ntable As New DataTable
+        Dim ndataset As New DataSet
+        AgentTotalDrawDatelHits = 0
+
+        'Try
+        Call connectSQL(conString)
+        mycommand = mysqlconn.CreateCommand
+        mycommand.CommandText = "select  *  from [tbl_DailySalesAccountRemittance] where SALESDATE='" & Format(CDate(FrmTicketEntry.dtpDrawDate.Text), "yyyy-MM-dd") & "' and USERNAME='" & (FrmTicketEntry.lblagentcode.Text) & "' "
+        myadapter.SelectCommand = mycommand
+        myadapter.Fill(ndataset, "tbl_DailySalesAccountRemittance")
+        ntable = ndataset.Tables("tbl_DailySalesAccountRemittance")
+
+        If mydataTable.Rows.Count > 0 Then
+            For Each mrow As DataRow In mydataTable.Rows
+                AgentTotalDrawDatelHits += CDbl(mrow("ONDATEHITS").ToString)
+            Next
+        End If
+
+        ntable.Rows.Clear()
+        ndataset.Clear()
+    End Sub
+    '----------------------------pending for previous validation ticket
 End Class
